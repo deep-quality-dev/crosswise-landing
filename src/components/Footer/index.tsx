@@ -81,6 +81,16 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export const Footer = () => {
+
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'auto'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
@@ -118,6 +128,7 @@ export const Footer = () => {
               borderRadius={'10px'}
               background={'transparent'}
               style={{ borderImage: 'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1' }}
+              onClick={() => scrollToTop()}
             >
               <Text fontSize={'13px'} mr={'30px'}>GO TO TOP</Text>
               <UpIcon />
