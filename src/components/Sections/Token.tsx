@@ -78,7 +78,7 @@ const Token = () => {
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={8}
-          pt={{ base: 5, lg: 12 }}
+          pt={{ base: 10, lg: 24 }}
         >
           <Feature
             icon={<Icon as={IconEmission} width={'60px'} height={'53px'} />}

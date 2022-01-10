@@ -71,7 +71,7 @@ const TechnicalPartner = () => {
     'radial-gradient(50% 288% at 50% 79.57%, rgba(4, 248, 173, 0.4) 0%, rgba(63, 129, 239, 0.4) 52.6%, rgba(135, 80, 244, 0.4) 100%)'
   );
   return (
-    <Box position={'relative'}>
+    <Box position={'relative'} bg={color}>
       <Stack
         as={Container}
         maxW={'7xl'}
