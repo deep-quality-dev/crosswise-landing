@@ -40,6 +40,7 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
           color={'white'}
           bgImage={'linear-gradient(107deg, #0fa, #4579f5 55%, #9c42f5)'}
           boxShadow={'0 .5rem 1rem rgba(0, 0, 0, .15)'}
+          cursor={'pointer'}
         >
           {primary.label}
         </Button>
@@ -56,6 +57,7 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
               height={'48px'}
               bg={'#E0E0FF02'}
               boxShadow={'inset 1px 1px 6px #00000040'}
+              cursor={'pointer'}
             >
               {item.icon}
             </Button>

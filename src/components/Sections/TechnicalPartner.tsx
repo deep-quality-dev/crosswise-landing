@@ -18,37 +18,44 @@ import {
   IconCERTIK,
   IconBiconomy,
 } from '../icons';
+import Link from 'next/link';
 
 const Partners = [
   {
+    href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf',
     icon: <Icon as={IconTechRate} width={'42px'} height={'42px'} />,
     label: 'TehchRate',
   },
   {
+    href: 'https://data.chain.link/users/crosswise',
     icon: <Icon as={IconChainLink} width={'42px'} height={'42px'} />,
     label: 'ChainLink',
   },
   {
+    href: 'https://www.certik.com/projects/crosswise-finance',
     icon: <Icon as={IconCERTIK} width={'42px'} height={'42px'} />,
     label: 'CERTIK',
   },
   {
+    href: 'https://www.biconomy.io/',
     icon: <Icon as={IconBiconomy} width={'42px'} height={'42px'} />,
     label: 'Biconomy',
   },
 ];
 
 const Feature = ({
+  href,
   icon,
   label,
 }: {
+  href: string;
   icon: React.ReactElement;
   label: string;
 }) => {
   return (
     <Stack
       as={Container}
-      p={{ base: '17px' }}
+      p={{ base: '10px 30px' }}
       spacing={{ base: '17px' }}
       direction={'row'}
       alignItems={'center'}
@@ -59,7 +66,9 @@ const Feature = ({
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
-      {icon}
+      <Link href={href} passHref>
+        {icon}
+      </Link>
       <Text>{label}</Text>
     </Stack>
   );
@@ -98,6 +107,7 @@ const TechnicalPartner = () => {
           {Partners.map((partner) => (
             <Feature
               key={partner.label}
+              href={partner.href}
               icon={partner.icon}
               label={partner.label}
             />
