@@ -3,16 +3,14 @@ import {
   Box,
   Stack,
   Text,
-  Link,
   SimpleGrid,
+  Button,
+  Flex,
+  Link,
   useColorModeValue,
-  Icon,
+  Spacer,
 } from '@chakra-ui/react';
-import Image from 'next/image';
-import NextLink from 'next/link';
 import { ReactNode } from 'react';
-import { FaLocationArrow, FaLanguage } from 'react-icons/fa';
-
 // import IconCrosswiseDark from '../../assets/images/logo-dark.png';
 // import IconCrosswiseLight from '../../assets/images/logo-light.png';
 
@@ -23,14 +21,15 @@ import {
   GITHUB_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
+import { IconChat, IconSend, TelegramIcon, TwitterIcon, DiscordIcon, MediumIcon, MailIcon, GitIcon, CopyRightIcon, UpIcon } from '@/components/icons';
 
 const About = [
   {
-    icon: FaLanguage,
+    icon: <IconChat />,
     label: 'English (United States)',
   },
   {
-    icon: FaLocationArrow,
+    icon: <IconSend />,
     label: 'United States',
   },
 ];
@@ -56,19 +55,19 @@ const LearnLinks = [
 
 const SOCIAL_LINKS = [
   {
-    label: 'Telegram',
+    icon: <TelegramIcon />,
     href: TELEGRAM_LINK,
   },
   {
-    label: 'Twitter',
+    icon: <TwitterIcon />,
     href: TWITTER_LINK,
   },
   {
-    label: 'Medium',
+    icon: <MediumIcon />,
     href: MEDIUM_LINK,
   },
   {
-    label: 'Github',
+    icon: <GitIcon />,
     href: GITHUB_LINK,
   },
 ];
@@ -88,25 +87,67 @@ export const Footer = () => {
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <Flex>
           <ListHeader>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <Logo width={26} height={25} />
               <Text fontWeight={'extrabold'}>crosswise</Text>
             </Stack>
           </ListHeader>
+          <Spacer />
           {About.map((link) => (
-            <Stack
-              key={link.label}
-              direction={'row'}
-              align={'center'}
-              spacing={3}
-            >
-              <Icon as={link.icon} w={5} h={5} />
-              <Text fontSize={'13px'}>{link.label}</Text>
-            </Stack>
+            <>
+              <Stack
+                key={link.label}
+                direction={'row'}
+                align={'center'}
+                spacing={3}
+              >
+                {link.icon}
+                <Text fontSize={'13px'}>{link.label}</Text>
+              </Stack>
+              <Spacer />
+            </>
           ))}
-        </SimpleGrid>
+          <Spacer />
+          <Box>
+            <Button 
+              size='md'
+              borderWidth={'2px'}
+              borderStyle={'solid'}
+              borderRadius={'10px'}
+              background={'transparent'}
+              style={{ borderImage: 'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1' }}
+            >
+              <Text fontSize={'13px'} mr={'30px'}>GO TO TOP</Text>
+              <UpIcon />
+            </Button>
+          </Box>
+        </Flex>
+
+        <Box width={'100%'} height={'2px'} backgroundColor={'rgba(196, 196, 196, 0.1)'} my={'10px !important'} />
+
+        <Flex>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+            {SOCIAL_LINKS.map((link) => (
+              <Link href={link.href} isExternal>
+                {link.icon}
+              </Link>
+            ))}
+          </SimpleGrid>
+
+          <Spacer />
+          
+          <Link href="#help">
+            <Text display={'flex'} flexDirection={'row'} fontWeight={"extrabold"}><CopyRightIcon />2022 Crosswise Finance</Text>
+          </Link>
+          
+          <Spacer />
+          
+          <Link href="#privacy" textDecoration={'none'} >
+            <Text fontWeight={"extrabold"}>TERMS & CONDITIONS | PRIVACY POLICY</Text>
+          </Link>
+        </Flex>
       </Container>
     </Box>
   );
