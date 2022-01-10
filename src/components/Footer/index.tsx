@@ -59,7 +59,12 @@ const SOCIAL_LINKS = [
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Box fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Box
+      fontWeight={'500'}
+      fontSize={'lg'}
+      display={'flex'}
+      alignItems={'center'}
+    >
       {children}
     </Box>
   );
@@ -70,7 +75,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
     <Box
       position={'relative'}
       zIndex={0}
-      borderRadius={'60px'}
+      borderRadius={'8px'}
       overflow={'hidden'}
       padding={'3px'}
       width={'fit-content'}
@@ -87,7 +92,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         backgroundImage={'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4)'}
       ></Box>
       <Box
-        borderRadius={'60px'}
+        borderRadius={'8px'}
         backgroundColor={'#0e263e'}
         fontSize={'20px'}
         boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
@@ -154,7 +159,7 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <SimpleGrid columns={{ base: 3, sm: 1, md: 1, lg: 3 }} spacing={3}>
+        <SimpleGrid columns={{ base: 3 }} spacing={3}>
           <SimpleGrid columns={{ base: 4, sm: 4, md: 4, lg: 4 }}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
