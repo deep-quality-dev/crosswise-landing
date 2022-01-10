@@ -30,7 +30,6 @@ const Feature = ({
 }) => {
   return (
     <Stack
-      as={Container}
       p={{ base: '17px' }}
       spacing={{ base: '17px' }}
       direction={'row'}
