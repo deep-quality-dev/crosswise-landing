@@ -3,7 +3,7 @@ import foundations from './foundations';
 import styles from './styles';
 
 const config = {
-  useSystemColorMode: true,
+  useSystemColorMode: false,
   initialColorMode: 'dark',
 };
 
