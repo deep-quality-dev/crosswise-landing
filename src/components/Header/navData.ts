@@ -4,16 +4,16 @@ export interface NavigationItem {
 }
 
 export const NaviationItems: Array<NavigationItem> = [
-  {
-    label: 'About',
-    href: '#About',
-  },
+  // {
+  //   label: 'About',
+  //   href: '#About',
+  // },
   {
     label: 'Blog',
-    href: '/blog',
+    href: 'https://crosswise.medium.com/',
   },
   {
     label: 'Docs',
-    href: '/docs',
+    href: 'https://crosswise.gitbook.io/',
   },
 ];

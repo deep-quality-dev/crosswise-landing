@@ -7,17 +7,11 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import styles from 'styled-components';
 
 import ImageSwap from '@/assets/images/swap-dialog.png';
 import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
 import { NavigationWidget } from './NavigationWidget';
 import { withSection } from './withSection';
-
-const RoundedImage = styles(Image)`
-  border-radius: 6px;
-  transform: transateX(72px);
-`;
 
 const LearnMore = () => {
   const color = useColorModeValue('white', '#060514');
@@ -39,7 +33,7 @@ const LearnMore = () => {
         bgPosition={'bottom'}
       >
         <Box flex={1}>
-          <RoundedImage src={ImageSwap} alt="swap" objectFit={'cover'} />
+          <Image src={ImageSwap} alt="swap" objectFit={'cover'} />
         </Box>
         <Stack spacing={4} pt={20} mb={{ base: 12, lg: 0 }} flex={1}>
           <Heading

@@ -15,6 +15,11 @@ a {
   box-sizing: border-box;
 }
 
-.nextImage {
+.dapp-screen {
+  border-radius: 6px;
+  transform: transateX(72px);
+}
+
+.border-circle {
   border-radius: 50%;
 }

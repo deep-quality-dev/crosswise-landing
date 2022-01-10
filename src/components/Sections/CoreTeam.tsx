@@ -93,12 +93,6 @@ const Members: Array<MemberProps> = [
   },
 ];
 
-const EmbedImageBox = styled(Box)`
-  .nextImage {
-    border-radius: 50%;
-  }
-`;
-
 const MemberCard = (member: MemberProps) => {
   const [expand, setExpand] = useState(false);
 
@@ -117,15 +111,15 @@ const MemberCard = (member: MemberProps) => {
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
-        <EmbedImageBox borderRadius={'50%'} width={'80px'} height={'80px'}>
+        <Box>
           <Image
             src={member.image}
             alt={member.name}
             width={'80px'}
             height={'80px'}
-            className={'nextImage'}
+            className={'border-circle'}
           />
-        </EmbedImageBox>
+        </Box>
         <Flex flex={1} flexDirection={'column'} justifyContent={'center'}>
           <Text>{member.name}</Text>
           <Text color={'#8E8FA0'}>{member.role}</Text>

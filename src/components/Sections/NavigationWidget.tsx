@@ -1,14 +1,12 @@
 import {
   Container,
   Button,
-  Icon,
-  Link,
   Stack,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
-
-import { PrimaryButton } from '@/components/Button';
 
 interface WidgetIconProps {
   key: string;
@@ -19,7 +17,7 @@ interface WidgetIconProps {
 export interface WidgetProps {
   primary: {
     label: string;
-    href?: string;
+    href: string;
   };
   icons?: WidgetIconProps[];
 }
@@ -37,9 +35,15 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
       maxW={'fit-content'}
     >
-      <Link href={primary.href ?? '#'} passHref>
-        <PrimaryButton color={'white'}>{primary.label}</PrimaryButton>
-      </Link>
+      <NextLink href={primary.href} passHref>
+        <Button
+          color={'white'}
+          bgImage={'linear-gradient(107deg, #0fa, #4579f5 55%, #9c42f5)'}
+          boxShadow={'0 .5rem 1rem rgba(0, 0, 0, .15)'}
+        >
+          {primary.label}
+        </Button>
+      </NextLink>
       {icons &&
         icons.map((item: WidgetIconProps) => {
           return (

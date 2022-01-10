@@ -73,7 +73,12 @@ const DApp = () => {
           />
         </Stack>
         <Box flex={1}>
-          <RoundedImage src={ImageDapp} alt="dapp" objectFit={'cover'} />
+          <Image
+            src={ImageDapp}
+            alt="dapp"
+            objectFit={'cover'}
+            className={'dapp-screen'}
+          />
         </Box>
       </Stack>
     </Box>

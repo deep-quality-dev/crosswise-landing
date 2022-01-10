@@ -36,29 +36,12 @@ const About = [
   {
     icon: <IconChat />,
     label: 'English (United States)',
+    key: 'chat',
   },
   {
     icon: <IconSend />,
     label: 'United States',
-  },
-];
-
-const LearnLinks = [
-  {
-    label: 'About',
-    href: '#about',
-  },
-  {
-    label: 'Help',
-    href: '#help',
-  },
-  {
-    label: 'Support',
-    href: '#support',
-  },
-  {
-    label: 'Privacy & Support',
-    href: '#privacy',
+    key: 'send',
   },
 ];
 
@@ -114,18 +97,13 @@ export const Footer = () => {
           </ListHeader>
           <Spacer />
           {About.map((link) => (
-            <>
-              <Stack
-                key={link.label}
-                direction={'row'}
-                align={'center'}
-                spacing={3}
-              >
+            <Box key={link.key}>
+              <Stack direction={'row'} align={'center'} spacing={3}>
                 {link.icon}
                 <Text fontSize={'13px'}>{link.label}</Text>
               </Stack>
               <Spacer />
-            </>
+            </Box>
           ))}
           <Spacer />
           <Box>
