@@ -64,7 +64,7 @@ const Feature = ({
           color={useColorModeValue('gray.100', 'white')}
         />
       </Stack>
-      {expand && <Text>{description}</Text>}
+      {expand && <Text pt={5}>{description}</Text>}
     </Box>
   );
 };
