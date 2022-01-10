@@ -9,6 +9,7 @@ import {
   Link,
   useColorModeValue,
   Spacer,
+  Icon,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 // import IconCrosswiseDark from '../../assets/images/logo-dark.png';
@@ -21,16 +22,8 @@ import {
   GITHUB_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
-import {
-  IconChat,
-  IconSend,
-  TelegramIcon,
-  TwitterIcon,
-  MediumIcon,
-  GitIcon,
-  CopyRightIcon,
-  UpIcon,
-} from '@/components/icons';
+import { IconChat, IconSend, CopyRightIcon, UpIcon } from '@/components/icons';
+import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 const About = [
   {
@@ -47,19 +40,19 @@ const About = [
 
 const SOCIAL_LINKS = [
   {
-    icon: <TelegramIcon />,
+    icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
     href: TELEGRAM_LINK,
   },
   {
-    icon: <TwitterIcon />,
+    icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
     href: TWITTER_LINK,
   },
   {
-    icon: <MediumIcon />,
+    icon: <Icon as={FaMedium} color={'#00B8B9'} />,
     href: MEDIUM_LINK,
   },
   {
-    icon: <GitIcon />,
+    icon: <Icon as={FaGithub} color={'#00B8B9'} />,
     href: GITHUB_LINK,
   },
 ];
@@ -96,15 +89,17 @@ export const Footer = () => {
             </Stack>
           </ListHeader>
           <Spacer />
-          {About.map((link) => (
-            <Box key={link.key}>
-              <Stack direction={'row'} align={'center'} spacing={3}>
-                {link.icon}
-                <Text fontSize={'13px'}>{link.label}</Text>
-              </Stack>
-              <Spacer />
-            </Box>
-          ))}
+          <Stack spacing={10} direction={'row'}>
+            {About.map((link) => (
+              <Box key={link.key}>
+                <Stack direction={'row'} align={'center'} spacing={3}>
+                  {link.icon}
+                  <Text fontSize={'13px'}>{link.label}</Text>
+                </Stack>
+                <Spacer />
+              </Box>
+            ))}
+          </Stack>
           <Spacer />
           <Box>
             <Button

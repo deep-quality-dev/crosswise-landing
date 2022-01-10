@@ -43,7 +43,7 @@ const LearnMore = () => {
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
           >
-            Low Trading & Transfer Fees Powered by Binance Smart Chain
+            Low Fees Powered by Binance Smart Chain
           </Heading>
           <NavigationWidget
             primary={{

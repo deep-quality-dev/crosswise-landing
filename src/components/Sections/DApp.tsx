@@ -8,23 +8,17 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import styles from 'styled-components';
-import { FaGithub, FaMedium, FaRetweet, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 import ImageDapp from '@/assets/dapp.png';
 import { withSection } from '@/components/Sections/withSection';
-import { TwitterIcon } from '@/components/icons';
 import { NavigationWidget } from './NavigationWidget';
-
-const RoundedImage = styles(Image)`
-  border-radius: 6px;
-  transform: transateX(72px);
-`;
+import { MEDIUM_LINK, GITHUB_LINK, TELEGRAM_LINK } from '@/constants/index';
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
   return (
-    <Box bg={color}>
+    <Box bg={color} position={'relative'} zIndex={0}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -41,10 +35,10 @@ const DApp = () => {
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
           >
-            Crosswise Finance - Bringing CeFi capabilities into DeFi
+            Crosswise Finance - Bringing CeFi to DeFi
           </Heading>
           <Text fontSize={{ base: '2xl' }}>
-            Cross-chain Automated Market Maker
+            Cross-chain Automated Market-maker
           </Text>
           <Text fontSize={{ base: '2xl' }}>Swap, Stake & Earn</Text>
           <NavigationWidget
@@ -56,18 +50,21 @@ const DApp = () => {
               {
                 key: 'github',
                 icon: <Icon as={FaGithub} color={'#00B8B9'} />,
+                href: GITHUB_LINK,
               },
               {
                 key: 'medium',
                 icon: <Icon as={FaMedium} color={'#00B8B9'} />,
+                href: MEDIUM_LINK,
               },
               {
                 key: 'telegram',
                 icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
+                href: TELEGRAM_LINK,
               },
               {
                 key: 'twitter',
-                icon: <TwitterIcon />, // <Icon as={FaRetweet} color={'#00B8B9'} />,
+                icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
               },
             ]}
           />
@@ -81,6 +78,32 @@ const DApp = () => {
           />
         </Box>
       </Stack>
+
+      <Box
+        position={'absolute'}
+        bg={
+          'radial-gradient(50% 50% at 50% 50%, rgba(66, 214, 214, 0.31) 0%, rgba(92, 193, 59, 0) 100%)'
+        }
+        transform={'rotate(180deg)'}
+        left={'-30%'}
+        top={'-20%'}
+        right={'10%'}
+        bottom={'90%'}
+        zIndex={-1}
+      ></Box>
+
+      <Box
+        position={'absolute'}
+        bg={
+          'radial-gradient(50% 50% at 50% 50%, rgba(74, 39, 74, 0.74) 0%, rgba(76, 38, 73, 0) 100%)'
+        }
+        transform={'rotate(180deg)'}
+        left={'-50%'}
+        top={'-30%'}
+        right={'85%'}
+        bottom={'40%'}
+        zIndex={-1}
+      ></Box>
     </Box>
   );
 };
