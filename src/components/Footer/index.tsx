@@ -21,7 +21,18 @@ import {
   GITHUB_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
-import { IconChat, IconSend, TelegramIcon, TwitterIcon, DiscordIcon, MediumIcon, MailIcon, GitIcon, CopyRightIcon, UpIcon } from '@/components/icons';
+import {
+  IconChat,
+  IconSend,
+  TelegramIcon,
+  TwitterIcon,
+  DiscordIcon,
+  MediumIcon,
+  MailIcon,
+  GitIcon,
+  CopyRightIcon,
+  UpIcon,
+} from '@/components/icons';
 
 const About = [
   {
@@ -81,11 +92,10 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export const Footer = () => {
-
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     window.scrollTo({
-      top: 0, 
-      behavior: 'auto'
+      top: 0,
+      behavior: 'auto',
       /* you can also use 'auto' behaviour
          in place of 'smooth' */
     });
@@ -121,22 +131,32 @@ export const Footer = () => {
           ))}
           <Spacer />
           <Box>
-            <Button 
-              size='md'
+            <Button
+              size="md"
               borderWidth={'2px'}
               borderStyle={'solid'}
               borderRadius={'10px'}
               background={'transparent'}
-              style={{ borderImage: 'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1' }}
+              style={{
+                borderImage:
+                  'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1',
+              }}
               onClick={() => scrollToTop()}
             >
-              <Text fontSize={'13px'} mr={'30px'}>GO TO TOP</Text>
+              <Text fontSize={'13px'} mr={'30px'}>
+                GO TO TOP
+              </Text>
               <UpIcon />
             </Button>
           </Box>
         </Flex>
 
-        <Box width={'100%'} height={'2px'} backgroundColor={'rgba(196, 196, 196, 0.1)'} my={'10px !important'} />
+        <Box
+          width={'100%'}
+          height={'2px'}
+          backgroundColor={'rgba(196, 196, 196, 0.1)'}
+          my={'10px !important'}
+        />
 
         <Flex>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
@@ -148,15 +168,24 @@ export const Footer = () => {
           </SimpleGrid>
 
           <Spacer />
-          
+
           <Link href="#help">
-            <Text display={'flex'} flexDirection={'row'} fontWeight={"extrabold"}><CopyRightIcon />2022 Crosswise Finance</Text>
+            <Text
+              display={'flex'}
+              flexDirection={'row'}
+              fontWeight={'extrabold'}
+            >
+              <CopyRightIcon />
+              2022 Crosswise Finance
+            </Text>
           </Link>
-          
+
           <Spacer />
-          
-          <Link href="#privacy" textDecoration={'none'} >
-            <Text fontWeight={"extrabold"}>TERMS & CONDITIONS | PRIVACY POLICY</Text>
+
+          <Link href="#privacy" textDecoration={'none'}>
+            <Text fontWeight={'extrabold'}>
+              TERMS & CONDITIONS | PRIVACY POLICY
+            </Text>
           </Link>
         </Flex>
       </Container>

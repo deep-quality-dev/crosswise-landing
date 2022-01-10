@@ -13,6 +13,7 @@ import { FaGithub, FaMedium, FaRetweet, FaTelegram } from 'react-icons/fa';
 
 import ImageDapp from '@/assets/dapp.png';
 import { withSection } from '@/components/Sections/withSection';
+import { TwitterIcon } from '@/components/icons';
 import { NavigationWidget } from './NavigationWidget';
 
 const RoundedImage = styles(Image)`
@@ -66,7 +67,7 @@ const DApp = () => {
               },
               {
                 key: 'twitter',
-                icon: <Icon as={FaRetweet} color={'#00B8B9'} />,
+                icon: <TwitterIcon />, // <Icon as={FaRetweet} color={'#00B8B9'} />,
               },
             ]}
           />

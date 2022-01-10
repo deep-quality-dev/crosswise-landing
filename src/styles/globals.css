@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.nextImage {
+  border-radius: 50%;
+}
