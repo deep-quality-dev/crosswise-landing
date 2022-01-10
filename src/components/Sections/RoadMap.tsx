@@ -155,7 +155,13 @@ const RoadMap = () => {
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 5 }}
       >
-        <Stack alignItems={'center'}>
+        <Stack
+          alignItems={'center'}
+          bgImage="url('/images/spary-1.png')"
+          bgRepeat={'no-repeat'}
+          bgPosition={'left'}
+          bgSize={'contain'}
+        >
           <Heading
             as={'h3'}
             fontWeight={400}
@@ -167,10 +173,15 @@ const RoadMap = () => {
           </Heading>
           <Map />
         </Stack>
+
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={8}
           pt={{ base: 10, lg: 24 }}
+          bgImage="url('/images/spary-2.png')"
+          bgRepeat={'no-repeat'}
+          bgPosition={'left'}
+          bgSize={'contain'}
         >
           <Image src={ImageEarth} objectFit="contain" />
           <Stack direction={'column'}>

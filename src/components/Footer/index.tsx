@@ -59,8 +59,54 @@ const SOCIAL_LINKS = [
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Box fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Box
+      fontWeight={'500'}
+      fontSize={'lg'}
+      display={'flex'}
+      alignItems={'center'}
+    >
       {children}
+    </Box>
+  );
+};
+
+const GotoTopBtn = ({ onClick }: { onClick: any }) => {
+  return (
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'8px'}
+      overflow={'hidden'}
+      padding={'3px'}
+      width={'fit-content'}
+      cursor={'pointer'}
+      onClick={() => onClick()}
+    >
+      <Box
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'100%'}
+        height={'100%'}
+        backgroundImage={'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4)'}
+      ></Box>
+      <Box
+        borderRadius={'8px'}
+        backgroundColor={'#0e263e'}
+        fontSize={'20px'}
+        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
+        padding={'5px 12px'}
+        fontWeight={'600'}
+        display={'flex'}
+        flexDirection={'row'}
+        alignItems={'center'}
+      >
+        <Text fontSize={'13px'} mr={'30px'}>
+          GO TO TOP
+        </Text>
+        <UpIcon />
+      </Box>
     </Box>
   );
 };
@@ -85,41 +131,25 @@ export const Footer = () => {
           <ListHeader>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <Logo width={26} height={25} />
-              <Text fontWeight={'extrabold'}>crosswise</Text>
+              <Text as={'span'} fontWeight={'extrabold'}>
+                crosswise
+              </Text>
             </Stack>
           </ListHeader>
           <Spacer />
-          <Stack spacing={10} direction={'row'}>
-            {About.map((link) => (
-              <Box key={link.key}>
+          {About.map((link) => (
+            <Box key={link.key}>
+              <Box display={'flex'} alignItems={'center'}>
                 <Stack direction={'row'} align={'center'} spacing={3}>
                   {link.icon}
                   <Text fontSize={'13px'}>{link.label}</Text>
                 </Stack>
-                <Spacer />
               </Box>
-            ))}
-          </Stack>
+              <Spacer />
+            </Box>
+          ))}
           <Spacer />
-          <Box>
-            <Button
-              size="md"
-              borderWidth={'2px'}
-              borderStyle={'solid'}
-              borderRadius={'10px'}
-              background={'transparent'}
-              style={{
-                borderImage:
-                  'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1',
-              }}
-              onClick={() => scrollToTop()}
-            >
-              <Text fontSize={'13px'} mr={'30px'}>
-                GO TO TOP
-              </Text>
-              <UpIcon />
-            </Button>
-          </Box>
+          <GotoTopBtn onClick={scrollToTop} />
         </Flex>
 
         <Box
@@ -129,16 +159,14 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <Flex>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <SimpleGrid columns={{ base: 3 }} spacing={3}>
+          <SimpleGrid columns={{ base: 4, sm: 4, md: 4, lg: 4 }}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
                 {link.icon}
               </Link>
             ))}
           </SimpleGrid>
-
-          <Spacer />
 
           <Link href="#help">
             <Text
@@ -151,14 +179,12 @@ export const Footer = () => {
             </Text>
           </Link>
 
-          <Spacer />
-
           <Link href="#privacy" textDecoration={'none'}>
             <Text fontWeight={'extrabold'}>
               TERMS & CONDITIONS | PRIVACY POLICY
             </Text>
           </Link>
-        </Flex>
+        </SimpleGrid>
       </Container>
     </Box>
   );
