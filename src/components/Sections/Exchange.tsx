@@ -65,10 +65,10 @@ const Feature = ({
 const Exchange = () => {
   const color = useColorModeValue(
     'gray.100',
-    'linear-gradient(90deg, #04F8AD 0%, #3F81EF 50.52%, #8750F4 100%)'
+    'linear-gradient(90deg,#04F8AD0E 0%, #3F81EF0E 50.52%, #8750F40E 100%)'
   );
   return (
-    <Box position={'relative'}>
+    <Box bg={color} position={'relative'}>
       <Stack
         as={Container}
         maxW={'7xl'}
