@@ -8,6 +8,7 @@ import Exchange from '@/components/Sections/Exchange';
 import Token from '@/components/Sections/Token';
 import { AppLayout } from '@/layout/AppLayout';
 import TechnicalPartner from '@/components/Sections/TechnicalPartner';
+import CoreTeam from '@/components/Sections/CoreTeam';
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <Exchange></Exchange>
       <Token></Token>
       <TechnicalPartner></TechnicalPartner>
+      <CoreTeam></CoreTeam>
     </AppLayout>
   );
 };
