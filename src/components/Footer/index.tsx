@@ -26,9 +26,7 @@ import {
   IconSend,
   TelegramIcon,
   TwitterIcon,
-  DiscordIcon,
   MediumIcon,
-  MailIcon,
   GitIcon,
   CopyRightIcon,
   UpIcon,
@@ -161,7 +159,7 @@ export const Footer = () => {
         <Flex>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
             {SOCIAL_LINKS.map((link) => (
-              <Link href={link.href} isExternal>
+              <Link key={link.href} href={link.href} isExternal>
                 {link.icon}
               </Link>
             ))}
