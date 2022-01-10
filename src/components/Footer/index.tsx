@@ -137,17 +137,19 @@ export const Footer = () => {
             </Stack>
           </ListHeader>
           <Spacer />
-          {About.map((link) => (
-            <Box key={link.key}>
-              <Box display={'flex'} alignItems={'center'}>
-                <Stack direction={'row'} align={'center'} spacing={3}>
-                  {link.icon}
-                  <Text fontSize={'13px'}>{link.label}</Text>
-                </Stack>
-              </Box>
-              <Spacer />
-            </Box>
-          ))}
+          <Box display={'flex'} alignItems={'center'}>
+            <Stack direction={'row'} align={'center'} spacing={3}>
+              <IconChat />
+              <Text fontSize={'13px'}>English (United States)</Text>
+            </Stack>
+          </Box>
+          <Spacer />
+          <Box display={'flex'} alignItems={'center'}>
+            <Stack direction={'row'} align={'center'} spacing={3}>
+              <IconSend />
+              <Text fontSize={'13px'}>United States</Text>
+            </Stack>
+          </Box>
           <Spacer />
           <GotoTopBtn onClick={scrollToTop} />
         </Flex>
