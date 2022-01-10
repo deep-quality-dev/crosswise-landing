@@ -29,33 +29,26 @@ const Feature = ({
     setExpand(!expand);
   };
 
-  {
-    /* <Box
-        position={'absolute'}
-        left={'0'}
-        right={'0'}
-        top={'0'}
-        bottom={'0'}
-        bg={'#25272C'}
-      /> */
-  }
-
   return (
-    <Box
+    <Stack
+      p={{ base: '17px' }}
+      spacing={{ base: '17px' }}
+      direction={'column'}
+      alignItems={'center'}
       bg={useColorModeValue(
         'transparent',
-        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
+        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%) #25272C'
       )}
-      p={{ base: '16px' }}
-      borderRadius={'10px'}
+      borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
-      position={'relative'}
     >
       <Stack
         justifyContent={'space-between'}
         spacing={2}
         direction={'row'}
         alignItems={'center'}
+        width={'full'}
+        position={'relative'}
       >
         <Text>{title}</Text>
         <Icon
@@ -66,17 +59,23 @@ const Feature = ({
         />
       </Stack>
       {expand && <Text pt={5}>{description}</Text>}
-    </Box>
+    </Stack>
   );
 };
 
 const Solutions = () => {
   const color = useColorModeValue(
     'gray.100',
-    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
+    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%), url("/images/shine2.png")'
   );
   return (
-    <Box bg={color} position={'relative'} opacity={'0.8'}>
+    <Box
+      bg={color}
+      position={'relative'}
+      opacity={'0.8'}
+      bgRepeat={'no-repeat'}
+      bgPosition={'bottom'}
+    >
       <Stack
         as={Container}
         maxW={'7xl'}

@@ -44,7 +44,7 @@ const DApp = () => {
           <NavigationWidget
             primary={{
               label: 'Launch APP',
-              href: 'https://crosswise.finance',
+              href: 'https://app.crosswise.finance',
             }}
             icons={[
               {
