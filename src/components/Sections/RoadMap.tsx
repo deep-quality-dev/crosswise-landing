@@ -84,17 +84,19 @@ const RoadMap = () => {
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 5 }}
       >
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} pt={{ base: 10, lg: 24 }}>  
-          <Image src={ImageEarth} objectFit='contain' />
-          <Stack
-            direction={'column'}
-          >
+        <SimpleGrid
+          columns={{ base: 1, lg: 2 }}
+          spacing={8}
+          pt={{ base: 10, lg: 24 }}
+        >
+          <Image src={ImageEarth} objectFit="contain" />
+          <Stack direction={'column'}>
             <Box>
-              <Box 
+              <Box
                 as={'span'}
                 borderRadius={'20px'}
                 border={'2px solid #04F8AD'}
-                fontWeight={'light'} 
+                fontWeight={'light'}
                 fontSize={'16px'}
                 color={'#04F8AD'}
                 py={'10px'}
@@ -103,18 +105,13 @@ const RoadMap = () => {
                 Coming soon
               </Box>
             </Box>
-            <Heading
-              as={'h5'}
-            >
-              Crosswise Launchpad
-            </Heading>
+            <Heading as={'h5'}>Crosswise Launchpad</Heading>
             <Text fontSize={'20px'}>
-              The Crosswise Launchpad is a protocol designed for cross-chain token pools as well as auctions, enabling our ecosystem projects to raise capital on a decentralized & interoperable environment. 
+              The Crosswise Launchpad is a protocol designed for cross-chain
+              token pools as well as auctions, enabling our ecosystem projects
+              to raise capital on a decentralized & interoperable environment.
             </Text>
-            <Link
-              style={{ textDecoration: 'none' }}
-              href={'#'}
-            >
+            <Link style={{ textDecoration: 'none' }} href={'#'}>
               <Text color={'#04F8AD'}>Learn more &#8594;</Text>
             </Link>
           </Stack>

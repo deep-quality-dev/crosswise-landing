@@ -118,9 +118,8 @@ const About = () => {
           ></Feature>
         </SimpleGrid>
         <Text fontSize={{ base: '2xl' }} align={'center'}>
-          Crosswise Finance is inspired by the intention to integrate CeFi tools
-          into DeFi in order to drive greater integration & interoperability and
-          facilitate mass adoption.
+          Crosswise Finance aims to combine CeFi and DeFi, enhance
+          interoperability, and drive mass adoption.
         </Text>
       </Stack>
     </Box>

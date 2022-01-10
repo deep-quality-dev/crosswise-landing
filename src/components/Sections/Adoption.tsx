@@ -88,9 +88,8 @@ const Adoption = () => {
         </HStack>
         <SimpleGrid columns={2}>
           <Text fontSize={{ base: '2xl' }}>
-            In spite of accelerated innovation & development, decentralized
-            exchanges have yet to find a perfect balance between transactional
-            speed, cost & user experience.
+            Crosswise Finance bridges the gap between centralised and
+            decentralized exchanges, bringing together the best of both worlds.
           </Text>
         </SimpleGrid>
       </Stack>
