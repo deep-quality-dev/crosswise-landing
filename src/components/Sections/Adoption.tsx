@@ -9,7 +9,6 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import React from 'react';
 
 import ImageAdoption from '@/assets/images/adoption.png';
@@ -27,7 +26,7 @@ const Feature = ({ label }: { label: string }) => {
       borderRadius={'20px'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
-      {label}
+      <Text>{label}</Text>
     </Box>
   );
 };
@@ -42,7 +41,6 @@ const Adoption = () => {
       <Stack
         as={Container}
         maxW={'7xl'}
-        h={{ base: '100%', lg: '100vh' }}
         minH={950}
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 5 }}

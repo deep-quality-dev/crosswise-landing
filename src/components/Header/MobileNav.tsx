@@ -1,17 +1,4 @@
-import { SyntheticEvent } from 'react';
-import {
-  Box,
-  Collapse,
-  Flex,
-  Icon,
-  Link,
-  Stack,
-  Text,
-  useColorModeValue,
-  useDisclosure,
-} from '@chakra-ui/react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import NextLink from 'next/link';
+import { Flex, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 
 import { NaviationItems, NavigationItem } from '@/components/Header/navData';
 
@@ -20,12 +7,12 @@ interface MobileNavProps {
 }
 
 export const MobileNav = ({ isOpen }: MobileNavProps) => {
-  if (!isOpen) return null;
-
   const backgroundColor = useColorModeValue(
     'rgba(255, 255, 255, 0.8)',
     'rgba(26, 32, 44, 0.8)'
   );
+
+  if (!isOpen) return null;
 
   return (
     <Stack
@@ -50,12 +37,8 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
 };
 
 const MobileNavItem = ({ href, label }: NavigationItem) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  const handleToggle = (e: SyntheticEvent) => {};
-
   return (
-    <Stack spacing={4} onClick={handleToggle}>
+    <Stack spacing={4}>
       <Flex
         py={2}
         as={Link}
