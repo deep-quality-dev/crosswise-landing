@@ -72,6 +72,47 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   );
 };
 
+const GotoTopBtn = ({ onClick }: { onClick: any }) => {
+  return (
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'60px'}
+      overflow={'hidden'}
+      padding={'3px'}
+      width={'fit-content'}
+      cursor={'pointer'}
+      onClick={() => onClick()}
+    >
+      <Box
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'100%'}
+        height={'100%'}
+        backgroundImage={'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4)'}
+      ></Box>
+      <Box
+        borderRadius={'60px'}
+        backgroundColor={'#0e263e'}
+        fontSize={'20px'}
+        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
+        padding={'5px 12px'}
+        fontWeight={'600'}
+        display={'flex'}
+        flexDirection={'row'}
+        alignItems={'center'}
+      >
+        <Text fontSize={'13px'} mr={'30px'}>
+          GO TO TOP
+        </Text>
+        <UpIcon />
+      </Box>
+    </Box>
+  );
+};
+
 export const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -92,39 +133,25 @@ export const Footer = () => {
           <ListHeader>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <Logo width={26} height={25} />
-              <Text fontWeight={'extrabold'}>crosswise</Text>
+              <Text as={'span'} fontWeight={'extrabold'}>
+                crosswise
+              </Text>
             </Stack>
           </ListHeader>
           <Spacer />
           {About.map((link) => (
-            <Box key={link.key}>
-              <Stack direction={'row'} align={'center'} spacing={3}>
-                {link.icon}
-                <Text fontSize={'13px'}>{link.label}</Text>
-              </Stack>
+            <>
+              <Box key={link.key} display={'flex'} alignItems={'center'}>
+                <Stack direction={'row'} align={'center'} spacing={3}>
+                  {link.icon}
+                  <Text fontSize={'13px'}>{link.label}</Text>
+                </Stack>
+              </Box>
               <Spacer />
-            </Box>
+            </>
           ))}
           <Spacer />
-          <Box>
-            <Button
-              size="md"
-              borderWidth={'2px'}
-              borderStyle={'solid'}
-              borderRadius={'10px'}
-              background={'transparent'}
-              style={{
-                borderImage:
-                  'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4) 1',
-              }}
-              onClick={() => scrollToTop()}
-            >
-              <Text fontSize={'13px'} mr={'30px'}>
-                GO TO TOP
-              </Text>
-              <UpIcon />
-            </Button>
-          </Box>
+          <GotoTopBtn onClick={scrollToTop} />
         </Flex>
 
         <Box
@@ -134,16 +161,14 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <Flex>
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
+        <SimpleGrid columns={{ base: 3, sm: 1, md: 1, lg: 3 }} spacing={3}>
+          <SimpleGrid columns={{ base: 4, sm: 4, md: 4, lg: 4 }}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
                 {link.icon}
               </Link>
             ))}
           </SimpleGrid>
-
-          <Spacer />
 
           <Link href="#help">
             <Text
@@ -156,14 +181,12 @@ export const Footer = () => {
             </Text>
           </Link>
 
-          <Spacer />
-
           <Link href="#privacy" textDecoration={'none'}>
             <Text fontWeight={'extrabold'}>
               TERMS & CONDITIONS | PRIVACY POLICY
             </Text>
           </Link>
-        </Flex>
+        </SimpleGrid>
       </Container>
     </Box>
   );
