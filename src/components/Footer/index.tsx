@@ -75,9 +75,9 @@ const SOCIAL_LINKS = [
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Box fontWeight={'500'} fontSize={'lg'} mb={2}>
       {children}
-    </Text>
+    </Box>
   );
 };
 
@@ -89,43 +89,23 @@ export const Footer = () => {
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={'flex-start'}>
-            <ListHeader>
-              <Stack direction={'row'} align={'center'} spacing={3}>
-                <Logo width={26} height={25} />
-                <Text>crosswise</Text>
-              </Stack>
-            </ListHeader>
-            {About.map((link) => (
-              <Stack
-                key={link.label}
-                direction={'row'}
-                align={'center'}
-                spacing={3}
-              >
-                <Icon as={link.icon} w={5} h={5} />
-                <Text>{link.label}</Text>
-              </Stack>
-            ))}
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Learn</ListHeader>
-            {LearnLinks.map((link) => (
-              <NextLink key={link.label} passHref href={link.href}>
-                <Link>{link.label}</Link>
-              </NextLink>
-            ))}
-          </Stack>
-
-          <Stack align={'flex-start'}>
-            <ListHeader>Social</ListHeader>
-            {SOCIAL_LINKS.map((link) => (
-              <Link key={link.label} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
-          </Stack>
+          <ListHeader>
+            <Stack direction={'row'} align={'center'} spacing={3}>
+              <Logo width={26} height={25} />
+              <Text fontWeight={'extrabold'}>crosswise</Text>
+            </Stack>
+          </ListHeader>
+          {About.map((link) => (
+            <Stack
+              key={link.label}
+              direction={'row'}
+              align={'center'}
+              spacing={3}
+            >
+              <Icon as={link.icon} w={5} h={5} />
+              <Text fontSize={'13px'}>{link.label}</Text>
+            </Stack>
+          ))}
         </SimpleGrid>
       </Container>
     </Box>

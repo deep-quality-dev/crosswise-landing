@@ -34,10 +34,13 @@ const Feature = ({ label }: { label: string }) => {
 const Adoption = () => {
   const color = useColorModeValue(
     'white',
-    'linear-gradient(90deg, rgba(4, 248, 173, 0.9) 0%, rgba(63, 129, 239, 0.8) 24.48%, rgba(135, 80, 244, 0.72) 48.96%, rgba(135, 80, 244, 0) 100%)'
+    'linear-gradient(90deg, rgba(4, 248, 173, 0.9) 0%, rgba(63, 129, 239, 0.8) 24.48%, rgba(135, 80, 244, 0.72) 48.96%, rgba(135, 80, 244, 0) 100%), url("/images/adoption.png")'
   );
   return (
-    <Box bg={color} position={'relative'} opacity={'0.8'}>
+    <Box position={'relative'} opacity={'0.8'} 
+    bgRepeat={'no-repeat'}
+    bgSize={'cover'}
+    bgImage={color} >
       <Stack
         as={Container}
         maxW={'7xl'}

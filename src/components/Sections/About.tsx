@@ -60,7 +60,7 @@ const About = () => {
         spacing={{ base: 10, lg: 24 }}
         direction={{ base: 'column' }}
         alignItems={'center'}
-        bg={'radial-gradient(20% 25% at 50% 22%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'}
+        bg={useColorModeValue('transparent', 'radial-gradient(20% 25% at 50% 22%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)')}
       >
         <Box>
           <Logo width={'160'} height={'145'} />

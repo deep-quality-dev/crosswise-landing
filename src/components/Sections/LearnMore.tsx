@@ -32,6 +32,9 @@ const LearnMore = () => {
         spacing={{ base: 10, lg: 24 }}
         direction={{ base: 'column', lg: 'row' }}
         alignItems={'center'}
+        bgImage="url('/images/shine.png')"
+        bgRepeat={'no-repeat'}
+        bgPosition={'bottom'}
       >
         <Box flex={1}>
           <RoundedImage src={ImageSwap} alt="swap" objectFit={'cover'} />
