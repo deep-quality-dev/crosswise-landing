@@ -84,7 +84,7 @@ const Exchange = () => {
           maxW={'2xl'}
           textAlign={'center'}
         >
-          User-first Unified Decentralized Exchange
+          User-First Decentralized Exchange
         </Heading>
 
         <SimpleGrid
@@ -94,21 +94,21 @@ const Exchange = () => {
         >
           <Feature
             icon={<Icon as={IconBridge} width={'60px'} height={'53px'} />}
-            title={'Cross-Chain Bridee'}
+            title={'Cross-Chain Bridges'}
             description={
-              'Crosswise will employ a node architecture to create cross-chain bridges in order to promote interoperability across blockchain networks. This will enable network swaps to be executed swiftly.'
+              'Crosswise will deploy nodes on chosen blockchains to create cross-chain bridges, enabling interoperability across networks. This will enable cross-chain swaps to be executed efficiently.'
             }
           ></Feature>
           <Feature
             icon={<Icon as={IconSwap} width={'60px'} height={'53px'} />}
-            title={'Swap'}
+            title={'Swaps'}
             description={
-              'Quick swap executions with low fees and slippage - powered by a Hybrid Automated Market Maker (AMM) with incentivized liquidity pools.'
+              'Quick swaps with low fees and slippage - powered by a Hybrid Automated Market-Maker (AMM) using incentivized liquidity pools.'
             }
           ></Feature>
           <Feature
             icon={<Icon as={IconTools} width={'60px'} height={'53px'} />}
-            title={'Advanced tools'}
+            title={'Advanced Tools'}
             description={
               'Switchable DEX interface to utilize limit and stop orders.'
             }
@@ -117,7 +117,7 @@ const Exchange = () => {
             icon={<Icon as={IconFarms} width={'60px'} height={'53px'} />}
             title={'Farms & Liquidity Pools'}
             description={
-              'Users are incentivized to provide liquidity with generous liquidity provider rewards in our farms.'
+              'Users are incentivized to provide liquidity with generous rewards in our farms and pools.'
             }
           ></Feature>
         </SimpleGrid>

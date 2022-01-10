@@ -8,10 +8,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { FaGithub, FaMedium, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 import ImageDapp from '@/assets/dapp.png';
-import ImageGridPattern from '@/assets/images/grid-pattern.png';
 import { withSection } from '@/components/Sections/withSection';
 import { NavigationWidget } from './NavigationWidget';
 import { MEDIUM_LINK, GITHUB_LINK, TELEGRAM_LINK } from '@/constants/index';
@@ -36,10 +35,10 @@ const DApp = () => {
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
           >
-            Crosswise Finance - Bringing CeFi capabilities into DeFi
+            Crosswise Finance - Bringing CeFi to DeFi
           </Heading>
           <Text fontSize={{ base: '2xl' }}>
-            Cross-chain Automated Market Maker
+            Cross-chain Automated Market-maker
           </Text>
           <Text fontSize={{ base: '2xl' }}>Swap, Stake & Earn</Text>
           <NavigationWidget
@@ -99,7 +98,7 @@ const DApp = () => {
           'radial-gradient(50% 50% at 50% 50%, rgba(74, 39, 74, 0.74) 0%, rgba(76, 38, 73, 0) 100%)'
         }
         transform={'rotate(180deg)'}
-        left={'-30%'}
+        left={'-50%'}
         top={'-30%'}
         right={'85%'}
         bottom={'40%'}
