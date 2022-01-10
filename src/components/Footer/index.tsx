@@ -138,15 +138,15 @@ export const Footer = () => {
           </ListHeader>
           <Spacer />
           {About.map((link) => (
-            <>
-              <Box key={link.key} display={'flex'} alignItems={'center'}>
+            <Box key={link.key}>
+              <Box display={'flex'} alignItems={'center'}>
                 <Stack direction={'row'} align={'center'} spacing={3}>
                   {link.icon}
                   <Text fontSize={'13px'}>{link.label}</Text>
                 </Stack>
               </Box>
               <Spacer />
-            </>
+            </Box>
           ))}
           <Spacer />
           <GotoTopBtn onClick={scrollToTop} />
