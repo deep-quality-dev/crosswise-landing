@@ -74,9 +74,72 @@ const Feature = ({
   );
 };
 
+interface StageProps {
+  title: string
+}
+
+// 'border-image-source: linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
+const Stage = ({title} : StageProps) => {
+  return (
+    <Box position={'relative'} zIndex={0} borderRadius={'60px'} overflow={'hidden'} padding={'6px'} marginY={'26px'}>
+      <Box position={'absolute'} left={0} top={0} zIndex={-1} width={'100%'} height={'100%'} backgroundImage={'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'}>
+      </Box>
+      <Box borderRadius={'60px'} backgroundColor={'#1B272D'} fontSize={'20px'} boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'} padding={'12px 30px'}>
+        {title}
+      </Box>      
+    </Box>
+  )
+}
+
+interface CircleProps {
+  description?: string
+}
+const Circle = ({description} : CircleProps) => {
+  return (
+    <Box position={'relative'} width={'100%'}>
+      <Box position={'relative'} zIndex={0} borderRadius={'50%'} overflow={'hidden'} padding={'2px'} width={'22px'} height={'22px'} marginX={'auto'} marginY={'13px'}>
+        <Box position={'absolute'} left={0} top={0} zIndex={-1} width={'100%'} height={'100%'} backgroundImage={'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'}>
+        </Box>
+        <Box borderRadius={'50%'} backgroundColor={'#1B272D'} fontSize={'20px'} boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'} height={'100%'}>
+        </Box>    
+      </Box>
+      <Box position={'absolute'} left={'calc(50% + 30px)'} top={'12px'} maxWidth={'240px'} fontSize={'16px'}>
+        {description}
+      </Box>
+    </Box>
+  )
+}
+
+const Map = () => {
+  return (
+    <Flex position={'relative'} zIndex={0} direction={'column'} alignItems={'center'} width={'100%'} paddingBottom={'40px'}>
+      <Stage title="Q1 2022" />
+      <Circle description='Token Listing onDEX - launch on BSC' />
+      <Circle description='Smart Contract Audits' />
+      <Circle description='Crosswise API Implementation'/>
+      <Stage title="Q1 2022" />
+      <Circle description='Launchpad Release'/>
+      <Circle description='Ramp Network Integration'/>
+      <Circle description='Front-Running Deterrents'/>
+      <Circle description='Launch on Polygon'/>
+      <Stage title="Q1 2022" />
+      <Circle description='Industry Partnerships'/>
+      <Circle description='Synthetic Assets'/>
+      <Circle description='Cross-Chain Swaps'/>
+      <Circle description='Token Bridge'/>
+      <Circle description='Launch on Ethereum'/>
+
+      <Box position={'absolute'} left={'calc(50% - 4px)'} top={0} width={'8px'} height={'100%'}
+        backgroundImage={'linear-gradient(180deg, rgba(4, 248, 173, 0) 0%, #04F8AD 19.79%, #3F81EF 45.31%, #8750F4 80.73%, rgba(135, 80, 244, 0) 100%)'}
+        zIndex={-1}
+       />
+    </Flex>
+  )
+}
+
 const RoadMap = () => {
   return (
-    <Box position={'relative'} opacity={'0.8'}>
+    <Box position={'relative'} >
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -84,33 +147,47 @@ const RoadMap = () => {
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 5 }}
       >
+        <Stack
+          alignItems={'center'}
+        >
+          <Heading
+            as={'h3'}
+            fontWeight={400}
+            fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+            maxW={'2xl'}
+            textAlign={'center'}
+          >
+            Roadmap
+          </Heading>
+          <Map />
+        </Stack>
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} pt={{ base: 10, lg: 24 }}>  
           <Image src={ImageEarth} objectFit='contain' />
           <Stack
             direction={'column'}
           >
-            <Box>
-              <Box 
-                as={'span'}
-                borderRadius={'20px'}
-                border={'2px solid #04F8AD'}
-                fontWeight={'light'} 
-                fontSize={'16px'}
-                color={'#04F8AD'}
-                py={'10px'}
-                px={'25px'}
-              >
-                Coming soon
+            <Box position={'relative'} zIndex={0} borderRadius={'60px'} overflow={'hidden'} padding={'1px'} width={'fit-content'}>
+              <Box position={'absolute'} left={0} top={0} zIndex={-1} width={'100%'} height={'100%'} backgroundImage={'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'}>
               </Box>
+              <Box borderRadius={'60px'} backgroundColor={'#0e263e'} fontSize={'20px'} boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'} padding={'5px 12px'} color={'#04F8AD'} fontWeight={'light'}>
+                Coming soon
+              </Box>      
             </Box>
+            
+            <Spacer />
             <Heading
-              as={'h5'}
+              as={'h3'}
+              fontWeight={400}
+              fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+              maxW={'2xl'}
             >
               Crosswise Launchpad
             </Heading>
-            <Text fontSize={'20px'}>
+            <Spacer />
+            <Text fontSize={'20px'} fontWeight={'300'}>
               The Crosswise Launchpad is a protocol designed for cross-chain token pools as well as auctions, enabling our ecosystem projects to raise capital on a decentralized & interoperable environment. 
             </Text>
+            <Spacer />
             <Link
               style={{ textDecoration: 'none' }}
               href={'#'}

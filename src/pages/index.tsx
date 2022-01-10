@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <Adoption></Adoption>
       <Solutions></Solutions>
       <Exchange></Exchange>
-      {/* <RoadMap></RoadMap> */}
+      <RoadMap></RoadMap>
       <Token></Token>
       <TechnicalPartner></TechnicalPartner>
       <CoreTeam></CoreTeam>
