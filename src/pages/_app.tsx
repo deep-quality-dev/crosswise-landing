@@ -10,12 +10,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider resetCSS theme={theme}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <meta
+          name="description"
+          content="crosswise takes the trading experience on DEX to the next level with tighter security, a friendly interface, cross-chain transactions, gasless swaps, verified listings and the right tools"
+        />
+        <title>crosswise - Cross-Chain DEX 2.0</title>
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
