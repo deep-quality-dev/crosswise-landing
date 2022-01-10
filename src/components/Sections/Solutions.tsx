@@ -66,10 +66,16 @@ const Feature = ({
 const Solutions = () => {
   const color = useColorModeValue(
     'gray.100',
-    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
+    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%), url("/images/shine2.png")'
   );
   return (
-    <Box bg={color} position={'relative'} opacity={'0.8'}>
+    <Box
+      bg={color}
+      position={'relative'}
+      opacity={'0.8'}
+      bgRepeat={'no-repeat'}
+      bgPosition={'bottom'}
+    >
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -78,9 +84,6 @@ const Solutions = () => {
         spacing={{ base: 5 }}
         direction={{ base: 'column' }}
         alignItems={'center'}
-        bgRepeat={'no-repeat'}
-        bgPosition={'bottom'}
-        bgImage="url('/images/shine2.png')"
       >
         <Heading
           as={'h3'}
