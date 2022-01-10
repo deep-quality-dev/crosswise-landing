@@ -24,7 +24,7 @@ const Partners = [
   {
     href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf',
     icon: <Icon as={IconTechRate} width={'42px'} height={'42px'} />,
-    label: 'TehchRate',
+    label: 'TechRate',
   },
   {
     href: 'https://data.chain.link/users/crosswise',

@@ -221,7 +221,6 @@ const RoadMap = () => {
               token pools as well as auctions, enabling our ecosystem projects
               to raise capital on a decentralized & interoperable environment.
             </Text>
-            <Spacer />
             <Link style={{ textDecoration: 'none' }} href={'#'}>
               <Text color={'#04F8AD'}>Learn more &#8594;</Text>
             </Link>

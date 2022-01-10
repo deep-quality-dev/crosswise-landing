@@ -91,7 +91,7 @@ const Token = () => {
         </Heading>
 
         <Text fontSize={{ base: '2xl', sm: '3xl' }} textAlign={'center'}>
-          Staking rewards, low fees and incentives for token holders.
+          Staking rewards, low fees and incentives for holders.
         </Text>
 
         <SimpleGrid
@@ -115,14 +115,14 @@ const Token = () => {
           ></Feature>
           <Feature
             icon={<Icon as={IconLiquidity} width={'60px'} height={'53px'} />}
-            title={'Liquidity Pools'}
-            description={'High APR rewards for AMM liquidity pools'}
+            title={'Max Supply'}
+            description={'Maximum supply is limited to only 50 Million CRSS.'}
           ></Feature>
           <Feature
             icon={<Icon as={IconTxFee} width={'60px'} height={'53px'} />}
-            title={'Low Transaction Fees'}
+            title={'Deflationary Features'}
             description={
-              'Low transaction fees that are used to fund development, grow liquidity and support the CRSS price.'
+              'A range of fees are used to buy-back and burn CRSS token, in order to keep inflation at bay.'
             }
           ></Feature>
         </SimpleGrid>
