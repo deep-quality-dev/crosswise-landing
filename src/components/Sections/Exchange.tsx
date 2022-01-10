@@ -24,25 +24,41 @@ const Feature = ({
   description: string;
 }) => {
   return (
-    <Stack
-      bg={useColorModeValue('transparent', 'rgba(157, 249, 219, 0.17)')}
-      p={{ base: '16px' }}
-      border={
-        '6px solid linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
-      }
-      borderRadius={'30px'}
-      boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
-      direction={'column'}
-      padding={10}
-      alignItems={'center'}
-      width={'320px'}
-    >
-      {icon}
-      <Text pt={{ base: 5 }} fontSize={{ base: '2xl' }}>
-        {title}
-      </Text>
-      <Text>{description}</Text>
-    </Stack>
+    <Box position={'relative'}>
+      <Stack
+        bg={useColorModeValue('transparent', 'rgba(157, 249, 219, 0.17)')}
+        p={{ base: '16px' }}
+        borderRadius={'30px'}
+        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
+        direction={'column'}
+        padding={10}
+        alignItems={'center'}
+        width={'320px'}
+        height={'100%'}
+        _before={{
+          content: '""',
+          position: 'absolute',
+          zIndex: '-1',
+          left: '0',
+          top: '0',
+          right: '0',
+          bottom: '0',
+          padding: '6px',
+          borderRadius: '30px',
+          background:
+            'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)',
+          '-webkit-mask':
+            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          '-webkit-mask-composite': 'destination-out',
+        }}
+      >
+        {icon}
+        <Text pt={{ base: 5 }} fontSize={{ base: '2xl' }}>
+          {title}
+        </Text>
+        <Text>{description}</Text>
+      </Stack>
+    </Box>
   );
 };
 

@@ -16,10 +16,12 @@ import { withSection } from './withSection';
 const LearnMore = () => {
   const color = useColorModeValue('white', '#060514');
   return (
-    <Box bg={color}
-    bgImage="url('/images/shine.png')"
-    bgRepeat={'no-repeat'}
-    bgPosition={'bottom'}>
+    <Box
+      bg={color}
+      bgImage="url('/images/shine.png')"
+      bgRepeat={'no-repeat'}
+      bgPosition={'bottom'}
+    >
       <Stack
         as={Container}
         maxW={'7xl'}
