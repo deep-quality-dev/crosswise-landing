@@ -152,8 +152,12 @@ const RoadMap = () => {
         as={Container}
         maxW={'7xl'}
         minH={950}
-        py={{ base: 24, lg: 32 }}
+        py={{ base: 200, lg: 32 }}
         spacing={{ base: 5 }}
+        bgImage="url('/images/spary-2.png')"
+        bgRepeat={'no-repeat'}
+        bgPosition={'bottom'}
+        bgSize={'contain'}
       >
         <Stack
           alignItems={'center'}
@@ -178,10 +182,6 @@ const RoadMap = () => {
           columns={{ base: 1, lg: 2 }}
           spacing={8}
           pt={{ base: 10, lg: 24 }}
-          bgImage="url('/images/spary-2.png')"
-          bgRepeat={'no-repeat'}
-          bgPosition={'left'}
-          bgSize={'contain'}
         >
           <Image src={ImageEarth} objectFit="contain" />
           <Stack direction={'column'}>
