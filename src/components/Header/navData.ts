@@ -16,4 +16,8 @@ export const NaviationItems: Array<NavigationItem> = [
     label: 'Docs',
     href: 'https://crosswise.gitbook.io/',
   },
+  {
+    label: 'Pre-Sale Dashboard',
+    href: 'https://presale.crosswise.finance/',
+  },
 ];

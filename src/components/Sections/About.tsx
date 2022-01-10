@@ -74,8 +74,7 @@ const About = () => {
       <Stack
         as={Container}
         maxW={'7xl'}
-        h={{ base: '100%', lg: '100vh' }}
-        minH={950}
+        minH={1000}
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 10, lg: 24 }}
         direction={{ base: 'column' }}
