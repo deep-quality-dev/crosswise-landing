@@ -4,7 +4,10 @@ import Adoption from '@/components/Sections/Adoption';
 import DApp from '@/components/Sections/DApp';
 import LearnMore from '@/components/Sections/LearnMore';
 import Solutions from '@/components/Sections/Solutions';
+import Exchange from '@/components/Sections/Exchange';
+import Token from '@/components/Sections/Token';
 import { AppLayout } from '@/layout/AppLayout';
+import TechnicalPartner from '@/components/Sections/TechnicalPartner';
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +17,9 @@ const Home: NextPage = () => {
       <About></About>
       <Adoption></Adoption>
       <Solutions></Solutions>
+      <Exchange></Exchange>
+      <Token></Token>
+      <TechnicalPartner></TechnicalPartner>
     </AppLayout>
   );
 };
