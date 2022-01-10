@@ -22,7 +22,10 @@ const RoundedImage = styles(Image)`
 const LearnMore = () => {
   const color = useColorModeValue('white', '#060514');
   return (
-    <Box bg={color}>
+    <Box bg={color}
+    bgImage="url('/images/shine.png')"
+    bgRepeat={'no-repeat'}
+    bgPosition={'bottom'}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -31,7 +34,6 @@ const LearnMore = () => {
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 10, lg: 24 }}
         direction={{ base: 'column', lg: 'row' }}
-        alignItems={'center'}
         bgImage="url('/images/shine.png')"
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
@@ -39,7 +41,7 @@ const LearnMore = () => {
         <Box flex={1}>
           <RoundedImage src={ImageSwap} alt="swap" objectFit={'cover'} />
         </Box>
-        <Stack spacing={4} mb={{ base: 12, lg: 0 }} flex={1}>
+        <Stack spacing={4} pt={20} mb={{ base: 12, lg: 0 }} flex={1}>
           <Heading
             as={'h3'}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
