@@ -9,12 +9,12 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import styles from 'styled-components';
-import { FaGithub, FaMedium, FaRetweet, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
 
 import ImageDapp from '@/assets/dapp.png';
 import { withSection } from '@/components/Sections/withSection';
-import { TwitterIcon } from '@/components/icons';
 import { NavigationWidget } from './NavigationWidget';
+import { MEDIUM_LINK, GITHUB_LINK, TELEGRAM_LINK } from '@/constants/index';
 
 const RoundedImage = styles(Image)`
   border-radius: 6px;
@@ -56,18 +56,21 @@ const DApp = () => {
               {
                 key: 'github',
                 icon: <Icon as={FaGithub} color={'#00B8B9'} />,
+                href: GITHUB_LINK,
               },
               {
                 key: 'medium',
                 icon: <Icon as={FaMedium} color={'#00B8B9'} />,
+                href: MEDIUM_LINK,
               },
               {
                 key: 'telegram',
                 icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
+                href: TELEGRAM_LINK,
               },
               {
                 key: 'twitter',
-                icon: <TwitterIcon />, // <Icon as={FaRetweet} color={'#00B8B9'} />,
+                icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
               },
             ]}
           />

@@ -13,18 +13,33 @@ import React from 'react';
 import { withSection } from './withSection';
 
 const Feature = ({ label }: { label: string }) => {
-  // border-image-source: linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%);
   return (
-    <Box
-      bg={useColorModeValue(
-        'transparent',
-        'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'
-      )}
-      p={{ base: '10px' }}
-      borderRadius={'20px'}
-      boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
-    >
-      <Text>{label}</Text>
+    <Box position={'relative'}>
+      <Box
+        bg={useColorModeValue(
+          'transparent',
+          'rgba(0, 184, 185, 0.17)' // 'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'
+        )}
+        p={{ base: '10px' }}
+        borderRadius={'20px'}
+        _before={{
+          content: '""',
+          position: 'absolute',
+          zIndex: '-1',
+          left: '0',
+          top: '0',
+          right: '0',
+          bottom: '0',
+          padding: '1px',
+          borderRadius: '20px',
+          background: 'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)',
+          '-webkit-mask':
+            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          '-webkit-mask-composite': 'destination-out',
+        }}
+      >
+        <Text>{label}</Text>
+      </Box>
     </Box>
   );
 };
@@ -66,7 +81,7 @@ const Adoption = () => {
         >
           Facilitating DeFi Adoption
         </Heading>
-        <HStack spacing={'10'}>
+        <HStack spacing={'10'} pt={{ base: 5 }}>
           <Feature label={'Cost-Effective'}></Feature>
           <Feature label={'Performance'}></Feature>
           <Feature label={'UI/UX Optimized'}></Feature>

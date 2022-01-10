@@ -12,7 +12,6 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import ImageFreddy from '@/assets/images/members/Freddy.png';
 import ImageGreg from '@/assets/images/members/Greg.png';
@@ -23,7 +22,8 @@ import ImageJamesGao from '@/assets/images/members/JamesGao.jpg';
 import ImageJamesYin from '@/assets/images/members/JamesYin.jpg';
 import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
 import { withSection } from './withSection';
-import { IconArrowDown } from '../icons';
+import { IconArrowDown, IconLinkedin } from '../icons';
+import Link from 'next/link';
 
 interface MemberProps {
   image: StaticImageData;
@@ -111,7 +111,7 @@ const MemberCard = (member: MemberProps) => {
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
-        <Box>
+        <Box position={'relative'}>
           <Image
             src={member.image}
             alt={member.name}
@@ -119,6 +119,17 @@ const MemberCard = (member: MemberProps) => {
             height={'80px'}
             className={'border-circle'}
           />
+          <Link href={member.linkedIn} passHref>
+            <Icon
+              as={IconLinkedin}
+              width={'27px'}
+              height={'27px'}
+              position={'absolute'}
+              right={'0px'}
+              top={'0px'}
+              cursor={'pointer'}
+            />
+          </Link>
         </Box>
         <Flex flex={1} flexDirection={'column'} justifyContent={'center'}>
           <Text>{member.name}</Text>
@@ -136,6 +147,7 @@ const MemberCard = (member: MemberProps) => {
           as={IconArrowDown}
           onClick={handleExpand}
           color={useColorModeValue('gray.100', 'white')}
+          cursor={'pointer'}
         />
       </Flex>
     </Stack>

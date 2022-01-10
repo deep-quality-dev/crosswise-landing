@@ -2,6 +2,7 @@ import {
   Box,
   chakra,
   Container,
+  Flex,
   Heading,
   Icon,
   SimpleGrid,
@@ -36,12 +37,31 @@ const Feature = ({
       alignItems={'center'}
       bg={useColorModeValue(
         'transparent',
-        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
+        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%) #25272C'
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
-      {icon}
+      <Flex
+        padding={'10px'}
+        width={'48px'}
+        height={'48px'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        position={'relative'}
+      >
+        {icon}
+        <Box
+          opacity={'0.1'}
+          position={'absolute'}
+          left={'0px'}
+          right={'0px'}
+          top={'0px'}
+          bottom={'0px'}
+          bg={'rgba(22, 184, 184, 0.3)'}
+          borderRadius={'50%'}
+        />
+      </Flex>
       <Text>{label}</Text>
     </Stack>
   );

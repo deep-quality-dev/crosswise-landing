@@ -62,6 +62,7 @@ const Feature = ({
           as={IconArrowDown}
           onClick={handleExpand}
           color={useColorModeValue('gray.100', 'white')}
+          cursor={'pointer'}
         />
       </Stack>
       {expand && <Text pt={5}>{description}</Text>}
