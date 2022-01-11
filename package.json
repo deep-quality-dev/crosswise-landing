@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "d"
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
   "husky": {
     "hooks": {
