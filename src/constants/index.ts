@@ -1,3 +1,8 @@
+export const PRESALE_CROSS_LINK = 'https://presale.crosswise.finance/';
+
+export const CROSS_DOCS_LINK =
+  'https://crosswise.gitbook.io/crosswise-litepaper';
+
 export const TELEGRAM_LINK = 'https://t.me/crosswise';
 
 export const TWITTER_LINK = 'https://twitter.com/crosswisefi';
