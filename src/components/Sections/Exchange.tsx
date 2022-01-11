@@ -56,10 +56,16 @@ const Feature = ({
         }}
       >
         {icon}
-        <Text pt={{ base: 5 }} fontSize={{ base: '2xl' }}>
+        <Text
+          color={useColorModeValue('#2A0CC8', '#ffffff')}
+          pt={{ base: 5 }}
+          fontSize={{ base: '2xl' }}
+        >
           {title}
         </Text>
-        <Text>{description}</Text>
+        <Text color={useColorModeValue('#2C09E2', '#ffffff')}>
+          {description}
+        </Text>
       </Stack>
     </Box>
   );
