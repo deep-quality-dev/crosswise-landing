@@ -93,9 +93,12 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
       ></Box>
       <Box
         borderRadius={'8px'}
-        backgroundColor={'#0e263e'}
+        backgroundColor={useColorModeValue('#ffffff', '#0e263e')}
         fontSize={'20px'}
-        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
+        boxShadow={useColorModeValue(
+          '',
+          'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
+        )}
         padding={'5px 12px'}
         fontWeight={'600'}
         display={'flex'}
@@ -123,7 +126,10 @@ export const Footer = () => {
 
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg={useColorModeValue(
+        'linear-gradient(90deg, rgba(0, 0, 0, 0.007) 0%, rgba(0, 0, 0, 0.059) 47.4%, rgba(0, 0, 0, 0.007) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.0432292) 50.52%, rgba(255, 255, 255, 0) 100%), linear-gradient(90deg, rgba(250, 251, 252, 0.97) 0%, #FAFBFC 100%)',
+        'gray.900'
+      )}
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={'6xl'} py={10}>

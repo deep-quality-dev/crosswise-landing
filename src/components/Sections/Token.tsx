@@ -67,8 +67,8 @@ const Feature = ({
 
 const Token = () => {
   const color = useColorModeValue(
-    'gray.100',
-    'linear-gradient(90deg,#04F8AD0E 0%, #3F81EF0E 50.52%, #8750F40E 100%)'
+    'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)',
+    'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)'
   );
   return (
     <Box bg={color} position={'relative'}>
@@ -85,6 +85,7 @@ const Token = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
+          fontWeight={'100'}
           textAlign={'center'}
         >
           $CRSS Token
