@@ -207,7 +207,7 @@ export const IconArrowUp = ({ ...props }) => {
         rx="8.99539"
         transform="matrix(1 1.74846e-07 1.74846e-07 -1 0.0898438 18.5083)"
         stroke="currentColor"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
     </svg>
   );
