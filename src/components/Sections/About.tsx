@@ -130,7 +130,6 @@ const About = () => {
         right={'0%'}
         bottom={'0%'}
         zIndex={-1}
-        display={useColorModeValue('block', 'none')}
       ></Box>
 
       <Box
@@ -143,7 +142,6 @@ const About = () => {
         right={'80%'}
         bottom={'0%'}
         zIndex={-1}
-        display={useColorModeValue('block', 'none')}
       ></Box>
     </Box>
   );
