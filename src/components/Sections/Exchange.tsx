@@ -56,10 +56,17 @@ const Feature = ({
         }}
       >
         {icon}
-        <Text pt={{ base: 5 }} fontSize={{ base: '2xl' }}>
+        <Text
+          color={useColorModeValue('#2A0CC8', '#ffffff')}
+          pt={{ base: 5 }}
+          fontSize={{ base: '2xl' }}
+          textAlign={'center'}
+        >
           {title}
         </Text>
-        <Text>{description}</Text>
+        <Text color={useColorModeValue('#2C09E2', '#ffffff')}>
+          {description}
+        </Text>
       </Stack>
     </Box>
   );
@@ -82,14 +89,13 @@ const Exchange = () => {
         alignItems={'center'}
       >
         <Heading
-          as={'h3'}
+          as={'span'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'100'}
+          fontWeight={'light'}
           textAlign={'center'}
         >
-          User-First Unified
-          <br />
+          <Text fontWeight={'bold'}>User-First Unified</Text>
           Decentralized Exchange
         </Heading>
 

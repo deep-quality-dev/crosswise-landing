@@ -183,7 +183,7 @@ const RoadMap = () => {
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={8}
-          pt={{ base: 10, lg: 24 }}
+          py={{ base: 24, lg: 24 }}
         >
           <Image src={ImageEarth} objectFit="contain" />
           <Stack direction={'column'}>

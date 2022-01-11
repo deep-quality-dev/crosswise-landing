@@ -71,7 +71,7 @@ const Token = () => {
     'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)'
   );
   return (
-    <Box bg={color} position={'relative'}>
+    <Box bg={color} position={'relative'} zIndex={0}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -130,6 +130,29 @@ const Token = () => {
       </Stack>
 
       <Box position={'absolute'} bg={color}></Box>
+
+      <Box
+        position={'absolute'}
+        bg={"url('/images/pattern-top-right.png')"}
+        bgRepeat={'no-repeat'}
+        top={0}
+        left={'80%'}
+        right={'0%'}
+        bottom={'0%'}
+        zIndex={-1}
+      ></Box>
+
+      <Box
+        position={'absolute'}
+        bg={"url('/images/pattern-top-right.png')"}
+        bgRepeat={'no-repeat'}
+        transform={'rotate(180deg)'}
+        top={0}
+        left={'0%'}
+        right={'80%'}
+        bottom={'0%'}
+        zIndex={-1}
+      ></Box>
     </Box>
   );
 };

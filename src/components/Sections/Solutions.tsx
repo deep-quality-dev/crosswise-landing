@@ -36,7 +36,7 @@ const Feature = ({
       direction={'column'}
       alignItems={'center'}
       bg={useColorModeValue(
-        'transparent',
+        'linear-gradient(89.98deg, #F5F7FA 0.02%, #FFFFFF 50%, #FFFFFF 99.99%)',
         'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%) #25272C'
       )}
       borderRadius={'10'}
@@ -51,12 +51,7 @@ const Feature = ({
         position={'relative'}
       >
         <Text>{title}</Text>
-        <Icon
-          as={IconArrowDown}
-          onClick={handleExpand}
-          color={useColorModeValue('gray.100', 'white')}
-          cursor={'pointer'}
-        />
+        <Icon as={IconArrowDown} onClick={handleExpand} cursor={'pointer'} />
       </Stack>
       {expand && <Text pt={5}>{description}</Text>}
     </Stack>

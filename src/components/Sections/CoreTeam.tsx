@@ -22,7 +22,7 @@ import ImageJamesGao from '@/assets/images/members/JamesGao.jpg';
 import ImageJamesYin from '@/assets/images/members/JamesYin.jpg';
 import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
 import { withSection } from './withSection';
-import { IconArrowDown, IconLinkedin } from '../icons';
+import { IconArrowDown, IconArrowUp, IconLinkedin } from '../icons';
 import Link from 'next/link';
 
 interface MemberProps {
@@ -139,16 +139,13 @@ const MemberCard = (member: MemberProps) => {
 
       {expand && (
         <Box pt={5}>
-          <Text color={'gray.300'}>{member.desc}</Text>
+          <Text color={useColorModeValue('black', 'gray.300')}>
+            {member.desc}
+          </Text>
         </Box>
       )}
       <Flex justifyContent={'flex-end'}>
-        <Icon
-          as={IconArrowDown}
-          onClick={handleExpand}
-          color={useColorModeValue('gray.100', 'white')}
-          cursor={'pointer'}
-        />
+        <Icon as={IconArrowDown} onClick={handleExpand} cursor={'pointer'} />
       </Flex>
     </Stack>
   );
@@ -171,6 +168,7 @@ const CoreTeam = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
+          fontWeight={'light'}
           textAlign={'center'}
         >
           Core Team
@@ -192,4 +190,4 @@ const CoreTeam = () => {
   );
 };
 
-export default withSection(CoreTeam);
+export default CoreTeam;

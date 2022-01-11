@@ -9,6 +9,7 @@ import {
 import Image from 'next/image';
 
 import ImageSwap from '@/assets/images/swap-dialog.png';
+import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
 import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
 import { NavigationWidget } from './NavigationWidget';
 import { withSection } from './withSection';
@@ -37,7 +38,11 @@ const LearnMore = () => {
         bgPosition={'bottom'}
       >
         <Box flex={1}>
-          <Image src={ImageSwap} alt="swap" objectFit={'cover'} />
+          <Image
+            src={useColorModeValue(ImageSwapLight, ImageSwap)}
+            alt="swap"
+            objectFit={'cover'}
+          />
         </Box>
         <Stack spacing={4} pt={20} mb={{ base: 12, lg: 0 }} flex={1}>
           <Heading
