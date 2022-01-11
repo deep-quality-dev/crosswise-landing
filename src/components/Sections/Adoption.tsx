@@ -61,6 +61,7 @@ const Adoption = () => {
         spacing={{ base: 5 }}
         direction={{ base: 'column' }}
         alignItems={'start'}
+        justifyContent={'center'}
       >
         <Heading
           as={'h3'}
