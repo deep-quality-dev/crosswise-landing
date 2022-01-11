@@ -14,11 +14,14 @@ import { NavigationWidget } from './NavigationWidget';
 import { withSection } from './withSection';
 
 const LearnMore = () => {
-  const color = useColorModeValue('white', '#060514');
+  const color = useColorModeValue('#F7F8F9', '#060514');
   return (
     <Box
       bg={color}
-      bgImage="url('/images/shine.png')"
+      bgImage={useColorModeValue(
+        "url('/images/shine-light.png')",
+        "url('/images/shine.png')"
+      )}
       bgRepeat={'no-repeat'}
       bgPosition={'bottom'}
     >
@@ -30,7 +33,6 @@ const LearnMore = () => {
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 10, lg: 24 }}
         direction={{ base: 'column', lg: 'row' }}
-        bgImage="url('/images/shine.png')"
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
       >

@@ -65,16 +65,19 @@ const Feature = ({
 
 const Solutions = () => {
   const color = useColorModeValue(
-    'gray.100',
-    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%), url("/images/shine2.png")'
+    'url("/images/shine-light.png")',
+    'url("/images/shine-light.png")'
+  );
+  const rightBackground = useColorModeValue(
+    'radial-gradient(50% 50% at 50% 50%, rgba(4, 248, 181, 0.15) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.0465) 0%, rgba(6, 19, 31, 0) 100%)',
+    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
   );
   return (
     <Box
       bg={color}
       position={'relative'}
-      opacity={'0.8'}
       bgRepeat={'no-repeat'}
-      bgPosition={'bottom'}
+      bgPosition={'center'}
     >
       <Stack
         as={Container}
@@ -142,8 +145,18 @@ const Solutions = () => {
             ></Feature>
           </Stack>
 
-          <Box flex={1}>
+          <Box flex={1} position={'relative'} zIndex={0}>
             <Image src={ImageRocket} alt="dapp" objectFit={'cover'} />
+            <Box
+              position={'absolute'}
+              bg={rightBackground}
+              bgRepeat={'no-repeat'}
+              top={'0%'}
+              left={'0%'}
+              right={'0%'}
+              bottom={'0%'}
+              zIndex={-1}
+            ></Box>
           </Box>
         </SimpleGrid>
       </Stack>

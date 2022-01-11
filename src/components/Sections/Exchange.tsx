@@ -26,7 +26,10 @@ const Feature = ({
   return (
     <Box position={'relative'}>
       <Stack
-        bg={useColorModeValue('transparent', 'rgba(157, 249, 219, 0.17)')}
+        bg={useColorModeValue(
+          'rgba(157, 249, 219, 0.57)',
+          'rgba(157, 249, 219, 0.17)'
+        )}
         p={{ base: '16px' }}
         borderRadius={'30px'}
         boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
@@ -64,8 +67,8 @@ const Feature = ({
 
 const Exchange = () => {
   const color = useColorModeValue(
-    'gray.100',
-    'linear-gradient(90deg,#04F8AD0E 0%, #3F81EF0E 50.52%, #8750F40E 100%)'
+    'linear-gradient(90deg, #04F8AD80 0%, #3F81EF80 50.52%, #8750F480 100%)',
+    'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)'
   );
   return (
     <Box bg={color} position={'relative'}>
@@ -82,9 +85,12 @@ const Exchange = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
+          fontWeight={'100'}
           textAlign={'center'}
         >
-          User-First Decentralized Exchange
+          User-First Unified
+          <br />
+          Decentralized Exchange
         </Heading>
 
         <SimpleGrid

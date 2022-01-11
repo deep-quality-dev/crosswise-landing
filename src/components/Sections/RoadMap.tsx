@@ -8,6 +8,7 @@ import {
   Flex,
   Text,
   Link,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -48,6 +49,7 @@ const Stage = ({ title }: StageProps) => {
         fontSize={'20px'}
         boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
         padding={'12px 30px'}
+        color={'white'}
       >
         {title}
       </Box>
@@ -206,9 +208,12 @@ const RoadMap = () => {
               ></Box>
               <Box
                 borderRadius={'60px'}
-                backgroundColor={'#0e263e'}
+                backgroundColor={useColorModeValue('#d4f3f3', '#0e263e')}
                 fontSize={'20px'}
-                boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
+                boxShadow={useColorModeValue(
+                  '',
+                  'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
+                )}
                 padding={'5px 12px'}
                 color={'#04F8AD'}
                 fontWeight={'light'}

@@ -10,7 +10,8 @@ import {
 import Image from 'next/image';
 import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
 
-import ImageDapp from '@/assets/dapp.png';
+import ImageDapp from '@/assets/images/dapp.png';
+import ImageDappLight from '@/assets/images/dapp-light.png';
 import { withSection } from '@/components/Sections/withSection';
 import { NavigationWidget } from './NavigationWidget';
 import { MEDIUM_LINK, GITHUB_LINK, TELEGRAM_LINK } from '@/constants/index';
@@ -71,7 +72,7 @@ const DApp = () => {
         </Stack>
         <Box flex={1}>
           <Image
-            src={ImageDapp}
+            src={useColorModeValue(ImageDappLight, ImageDapp)}
             alt="dapp"
             objectFit={'cover'}
             className={'dapp-screen'}
@@ -89,6 +90,7 @@ const DApp = () => {
         top={'-20%'}
         right={'10%'}
         bottom={'90%'}
+        display={useColorModeValue('none', 'block')}
         zIndex={-1}
       ></Box>
 
@@ -102,7 +104,35 @@ const DApp = () => {
         top={'-30%'}
         right={'85%'}
         bottom={'40%'}
+        display={useColorModeValue('none', 'block')}
         zIndex={-1}
+      ></Box>
+
+      <Box
+        position={'absolute'}
+        bg={
+          'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
+        }
+        transform={'rotate(180deg)'}
+        left={'45%'}
+        top={'-25%'}
+        right={'10%'}
+        bottom={'0%'}
+        display={useColorModeValue('none', 'block')}
+        zIndex={-1}
+      ></Box>
+
+      <Box
+        position={'absolute'}
+        bg={"url('/images/pattern-top-right.png')"}
+        bgRepeat={'no-repeat'}
+        transform={'rotate(180deg)'}
+        top={0}
+        left={'0%'}
+        right={'80%'}
+        bottom={'0%'}
+        zIndex={-1}
+        display={useColorModeValue('none', 'block')}
       ></Box>
     </Box>
   );
