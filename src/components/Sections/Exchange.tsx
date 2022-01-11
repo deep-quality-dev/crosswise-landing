@@ -60,6 +60,7 @@ const Feature = ({
           color={useColorModeValue('#2A0CC8', '#ffffff')}
           pt={{ base: 5 }}
           fontSize={{ base: '2xl' }}
+          textAlign={'center'}
         >
           {title}
         </Text>
