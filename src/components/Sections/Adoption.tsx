@@ -16,12 +16,10 @@ const Feature = ({ label }: { label: string }) => {
   return (
     <Box position={'relative'}>
       <Box
-        bg={useColorModeValue(
-          'transparent',
-          'rgba(0, 184, 185, 0.17)' // 'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'
-        )}
+        bg={'rgba(0, 184, 185, 0.17)'}
         p={{ base: '10px' }}
         borderRadius={'20px'}
+        border={'1px solid #04F8AD'}
         _before={{
           content: '""',
           position: 'absolute',
@@ -38,24 +36,22 @@ const Feature = ({ label }: { label: string }) => {
           '-webkit-mask-composite': 'destination-out',
         }}
       >
-        <Text>{label}</Text>
+        <Text color={'#04F8AD'}>{label}</Text>
       </Box>
     </Box>
   );
 };
 
 const Adoption = () => {
-  const color = useColorModeValue(
-    'transparent, url("/images/adoption.png")',
-    'linear-gradient(90deg, rgba(4, 248, 173, 0.9) 0%, rgba(63, 129, 239, 0.8) 24.48%, rgba(135, 80, 244, 0.72) 48.96%, rgba(135, 80, 244, 0) 100%), url("/images/adoption.png")'
-  );
+  const color =
+    'linear-gradient(90deg, rgba(4, 248, 173, 0.9) 0%, rgba(63, 129, 239, 0.8) 24.48%, rgba(135, 80, 244, 0.72) 48.96%, rgba(135, 80, 244, 0) 100%), url("/images/adoption.png")';
   return (
     <Box
       position={'relative'}
-      opacity={'0.8'}
       bgRepeat={'no-repeat'}
       bgSize={'cover'}
       bgImage={color}
+      color={'white'}
     >
       <Stack
         as={Container}
@@ -87,9 +83,10 @@ const Adoption = () => {
           <Feature label={'UI/UX Optimized'}></Feature>
         </HStack>
         <SimpleGrid columns={2}>
-          <Text fontSize={{ base: '2xl' }}>
-            Crosswise Finance bridges the gap between centralised and
-            decentralized exchanges, bringing together the best of both worlds.
+          <Text fontSize={{ base: '2xl' }} fontWeight={'light'}>
+            In spite of accelerated innovation & development, decentralized
+            exchanges have yet to find a perfect balance between transactional
+            speed, cost & user experience.
           </Text>
         </SimpleGrid>
       </Stack>
