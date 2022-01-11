@@ -60,7 +60,7 @@ const Feature = ({
       direction={'row'}
       alignItems={'center'}
       bg={useColorModeValue(
-        'transparent',
+        'linear-gradient(89.98deg, #F5F7FA 0.02%, #FFFFFF 50%, #FFFFFF 99.99%)',
         'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
       )}
       borderRadius={'10'}
@@ -78,7 +78,7 @@ const TechnicalPartner = () => {
   const color =
     'radial-gradient(50% 288% at 50% 79.57%, rgba(4, 248, 173, 0.4) 0%, rgba(63, 129, 239, 0.4) 52.6%, rgba(135, 80, 244, 0.4) 100%)';
   return (
-    <Box position={'relative'} bg={color}>
+    <Box position={'relative'} bg={color} zIndex={0} py={'80px'}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -93,6 +93,7 @@ const TechnicalPartner = () => {
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
           textAlign={'center'}
+          fontWeight={'light'}
         >
           Technical Partners
         </Heading>
@@ -114,6 +115,30 @@ const TechnicalPartner = () => {
       </Stack>
 
       <Box position={'absolute'} bg={color}></Box>
+
+      <Box
+        position={'absolute'}
+        bg={"url('/images/pattern-top-right.png')"}
+        bgRepeat={'no-repeat'}
+        transform={'rotate(180deg) scaleX(-1)'}
+        top={0}
+        left={'80%'}
+        right={'0%'}
+        bottom={'0%'}
+        zIndex={-1}
+      ></Box>
+
+      <Box
+        position={'absolute'}
+        bg={"url('/images/pattern-top-right.png')"}
+        bgRepeat={'no-repeat'}
+        transform={'rotate(180deg)'}
+        top={0}
+        left={'0%'}
+        right={'80%'}
+        bottom={'0%'}
+        zIndex={-1}
+      ></Box>
     </Box>
   );
 };

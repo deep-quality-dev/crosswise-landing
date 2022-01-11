@@ -82,14 +82,13 @@ const Exchange = () => {
         alignItems={'center'}
       >
         <Heading
-          as={'h3'}
+          as={'span'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'100'}
+          fontWeight={'light'}
           textAlign={'center'}
         >
-          User-First Unified
-          <br />
+          <Text fontWeight={'bold'}>User-First Unified</Text>
           Decentralized Exchange
         </Heading>
 
