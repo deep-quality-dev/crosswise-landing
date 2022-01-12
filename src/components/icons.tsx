@@ -189,11 +189,12 @@ export const IconIntegrated = ({ ...props }) => {
 export const IconArrowUp = ({ ...props }) => {
   return (
     <svg
-      width="19"
+      width="20"
       height="20"
-      viewBox="0 0 19 20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M9.33522 7.1683C9.18305 7.1683 9.0309 7.2264 8.91488 7.34237L5.26403 10.9933C5.03178 11.2255 5.03178 11.602 5.26403 11.8342C5.49617 12.0663 5.87264 12.0663 6.1049 11.8342L9.33522 8.60368L12.5656 11.8341C12.7978 12.0662 13.1742 12.0662 13.4064 11.8341C13.6387 11.6019 13.6387 11.2254 13.4064 10.9931L9.75557 7.34225C9.63949 7.22627 9.48734 7.1683 9.33522 7.1683Z"
@@ -207,7 +208,7 @@ export const IconArrowUp = ({ ...props }) => {
         rx="8.99539"
         transform="matrix(1 1.74846e-07 1.74846e-07 -1 0.0898438 18.5083)"
         stroke="currentColor"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
     </svg>
   );

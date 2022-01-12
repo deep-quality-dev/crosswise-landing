@@ -94,6 +94,7 @@ const Members: Array<MemberProps> = [
 ];
 
 const MemberCard = (member: MemberProps) => {
+  const boxTextColor = useColorModeValue('black', 'gray.300');
   const [expand, setExpand] = useState(false);
 
   const handleExpand = () => {
@@ -109,6 +110,7 @@ const MemberCard = (member: MemberProps) => {
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
+      height={'fit-content'}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
         <Box position={'relative'}>
@@ -139,13 +141,17 @@ const MemberCard = (member: MemberProps) => {
 
       {expand && (
         <Box pt={5}>
-          <Text color={useColorModeValue('black', 'gray.300')}>
-            {member.desc}
-          </Text>
+          <Text color={boxTextColor}>{member.desc}</Text>
         </Box>
       )}
       <Flex justifyContent={'flex-end'}>
-        <Icon as={IconArrowDown} onClick={handleExpand} cursor={'pointer'} />
+        <Box p={'4px'} onClick={handleExpand} cursor={'pointer'}>
+          <Icon
+            as={expand === true ? IconArrowUp : IconArrowDown}
+            width={'15px'}
+            height={'15px'}
+          />
+        </Box>
       </Flex>
     </Stack>
   );
