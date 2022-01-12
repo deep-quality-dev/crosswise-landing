@@ -21,7 +21,6 @@ import ImageLeon from '@/assets/images/members/Leon.jpg';
 import ImageJamesGao from '@/assets/images/members/JamesGao.jpg';
 import ImageJamesYin from '@/assets/images/members/JamesYin.jpg';
 import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
-import { withSection } from './withSection';
 import { IconArrowDown, IconArrowUp, IconLinkedin } from '../icons';
 import Link from 'next/link';
 
@@ -96,6 +95,7 @@ const Members: Array<MemberProps> = [
 const MemberCard = (member: MemberProps) => {
   const boxTextColor = useColorModeValue('black', 'gray.300');
   const [expand, setExpand] = useState(false);
+  const descColor = useColorModeValue('black', 'gray.300');
 
   const handleExpand = () => {
     setExpand(!expand);
@@ -141,7 +141,7 @@ const MemberCard = (member: MemberProps) => {
 
       {expand && (
         <Box pt={5}>
-          <Text color={boxTextColor}>{member.desc}</Text>
+          <Text color={descColor}>{member.desc}</Text>
         </Box>
       )}
       <Flex justifyContent={'flex-end'}>

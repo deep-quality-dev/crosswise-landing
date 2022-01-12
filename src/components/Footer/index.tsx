@@ -4,48 +4,41 @@ import {
   Stack,
   Text,
   SimpleGrid,
-  Button,
-  Flex,
   Link,
   useColorModeValue,
-  Spacer,
   Icon,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-// import IconCrosswiseDark from '../../assets/images/logo-dark.png';
-// import IconCrosswiseLight from '../../assets/images/logo-light.png';
 
 import {
   TELEGRAM_LINK,
   TWITTER_LINK,
   MEDIUM_LINK,
   GITHUB_LINK,
+  DISCORD_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
 import { IconChat, IconSend, CopyRightIcon, UpIcon } from '@/components/icons';
-import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
-
-const About = [
-  {
-    icon: <IconChat />,
-    label: 'English (United States)',
-    key: 'chat',
-  },
-  {
-    icon: <IconSend />,
-    label: 'United States',
-    key: 'send',
-  },
-];
+import {
+  FaDiscord,
+  FaGithub,
+  FaMedium,
+  FaTelegram,
+  FaTwitter,
+} from 'react-icons/fa';
 
 const SOCIAL_LINKS = [
+  {
+    icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
+    href: TWITTER_LINK,
+  },
   {
     icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
     href: TELEGRAM_LINK,
   },
   {
-    icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
-    href: TWITTER_LINK,
+    icon: <Icon as={FaDiscord} color={'#00B8B9'} />,
+    href: DISCORD_LINK,
   },
   {
     icon: <Icon as={FaMedium} color={'#00B8B9'} />,
@@ -133,32 +126,25 @@ export const Footer = () => {
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
-        <Flex>
-          <ListHeader>
-            <Stack direction={'row'} align={'center'} spacing={3}>
-              <Logo width={26} height={25} />
-              <Text as={'span'} fontWeight={'extrabold'}>
-                crosswise
-              </Text>
-            </Stack>
-          </ListHeader>
-          <Spacer />
-          <Box display={'flex'} alignItems={'center'}>
-            <Stack direction={'row'} align={'center'} spacing={3}>
-              <IconChat />
-              <Text fontSize={'13px'}>English (United States)</Text>
-            </Stack>
-          </Box>
-          <Spacer />
-          <Box display={'flex'} alignItems={'center'}>
+        <SimpleGrid columns={{ base: 1, md: 3 }}>
+          <Stack direction={'row'} align={'center'} spacing={3}>
+            <Logo width={26} height={25} />
+            <Text as={'span'} fontWeight={'extrabold'}>
+              crosswise
+            </Text>
+          </Stack>
+          <Stack direction={'row'} align={'center'} spacing={3}>
+            <IconChat />
+            <Text fontSize={'13px'}>English (United States)</Text>
+          </Stack>
+          <Stack justifyContent={'space-between'} direction={'row'}>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <IconSend />
               <Text fontSize={'13px'}>United States</Text>
             </Stack>
-          </Box>
-          <Spacer />
-          <GotoTopBtn onClick={scrollToTop} />
-        </Flex>
+            <GotoTopBtn onClick={scrollToTop} />
+          </Stack>
+        </SimpleGrid>
 
         <Box
           width={'100%'}
@@ -167,14 +153,14 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <SimpleGrid columns={{ base: 3 }} spacing={3}>
-          <SimpleGrid columns={{ base: 4, sm: 4, md: 4, lg: 4 }}>
+        <SimpleGrid columns={{ base: 1, md: 3 }}>
+          <Stack spacing={5} direction={'row'}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
                 {link.icon}
               </Link>
             ))}
-          </SimpleGrid>
+          </Stack>
 
           <Link href="#help">
             <Text

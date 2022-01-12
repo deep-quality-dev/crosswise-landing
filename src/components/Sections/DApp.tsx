@@ -8,13 +8,25 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { FaGithub, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
+import {
+  FaDiscord,
+  FaGithub,
+  FaMedium,
+  FaTelegram,
+  FaTwitter,
+} from 'react-icons/fa';
 
 import ImageDapp from '@/assets/images/dapp.png';
 import ImageDappLight from '@/assets/images/dapp-light.png';
 import { withSection } from '@/components/Sections/withSection';
 import { NavigationWidget } from './NavigationWidget';
-import { MEDIUM_LINK, GITHUB_LINK, TELEGRAM_LINK } from '@/constants/index';
+import {
+  MEDIUM_LINK,
+  GITHUB_LINK,
+  TELEGRAM_LINK,
+  DISCORD_LINK,
+  TWITTER_LINK,
+} from '@/constants/index';
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
@@ -49,6 +61,21 @@ const DApp = () => {
             }}
             icons={[
               {
+                key: 'telegram',
+                icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
+                href: TWITTER_LINK,
+              },
+              {
+                key: 'telegram',
+                icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
+                href: TELEGRAM_LINK,
+              },
+              {
+                key: 'discord',
+                icon: <Icon as={FaDiscord} color={'#00B8B9'} />,
+                href: DISCORD_LINK,
+              },
+              {
                 key: 'github',
                 icon: <Icon as={FaGithub} color={'#00B8B9'} />,
                 href: GITHUB_LINK,
@@ -57,15 +84,6 @@ const DApp = () => {
                 key: 'medium',
                 icon: <Icon as={FaMedium} color={'#00B8B9'} />,
                 href: MEDIUM_LINK,
-              },
-              {
-                key: 'telegram',
-                icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
-                href: TELEGRAM_LINK,
-              },
-              {
-                key: 'twitter',
-                icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
               },
             ]}
           />
