@@ -14,27 +14,32 @@ import { withSection } from './withSection';
 
 const Feature = ({ label }: { label: string }) => {
   return (
-    <Box position={'relative'}>
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'20px'}
+      width={'fit-content'}
+      overflow={'hidden'}
+      padding={'1px'}
+    >
       <Box
-        bg={'rgba(0, 184, 185, 0.17)'}
-        p={{ base: '10px' }}
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'100%'}
+        height={'100%'}
+        backgroundImage={
+          'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'
+        }
+      ></Box>
+      <Box
         borderRadius={'20px'}
-        border={'1px solid #04F8AD'}
-        _before={{
-          content: '""',
-          position: 'absolute',
-          zIndex: '-1',
-          left: '0',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          padding: '1px',
-          borderRadius: '20px',
-          background: 'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)',
-          '-webkit-mask':
-            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          '-webkit-mask-composite': 'destination-out',
-        }}
+        backgroundColor={'rgba(0, 184, 185)'}
+        padding={'5px 10px'}
+        display={'flex'}
+        flexDirection={'row'}
+        alignItems={'center'}
       >
         <Text color={'#04F8AD'}>{label}</Text>
       </Box>

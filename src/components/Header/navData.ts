@@ -3,7 +3,6 @@ import {
   GITHUB_LINK,
   MEDIUM_LINK,
   PRESALE_CROSS_LINK,
-  DISCORD_LINK,
 } from '@/constants/index';
 
 export interface NavigationItem {
@@ -23,10 +22,6 @@ export const NaviationItems: Array<NavigationItem> = [
   {
     label: 'Github',
     href: GITHUB_LINK,
-  },
-  {
-    label: 'Discord',
-    href: DISCORD_LINK,
   },
   {
     label: 'Pre-Sale Dashboard',
