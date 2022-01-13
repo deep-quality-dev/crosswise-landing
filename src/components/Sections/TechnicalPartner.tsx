@@ -3,7 +3,6 @@ import {
   Container,
   Heading,
   Icon,
-  SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
@@ -69,7 +68,7 @@ const Feature = ({
       <Link href={href} passHref>
         {icon}
       </Link>
-      <Text>{label}</Text>
+      <Text fontWeight={{ base: '600' }}>{label}</Text>
     </Stack>
   );
 };
@@ -93,7 +92,7 @@ const TechnicalPartner = () => {
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
           textAlign={'center'}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
         >
           Technical Partners
         </Heading>

@@ -6,7 +6,6 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -71,6 +70,7 @@ const Adoption = () => {
         <Heading
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontWeight={{ base: '600' }}
           maxW={'2xl'}
         >
           Crosswise Finance
@@ -89,7 +89,11 @@ const Adoption = () => {
           <Feature label={'UI/UX Optimized'}></Feature>
         </HStack>
         <SimpleGrid columns={2}>
-          <Text fontSize={{ base: '2xl' }} fontWeight={'light'}>
+          <Text
+            fontSize={{ base: 'xl' }}
+            fontWeight={{ base: '300' }}
+            lineHeight={{ base: '28px' }}
+          >
             In spite of accelerated innovation & development, decentralized
             exchanges have yet to find a perfect balance between transactional
             speed, cost & user experience.

@@ -90,6 +90,7 @@ const Solutions = () => {
         <Heading
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontWeight={{ base: '400' }}
           maxW={'2xl'}
         >
           Our Solutions

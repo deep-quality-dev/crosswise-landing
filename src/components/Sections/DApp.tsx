@@ -47,14 +47,16 @@ const DApp = () => {
             as={'h2'}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
-            fontWeight={'light'}
+            fontWeight={'400'}
           >
             Crosswise Finance - Bringing CeFi to DeFi
           </Heading>
-          <Text fontSize={{ base: '2xl' }}>
+          <Text fontSize={{ base: '20px' }} fontWeight={{ base: '300' }}>
             Cross-chain Automated Market-maker
+            <br />
+            <br />
+            Swap, Stake & Earn
           </Text>
-          <Text fontSize={{ base: '2xl' }}>Swap, Stake & Earn</Text>
           <NavigationWidget
             primary={{
               label: 'Launch APP',

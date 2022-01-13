@@ -8,8 +8,7 @@ import {
   useColorModeValue,
   Icon,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
-
+// import { ReactNode } from 'react';
 import {
   TELEGRAM_LINK,
   TWITTER_LINK,
@@ -69,19 +68,6 @@ const SOCIAL_LINKS = [
     href: 'coinmarketcaps_link',
   },
 ];
-
-const ListHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <Box
-      fontWeight={'500'}
-      fontSize={'lg'}
-      display={'flex'}
-      alignItems={'center'}
-    >
-      {children}
-    </Box>
-  );
-};
 
 const GotoTopBtn = ({ onClick }: { onClick: any }) => {
   return (
@@ -149,7 +135,7 @@ export const Footer = () => {
         <SimpleGrid columns={{ base: 1, md: 3 }}>
           <Stack direction={'row'} align={'center'} spacing={3}>
             <Logo width={26} height={25} />
-            <Text as={'span'} fontWeight={'extrabold'}>
+            <Text as={'span'} fontWeight={{ base: '700' }}>
               crosswise
             </Text>
           </Stack>
@@ -205,7 +191,7 @@ export const Footer = () => {
             <Text
               display={'flex'}
               flexDirection={'row'}
-              fontWeight={'extrabold'}
+              fontWeight={{ base: '600' }}
               color={useColorModeValue('#606060', '#E0E0FF')}
             >
               <IconCopyRight />
@@ -219,7 +205,7 @@ export const Footer = () => {
             pt={{ base: '10px', lg: '0px' }}
           >
             <Text
-              fontWeight={'extrabold'}
+              fontWeight={{ base: '600' }}
               color={useColorModeValue('#606060', '#E0E0FF')}
             >
               TERMS & CONDITIONS | PRIVACY POLICY

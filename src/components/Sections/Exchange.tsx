@@ -65,7 +65,7 @@ const Feature = ({
         {icon}
         <Text
           pt={{ base: '30px' }}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
           fontSize={'20px'}
           color={useColorModeValue('#2C09E2', '#ffffff')}
         >
@@ -73,8 +73,8 @@ const Feature = ({
         </Text>
         <Text
           pt={{ base: '30px' }}
-          fontWeight={'light'}
-          fontSize={'13px'}
+          fontWeight={{ base: '300' }}
+          fontSize={{ base: '13px' }}
           color={useColorModeValue('#2C09E2', '#ffffff')}
         >
           {description}
@@ -104,10 +104,10 @@ const Exchange = () => {
           as={'span'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'light'}
+          fontWeight={{ base: '300' }}
           textAlign={'center'}
         >
-          <Text fontWeight={'bold'}>User-First Unified</Text>
+          <Text fontWeight={{ base: '400' }}>User-First Unified</Text>
           Decentralized Exchange
         </Heading>
 

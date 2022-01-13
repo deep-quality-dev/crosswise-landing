@@ -65,7 +65,7 @@ const Feature = ({
         {icon}
         <Text
           pt={{ base: '30px' }}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
           fontSize={{ base: '20px' }}
           color={useColorModeValue('#141029', '#E0E0FF')}
         >
@@ -73,7 +73,7 @@ const Feature = ({
         </Text>
         <Text
           pt={{ base: '30px' }}
-          fontWeight={'light'}
+          fontWeight={{ base: '300' }}
           fontSize={{ base: '14px' }}
           color={useColorModeValue('#141029', '#E0E0FF')}
         >
@@ -104,13 +104,17 @@ const Token = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'100'}
+          fontWeight={{ base: '400' }}
           textAlign={'center'}
         >
           $CRSS Token
         </Heading>
 
-        <Text fontSize={{ base: '2xl', sm: '3xl' }} textAlign={'center'}>
+        <Text
+          fontSize={{ base: '2xl', sm: '3xl' }}
+          textAlign={'center'}
+          fontWeight={{ base: '300' }}
+        >
           Staking rewards, low fees and incentives for holders.
         </Text>
 

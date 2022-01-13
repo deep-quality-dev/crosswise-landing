@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Container,
   Flex,
@@ -93,7 +92,7 @@ const Members: Array<MemberProps> = [
 ];
 
 const MemberCard = (member: MemberProps) => {
-  const boxTextColor = useColorModeValue('black', 'gray.300');
+  // const boxTextColor = useColorModeValue('black', 'gray.300');
   const [expand, setExpand] = useState(false);
   const descColor = useColorModeValue('black', 'gray.300');
 
@@ -134,7 +133,7 @@ const MemberCard = (member: MemberProps) => {
           </Link>
         </Box>
         <Flex flex={1} flexDirection={'column'} justifyContent={'center'}>
-          <Text>{member.name}</Text>
+          <Text fontWeight={{ base: '400' }}>{member.name}</Text>
           <Text color={'#8E8FA0'}>{member.role}</Text>
         </Flex>
       </Stack>
@@ -174,7 +173,7 @@ const CoreTeam = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
           textAlign={'center'}
         >
           Core Team
