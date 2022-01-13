@@ -105,7 +105,7 @@ const MemberCard = (member: MemberProps) => {
       direction={'column'}
       p={{ base: 5 }}
       bg={useColorModeValue(
-        'transparent',
+        'linear-gradient(89.98deg, #F5F7FA 0.02%, #FFFFFF 50%, #FFFFFF 99.99%)',
         'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
       )}
       borderRadius={'10'}
