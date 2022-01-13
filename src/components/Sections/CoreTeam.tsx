@@ -23,6 +23,12 @@ import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
 import { IconArrowDown, IconArrowUp, IconLinkedin } from '../icons';
 import Link from 'next/link';
 
+const ref = React.createRef<HTMLButtonElement>();
+type LinkProps = React.HTMLProps<HTMLElement>;
+const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
+  <>{props.children}</>
+));
+
 interface MemberProps {
   image: StaticImageData;
   name: string;
@@ -121,15 +127,17 @@ const MemberCard = (member: MemberProps) => {
             className={'border-circle'}
           />
           <Link href={member.linkedIn} passHref>
-            <Icon
-              as={IconLinkedin}
-              width={'27px'}
-              height={'27px'}
-              position={'absolute'}
-              right={'0px'}
-              top={'0px'}
-              cursor={'pointer'}
-            />
+            <ChildLink ref={ref}>
+              <Icon
+                as={IconLinkedin}
+                width={'27px'}
+                height={'27px'}
+                position={'absolute'}
+                right={'0px'}
+                top={'0px'}
+                cursor={'pointer'}
+              />
+            </ChildLink>
           </Link>
         </Box>
         <Flex flex={1} flexDirection={'column'} justifyContent={'center'}>
