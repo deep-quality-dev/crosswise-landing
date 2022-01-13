@@ -28,6 +28,7 @@ type LinkProps = React.HTMLProps<HTMLElement>;
 const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
   <>{props.children}</>
 ));
+ChildLink.displayName = 'ChildLink';
 
 interface MemberProps {
   image: StaticImageData;
