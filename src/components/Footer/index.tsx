@@ -18,7 +18,15 @@ import {
   DISCORD_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
-import { IconChat, IconSend, CopyRightIcon, UpIcon } from '@/components/icons';
+import {
+  IconChat,
+  IconSend,
+  CopyRightIcon,
+  IconUp,
+  IconMail,
+  IconCoinGecko,
+  IconCoinMarketCaps,
+} from '@/components/icons';
 import {
   FaDiscord,
   FaGithub,
@@ -45,8 +53,20 @@ const SOCIAL_LINKS = [
     href: MEDIUM_LINK,
   },
   {
+    icon: <Icon as={IconMail} />,
+    href: '',
+  },
+  {
     icon: <Icon as={FaGithub} color={'#00B8B9'} />,
     href: GITHUB_LINK,
+  },
+  {
+    icon: <Icon as={IconCoinGecko} />,
+    href: '',
+  },
+  {
+    icon: <Icon as={IconCoinMarketCaps} />,
+    href: '',
   },
 ];
 
@@ -70,7 +90,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
       zIndex={0}
       borderRadius={'8px'}
       overflow={'hidden'}
-      padding={'3px'}
+      padding={'2px'}
       width={'fit-content'}
       cursor={'pointer'}
       onClick={() => onClick()}
@@ -85,7 +105,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         backgroundImage={'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4)'}
       ></Box>
       <Box
-        borderRadius={'8px'}
+        borderRadius={'6px'}
         backgroundColor={useColorModeValue('#ffffff', '#0e263e')}
         fontSize={'20px'}
         boxShadow={useColorModeValue(
@@ -101,7 +121,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         <Text fontSize={'13px'} mr={'30px'}>
           GO TO TOP
         </Text>
-        <UpIcon />
+        <IconUp />
       </Box>
     </Box>
   );
