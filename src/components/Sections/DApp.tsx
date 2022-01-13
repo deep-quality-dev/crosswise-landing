@@ -88,7 +88,7 @@ const DApp = () => {
             ]}
           />
         </Stack>
-        <Box flex={1}>
+        <Box flex={1} boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}>
           <Image
             src={useColorModeValue(ImageDappLight, ImageDapp)}
             alt="dapp"
