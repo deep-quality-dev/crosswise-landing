@@ -21,7 +21,7 @@ import { Logo } from '@/components/Logo';
 import {
   IconChat,
   IconSend,
-  CopyRightIcon,
+  IconCopyRight,
   IconUp,
   IconMail,
   IconCoinGecko,
@@ -54,7 +54,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: <Icon as={IconMail} />,
-    href: '',
+    href: 'mail_link',
   },
   {
     icon: <Icon as={FaGithub} color={'#00B8B9'} />,
@@ -62,11 +62,11 @@ const SOCIAL_LINKS = [
   },
   {
     icon: <Icon as={IconCoinGecko} />,
-    href: '',
+    href: 'coingecho_link',
   },
   {
     icon: <Icon as={IconCoinMarketCaps} />,
-    href: '',
+    href: 'coinmarketcaps_link',
   },
 ];
 
@@ -208,7 +208,7 @@ export const Footer = () => {
               fontWeight={'extrabold'}
               color={useColorModeValue('#606060', '#E0E0FF')}
             >
-              <CopyRightIcon />
+              <IconCopyRight />
               2022 Crosswise Finance
             </Text>
           </Link>

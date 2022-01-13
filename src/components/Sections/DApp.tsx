@@ -49,11 +49,8 @@ const DApp = () => {
             maxW={'2xl'}
             fontWeight={'light'}
           >
-            Crosswise Finance - Bringing CeFi
+            Crosswise Finance - Bringing CeFi to DeFi
           </Heading>
-          <Text fontSize={{ base: '2xl', sm: '3xl', md: '3xl', lg: '4xl' }}>
-            capabilities into DeFi
-          </Text>
           <Text fontSize={{ base: '2xl' }}>
             Cross-chain Automated Market-maker
           </Text>
@@ -65,7 +62,7 @@ const DApp = () => {
             }}
             icons={[
               {
-                key: 'telegram',
+                key: 'twitter',
                 icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
                 href: TWITTER_LINK,
               },
