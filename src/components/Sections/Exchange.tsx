@@ -24,50 +24,62 @@ const Feature = ({
   description: string;
 }) => {
   return (
-    <Box position={'relative'}>
-      <Stack
-        bg={useColorModeValue(
-          'rgba(157, 249, 219, 0.57)',
-          'rgba(157, 249, 219, 0.17)'
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'30px'}
+      overflow={'hidden'}
+      padding={'6px'}
+      width={'fit-content'}
+      cursor={'pointer'}
+      height={'320px'}
+    >
+      <Box
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'332px'}
+        height={'100%'}
+        backgroundImage={
+          'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
+        }
+      ></Box>
+
+      <Box
+        borderRadius={'25px'}
+        backgroundColor={useColorModeValue('#cefced', '#0e263e')}
+        boxShadow={useColorModeValue(
+          '1px 10px 50px 0px #00000073 inset',
+          'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
         )}
-        p={{ base: '16px' }}
-        borderRadius={'30px'}
-        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
-        direction={'column'}
-        padding={10}
-        alignItems={'center'}
         width={'320px'}
         height={'100%'}
-        _before={{
-          content: '""',
-          position: 'absolute',
-          zIndex: '-1',
-          left: '0',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          padding: '6px',
-          borderRadius: '30px',
-          background:
-            'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)',
-          '-webkit-mask':
-            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          '-webkit-mask-composite': 'destination-out',
-        }}
+        padding={'30px'}
+        fontWeight={'600'}
+        display={'flex'}
+        flexDirection={'column'}
+        alignItems={'center'}
+        textAlign={'center'}
       >
         {icon}
         <Text
-          color={useColorModeValue('#2A0CC8', '#ffffff')}
-          pt={{ base: 5 }}
-          fontSize={{ base: '2xl' }}
-          textAlign={'center'}
+          pt={{ base: '30px' }}
+          fontWeight={{ base: '400' }}
+          fontSize={'20px'}
+          color={useColorModeValue('#2C09E2', '#ffffff')}
         >
           {title}
         </Text>
-        <Text color={useColorModeValue('#2C09E2', '#ffffff')}>
+        <Text
+          pt={{ base: '30px' }}
+          fontWeight={{ base: '300' }}
+          fontSize={{ base: '13px' }}
+          color={useColorModeValue('#2C09E2', '#ffffff')}
+        >
           {description}
         </Text>
-      </Stack>
+      </Box>
     </Box>
   );
 };
@@ -92,10 +104,10 @@ const Exchange = () => {
           as={'span'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'light'}
+          fontWeight={{ base: '300' }}
           textAlign={'center'}
         >
-          <Text fontWeight={'bold'}>User-First Unified</Text>
+          <Text fontWeight={{ base: '400' }}>User-First Unified</Text>
           Decentralized Exchange
         </Heading>
 

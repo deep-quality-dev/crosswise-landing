@@ -47,13 +47,16 @@ const DApp = () => {
             as={'h2'}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
+            fontWeight={'400'}
           >
             Crosswise Finance - Bringing CeFi to DeFi
           </Heading>
-          <Text fontSize={{ base: '2xl' }}>
+          <Text fontSize={{ base: '20px' }} fontWeight={{ base: '300' }}>
             Cross-chain Automated Market-maker
+            <br />
+            <br />
+            Swap, Stake & Earn
           </Text>
-          <Text fontSize={{ base: '2xl' }}>Swap, Stake & Earn</Text>
           <NavigationWidget
             primary={{
               label: 'Launch APP',
@@ -61,7 +64,7 @@ const DApp = () => {
             }}
             icons={[
               {
-                key: 'telegram',
+                key: 'twitter',
                 icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
                 href: TWITTER_LINK,
               },
@@ -88,7 +91,7 @@ const DApp = () => {
             ]}
           />
         </Stack>
-        <Box flex={1}>
+        <Box flex={1} boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}>
           <Image
             src={useColorModeValue(ImageDappLight, ImageDapp)}
             alt="dapp"

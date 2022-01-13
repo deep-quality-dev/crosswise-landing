@@ -3,7 +3,6 @@ import {
   Container,
   Heading,
   Icon,
-  SimpleGrid,
   Stack,
   Text,
   useColorModeValue,
@@ -23,7 +22,7 @@ import Link from 'next/link';
 const Partners = [
   {
     href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf',
-    icon: <Icon as={IconTechRate} width={'42px'} height={'42px'} />,
+    icon: <IconTechRate width={'42px'} height={'42px'} />,
     label: 'TechRate',
   },
   {
@@ -42,6 +41,13 @@ const Partners = [
     label: 'Biconomy',
   },
 ];
+
+const ref = React.createRef<HTMLButtonElement>();
+type LinkProps = React.HTMLProps<HTMLElement>;
+const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
+  <>{props.children}</>
+));
+ChildLink.displayName = 'ChildLink';
 
 const Feature = ({
   href,
@@ -67,9 +73,9 @@ const Feature = ({
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
       <Link href={href} passHref>
-        {icon}
+        <ChildLink ref={ref}>{icon}</ChildLink>
       </Link>
-      <Text>{label}</Text>
+      <Text fontWeight={{ base: '600' }}>{label}</Text>
     </Stack>
   );
 };
@@ -93,13 +99,13 @@ const TechnicalPartner = () => {
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
           textAlign={'center'}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
         >
           Technical Partners
         </Heading>
 
         <Stack
-          direction={{ base: 'column', md: 'row' }}
+          direction={{ sm: 'column', md: 'column', lg: 'row' }}
           spacing={{ base: 8 }}
           pt={{ base: 10, lg: 24 }}
         >

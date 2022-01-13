@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Container,
   Flex,
@@ -21,8 +20,15 @@ import ImageLeon from '@/assets/images/members/Leon.jpg';
 import ImageJamesGao from '@/assets/images/members/JamesGao.jpg';
 import ImageJamesYin from '@/assets/images/members/JamesYin.jpg';
 import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
-import { IconArrowDown, IconLinkedin } from '../icons';
+import { IconArrowDown, IconArrowUp, IconLinkedin } from '../icons';
 import Link from 'next/link';
+
+const ref = React.createRef<HTMLButtonElement>();
+type LinkProps = React.HTMLProps<HTMLElement>;
+const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
+  <>{props.children}</>
+));
+ChildLink.displayName = 'ChildLink';
 
 interface MemberProps {
   image: StaticImageData;
@@ -93,6 +99,7 @@ const Members: Array<MemberProps> = [
 ];
 
 const MemberCard = (member: MemberProps) => {
+  // const boxTextColor = useColorModeValue('black', 'gray.300');
   const [expand, setExpand] = useState(false);
   const descColor = useColorModeValue('black', 'gray.300');
 
@@ -104,11 +111,12 @@ const MemberCard = (member: MemberProps) => {
       direction={'column'}
       p={{ base: 5 }}
       bg={useColorModeValue(
-        'transparent',
+        'linear-gradient(89.98deg, #F5F7FA 0.02%, #FFFFFF 50%, #FFFFFF 99.99%)',
         'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
+      height={'fit-content'}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
         <Box position={'relative'}>
@@ -120,19 +128,21 @@ const MemberCard = (member: MemberProps) => {
             className={'border-circle'}
           />
           <Link href={member.linkedIn} passHref>
-            <Icon
-              as={IconLinkedin}
-              width={'27px'}
-              height={'27px'}
-              position={'absolute'}
-              right={'0px'}
-              top={'0px'}
-              cursor={'pointer'}
-            />
+            <ChildLink ref={ref}>
+              <Icon
+                as={IconLinkedin}
+                width={'27px'}
+                height={'27px'}
+                position={'absolute'}
+                right={'0px'}
+                top={'0px'}
+                cursor={'pointer'}
+              />
+            </ChildLink>
           </Link>
         </Box>
         <Flex flex={1} flexDirection={'column'} justifyContent={'center'}>
-          <Text>{member.name}</Text>
+          <Text fontWeight={{ base: '400' }}>{member.name}</Text>
           <Text color={'#8E8FA0'}>{member.role}</Text>
         </Flex>
       </Stack>
@@ -143,7 +153,13 @@ const MemberCard = (member: MemberProps) => {
         </Box>
       )}
       <Flex justifyContent={'flex-end'}>
-        <Icon as={IconArrowDown} onClick={handleExpand} cursor={'pointer'} />
+        <Box p={'4px'} onClick={handleExpand} cursor={'pointer'}>
+          <Icon
+            as={expand === true ? IconArrowUp : IconArrowDown}
+            width={'20px'}
+            height={'20px'}
+          />
+        </Box>
       </Flex>
     </Stack>
   );
@@ -166,7 +182,7 @@ const CoreTeam = () => {
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           maxW={'2xl'}
-          fontWeight={'light'}
+          fontWeight={{ base: '400' }}
           textAlign={'center'}
         >
           Core Team

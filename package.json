@@ -18,6 +18,7 @@
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/montserrat": "^4.5.1",
     "@types/lodash.throttle": "^4.1.6",
     "@types/styled-components": "^5.1.19",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

@@ -11,10 +11,6 @@ export interface NavigationItem {
 }
 
 export const NaviationItems: Array<NavigationItem> = [
-  // {
-  //   label: 'About',
-  //   href: '#About',
-  // },
   {
     label: 'CrossDocs',
     href: CROSS_DOCS_LINK,

@@ -170,7 +170,7 @@ const RoadMap = () => {
         >
           <Heading
             as={'h3'}
-            fontWeight={400}
+            fontWeight={{ base: '400' }}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             maxW={'2xl'}
             textAlign={'center'}
@@ -185,7 +185,7 @@ const RoadMap = () => {
           spacing={8}
           py={{ base: 24, lg: 24 }}
         >
-          <Image src={ImageEarth} objectFit="contain" />
+          <Image alt={'earth-img'} src={ImageEarth} objectFit="contain" />
           <Stack direction={'column'}>
             <Box
               position={'relative'}
@@ -225,7 +225,7 @@ const RoadMap = () => {
             <Spacer />
             <Heading
               as={'h3'}
-              fontWeight={400}
+              fontWeight={{ base: '400' }}
               fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
               maxW={'2xl'}
             >

@@ -14,7 +14,7 @@ import React, { useState } from 'react';
 import { withSection } from './withSection';
 
 import ImageRocket from '@/assets/images/rocket.png';
-import { IconArrowDown } from '../icons';
+import { IconArrowDown, IconArrowUp } from '../icons';
 
 const Feature = ({
   title,
@@ -51,7 +51,11 @@ const Feature = ({
         position={'relative'}
       >
         <Text>{title}</Text>
-        <Icon as={IconArrowDown} onClick={handleExpand} cursor={'pointer'} />
+        <Icon
+          as={!expand ? IconArrowDown : IconArrowUp}
+          onClick={handleExpand}
+          cursor={'pointer'}
+        />
       </Stack>
       {expand && <Text pt={5}>{description}</Text>}
     </Stack>
@@ -86,6 +90,7 @@ const Solutions = () => {
         <Heading
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontWeight={{ base: '400' }}
           maxW={'2xl'}
         >
           Our Solutions

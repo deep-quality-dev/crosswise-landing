@@ -6,7 +6,6 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
 
@@ -14,27 +13,32 @@ import { withSection } from './withSection';
 
 const Feature = ({ label }: { label: string }) => {
   return (
-    <Box position={'relative'}>
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'20px'}
+      width={'fit-content'}
+      overflow={'hidden'}
+      padding={'1px'}
+    >
       <Box
-        bg={'rgba(0, 184, 185, 0.17)'}
-        p={{ base: '10px' }}
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'100%'}
+        height={'100%'}
+        backgroundImage={
+          'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)'
+        }
+      ></Box>
+      <Box
         borderRadius={'20px'}
-        border={'1px solid #04F8AD'}
-        _before={{
-          content: '""',
-          position: 'absolute',
-          zIndex: '-1',
-          left: '0',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          padding: '1px',
-          borderRadius: '20px',
-          background: 'linear-gradient(270deg, #3F81EF 24.48%, #04F8AD 100%)',
-          '-webkit-mask':
-            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          '-webkit-mask-composite': 'destination-out',
-        }}
+        backgroundColor={'rgba(0, 184, 185)'}
+        padding={'5px 10px'}
+        display={'flex'}
+        flexDirection={'row'}
+        alignItems={'center'}
       >
         <Text color={'#04F8AD'}>{label}</Text>
       </Box>
@@ -66,6 +70,7 @@ const Adoption = () => {
         <Heading
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontWeight={{ base: '600' }}
           maxW={'2xl'}
         >
           Crosswise Finance
@@ -84,7 +89,11 @@ const Adoption = () => {
           <Feature label={'UI/UX Optimized'}></Feature>
         </HStack>
         <SimpleGrid columns={2}>
-          <Text fontSize={{ base: '2xl' }} fontWeight={'light'}>
+          <Text
+            fontSize={{ base: 'xl' }}
+            fontWeight={{ base: '300' }}
+            lineHeight={{ base: '28px' }}
+          >
             In spite of accelerated innovation & development, decentralized
             exchanges have yet to find a perfect balance between transactional
             speed, cost & user experience.

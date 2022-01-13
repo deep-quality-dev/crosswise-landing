@@ -11,4 +11,8 @@ export const theme = extendTheme({
   config,
   ...foundations,
   styles,
+  fonts: {
+    heading: 'Montserrat',
+    body: 'Montserrat',
+  },
 });

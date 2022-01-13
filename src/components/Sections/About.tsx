@@ -1,6 +1,5 @@
 import {
   Box,
-  chakra,
   Container,
   Flex,
   Heading,
@@ -89,13 +88,15 @@ const About = () => {
         <Heading
           as={'h3'}
           fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontWeight={{ base: '400' }}
           maxW={'2xl'}
         >
           About Crosswise
         </Heading>
-        <Text fontSize={{ base: '2xl' }}>
-          A next generation cross-chain decentralized exchange with integrated
-          trading tools & incentives.
+        <Text fontSize={{ base: '2xl' }} textAlign={'center'}>
+          A next generation cross-chain decentralized exchange
+          <br />
+          with integrated trading tools & incentives.
         </Text>
         <SimpleGrid columns={{ base: 2 }} spacing={8}>
           <Feature

@@ -8,8 +8,7 @@ import {
   useColorModeValue,
   Icon,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
-
+// import { ReactNode } from 'react';
 import {
   TELEGRAM_LINK,
   TWITTER_LINK,
@@ -18,7 +17,15 @@ import {
   DISCORD_LINK,
 } from '@/constants/index';
 import { Logo } from '@/components/Logo';
-import { IconChat, IconSend, CopyRightIcon, UpIcon } from '@/components/icons';
+import {
+  IconChat,
+  IconSend,
+  IconCopyRight,
+  IconUp,
+  IconMail,
+  IconCoinGecko,
+  IconCoinMarketCaps,
+} from '@/components/icons';
 import {
   FaDiscord,
   FaGithub,
@@ -45,23 +52,22 @@ const SOCIAL_LINKS = [
     href: MEDIUM_LINK,
   },
   {
+    icon: <Icon as={IconMail} />,
+    href: 'mail_link',
+  },
+  {
     icon: <Icon as={FaGithub} color={'#00B8B9'} />,
     href: GITHUB_LINK,
   },
+  {
+    icon: <Icon as={IconCoinGecko} />,
+    href: 'coingecho_link',
+  },
+  {
+    icon: <Icon as={IconCoinMarketCaps} />,
+    href: 'coinmarketcaps_link',
+  },
 ];
-
-const ListHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <Box
-      fontWeight={'500'}
-      fontSize={'lg'}
-      display={'flex'}
-      alignItems={'center'}
-    >
-      {children}
-    </Box>
-  );
-};
 
 const GotoTopBtn = ({ onClick }: { onClick: any }) => {
   return (
@@ -70,7 +76,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
       zIndex={0}
       borderRadius={'8px'}
       overflow={'hidden'}
-      padding={'3px'}
+      padding={'2px'}
       width={'fit-content'}
       cursor={'pointer'}
       onClick={() => onClick()}
@@ -85,7 +91,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         backgroundImage={'linear-gradient(45deg, #04F8AD, #3F81EF, #8750F4)'}
       ></Box>
       <Box
-        borderRadius={'8px'}
+        borderRadius={'6px'}
         backgroundColor={useColorModeValue('#ffffff', '#0e263e')}
         fontSize={'20px'}
         boxShadow={useColorModeValue(
@@ -98,10 +104,10 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         flexDirection={'row'}
         alignItems={'center'}
       >
-        <Text fontSize={'13px'} mr={'30px'}>
+        <Text fontSize={'13px'} mr={{ sm: '10px', md: '10px' }}>
           GO TO TOP
         </Text>
-        <UpIcon />
+        <IconUp />
       </Box>
     </Box>
   );
@@ -129,18 +135,33 @@ export const Footer = () => {
         <SimpleGrid columns={{ base: 1, md: 3 }}>
           <Stack direction={'row'} align={'center'} spacing={3}>
             <Logo width={26} height={25} />
-            <Text as={'span'} fontWeight={'extrabold'}>
+            <Text as={'span'} fontWeight={{ base: '700' }}>
               crosswise
             </Text>
           </Stack>
-          <Stack direction={'row'} align={'center'} spacing={3}>
+          <Stack
+            direction={'row'}
+            align={'center'}
+            spacing={3}
+            pt={{ sm: '10px', md: '0px' }}
+          >
             <IconChat />
-            <Text fontSize={'13px'}>English (United States)</Text>
+            <Text
+              fontSize={'13px'}
+              color={useColorModeValue('#606060', '#E0E0FF')}
+            >
+              English (United States)
+            </Text>
           </Stack>
           <Stack justifyContent={'space-between'} direction={'row'}>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <IconSend />
-              <Text fontSize={'13px'}>United States</Text>
+              <Text
+                fontSize={'13px'}
+                color={useColorModeValue('#606060', '#E0E0FF')}
+              >
+                United States
+              </Text>
             </Stack>
             <GotoTopBtn onClick={scrollToTop} />
           </Stack>
@@ -153,7 +174,7 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <SimpleGrid columns={{ base: 1, md: 3 }}>
+        <SimpleGrid columns={{ base: 1, lg: 3 }}>
           <Stack spacing={5} direction={'row'}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
@@ -162,19 +183,31 @@ export const Footer = () => {
             ))}
           </Stack>
 
-          <Link href="#help">
+          <Link
+            href="#help"
+            textDecoration={'none'}
+            pt={{ base: '10px', lg: '0px' }}
+          >
             <Text
               display={'flex'}
               flexDirection={'row'}
-              fontWeight={'extrabold'}
+              fontWeight={{ base: '600' }}
+              color={useColorModeValue('#606060', '#E0E0FF')}
             >
-              <CopyRightIcon />
+              <IconCopyRight />
               2022 Crosswise Finance
             </Text>
           </Link>
 
-          <Link href="#privacy" textDecoration={'none'}>
-            <Text fontWeight={'extrabold'}>
+          <Link
+            href="#privacy"
+            textDecoration={'none'}
+            pt={{ base: '10px', lg: '0px' }}
+          >
+            <Text
+              fontWeight={{ base: '600' }}
+              color={useColorModeValue('#606060', '#E0E0FF')}
+            >
               TERMS & CONDITIONS | PRIVACY POLICY
             </Text>
           </Link>
