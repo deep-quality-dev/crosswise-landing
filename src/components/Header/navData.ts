@@ -3,7 +3,7 @@ import {
   GITHUB_LINK,
   MEDIUM_LINK,
   PRESALE_CROSS_LINK,
-  DISCORD_LINK
+  DISCORD_LINK,
 } from '@/constants/index';
 
 export interface NavigationItem {
