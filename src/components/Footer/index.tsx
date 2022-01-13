@@ -118,7 +118,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         flexDirection={'row'}
         alignItems={'center'}
       >
-        <Text fontSize={'13px'} mr={'30px'}>
+        <Text fontSize={'13px'} mr={{ sm: '10px', md: '10px' }}>
           GO TO TOP
         </Text>
         <IconUp />
@@ -153,14 +153,29 @@ export const Footer = () => {
               crosswise
             </Text>
           </Stack>
-          <Stack direction={'row'} align={'center'} spacing={3}>
+          <Stack
+            direction={'row'}
+            align={'center'}
+            spacing={3}
+            pt={{ sm: '10px', md: '0px' }}
+          >
             <IconChat />
-            <Text fontSize={'13px'}>English (United States)</Text>
+            <Text
+              fontSize={'13px'}
+              color={useColorModeValue('#606060', '#E0E0FF')}
+            >
+              English (United States)
+            </Text>
           </Stack>
           <Stack justifyContent={'space-between'} direction={'row'}>
             <Stack direction={'row'} align={'center'} spacing={3}>
               <IconSend />
-              <Text fontSize={'13px'}>United States</Text>
+              <Text
+                fontSize={'13px'}
+                color={useColorModeValue('#606060', '#E0E0FF')}
+              >
+                United States
+              </Text>
             </Stack>
             <GotoTopBtn onClick={scrollToTop} />
           </Stack>
@@ -173,7 +188,7 @@ export const Footer = () => {
           my={'10px !important'}
         />
 
-        <SimpleGrid columns={{ base: 1, md: 3 }}>
+        <SimpleGrid columns={{ base: 1, lg: 3 }}>
           <Stack spacing={5} direction={'row'}>
             {SOCIAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} isExternal>
@@ -182,19 +197,31 @@ export const Footer = () => {
             ))}
           </Stack>
 
-          <Link href="#help">
+          <Link
+            href="#help"
+            textDecoration={'none'}
+            pt={{ base: '10px', lg: '0px' }}
+          >
             <Text
               display={'flex'}
               flexDirection={'row'}
               fontWeight={'extrabold'}
+              color={useColorModeValue('#606060', '#E0E0FF')}
             >
               <CopyRightIcon />
               2022 Crosswise Finance
             </Text>
           </Link>
 
-          <Link href="#privacy" textDecoration={'none'}>
-            <Text fontWeight={'extrabold'}>
+          <Link
+            href="#privacy"
+            textDecoration={'none'}
+            pt={{ base: '10px', lg: '0px' }}
+          >
+            <Text
+              fontWeight={'extrabold'}
+              color={useColorModeValue('#606060', '#E0E0FF')}
+            >
               TERMS & CONDITIONS | PRIVACY POLICY
             </Text>
           </Link>

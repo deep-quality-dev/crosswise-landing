@@ -148,8 +148,8 @@ const MemberCard = (member: MemberProps) => {
         <Box p={'4px'} onClick={handleExpand} cursor={'pointer'}>
           <Icon
             as={expand === true ? IconArrowUp : IconArrowDown}
-            width={'15px'}
-            height={'15px'}
+            width={'20px'}
+            height={'20px'}
           />
         </Box>
       </Flex>
