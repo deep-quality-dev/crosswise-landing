@@ -24,43 +24,62 @@ const Feature = ({
   description: string;
 }) => {
   return (
-    <Box position={'relative'}>
-      <Stack
-        bg={useColorModeValue('transparent', 'rgba(157, 249, 219, 0.17)')}
-        p={{ base: '16px' }}
-        border={
-          '6px solid linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
+    <Box
+      position={'relative'}
+      zIndex={0}
+      borderRadius={'30px'}
+      overflow={'hidden'}
+      padding={'6px'}
+      width={'fit-content'}
+      cursor={'pointer'}
+      height={'320px'}
+    >
+      <Box
+        position={'absolute'}
+        left={0}
+        top={0}
+        zIndex={-1}
+        width={'332px'}
+        height={'100%'}
+        backgroundImage={
+          'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
         }
-        borderRadius={'30px'}
-        boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
-        direction={'column'}
-        padding={10}
-        alignItems={'center'}
+      ></Box>
+
+      <Box
+        borderRadius={'25px'}
+        backgroundColor={useColorModeValue('#cefced', '#0e263e')}
+        boxShadow={useColorModeValue(
+          '1px 10px 50px 0px #00000073 inset',
+          'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
+        )}
         width={'320px'}
         height={'100%'}
-        _before={{
-          content: '""',
-          position: 'absolute',
-          zIndex: '-1',
-          left: '0',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          padding: '6px',
-          borderRadius: '30px',
-          background:
-            'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)',
-          '-webkit-mask':
-            'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-          '-webkit-mask-composite': 'destination-out',
-        }}
+        padding={'30px'}
+        fontWeight={'600'}
+        display={'flex'}
+        flexDirection={'column'}
+        alignItems={'center'}
+        textAlign={'center'}
       >
         {icon}
-        <Text pt={{ base: 5 }} fontSize={{ base: '2xl' }}>
+        <Text
+          pt={{ base: '30px' }}
+          fontWeight={'light'}
+          fontSize={{ base: '20px' }}
+          color={useColorModeValue('#141029', '#E0E0FF')}
+        >
           {title}
         </Text>
-        <Text>{description}</Text>
-      </Stack>
+        <Text
+          pt={{ base: '30px' }}
+          fontWeight={'light'}
+          fontSize={{ base: '14px' }}
+          color={useColorModeValue('#141029', '#E0E0FF')}
+        >
+          {description}
+        </Text>
+      </Box>
     </Box>
   );
 };
@@ -116,14 +135,14 @@ const Token = () => {
           ></Feature>
           <Feature
             icon={<Icon as={IconLiquidity} width={'60px'} height={'53px'} />}
-            title={'Max Supply'}
-            description={'Maximum supply is limited to only 50 Million CRSS.'}
+            title={'Liquidity Pools'}
+            description={'High APR rewards for AMM liquidity pools.'}
           ></Feature>
           <Feature
             icon={<Icon as={IconTxFee} width={'60px'} height={'53px'} />}
-            title={'Deflationary Features'}
+            title={'Low Transaction Fees'}
             description={
-              'A range of fees are used to buy-back and burn CRSS token, in order to keep inflation at bay.'
+              'Low transaction fees that are used to fund development, grow liquidity and support the CRSS price.'
             }
           ></Feature>
         </SimpleGrid>
