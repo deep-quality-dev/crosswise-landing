@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { flipAnimation } from '@/constants/animations';
+import { SlideDropDown } from '../Slidedown';
 
 import ImageFreddy from '@/assets/images/members/Freddy.png';
 import ImageGreg from '@/assets/images/members/Greg.png';
@@ -156,11 +157,10 @@ const MemberCard = ({
         </Flex>
       </Stack>
 
-      {expand && (
-        <Box pt={5}>
-          <Text color={descColor}>{member.desc}</Text>
-        </Box>
-      )}
+      <SlideDropDown open={expand}>
+        <Text color={descColor}>{member.desc}</Text>
+      </SlideDropDown>
+
       <Flex justifyContent={'flex-end'}>
         <Box p={'4px'} onClick={handleExpand} cursor={'pointer'}>
           <Icon

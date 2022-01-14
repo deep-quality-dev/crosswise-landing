@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { withSection } from './withSection';
+import { SlideDropDown } from '../Slidedown';
 
 import ImageRocket from '@/assets/images/rocket.png';
 import {
@@ -61,7 +62,9 @@ const Feature = ({
           cursor={'pointer'}
         />
       </Stack>
-      {expand && <Text pt={5}>{description}</Text>}
+      <SlideDropDown open={expand}>
+        <Text pt={1}>{description}</Text>
+      </SlideDropDown>
     </Stack>
   );
 };
