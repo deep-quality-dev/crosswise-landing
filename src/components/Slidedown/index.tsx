@@ -3,7 +3,7 @@ import { SlideDown } from 'react-slidedown';
 import 'react-slidedown/lib/slidedown.css';
 
 interface SlideDownProps {
-  open: Boolean;
+  open: boolean;
   children: ReactNode;
 }
 
