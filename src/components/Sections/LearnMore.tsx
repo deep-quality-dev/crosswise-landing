@@ -5,28 +5,22 @@ import {
   Icon,
   Stack,
   useColorModeValue,
-  keyframes,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import { fadeInLeft, fadeInDownBig, fadeInUpBig } from 'react-animations';
 
 import ImageSwap from '@/assets/images/swap-dialog.png';
 import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
 import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
+import {
+  fadeInLeftAnimation,
+  fadeInDownBigAnimation,
+  fadeInUpBigAnimation,
+} from '@/constants/animations';
 import { NavigationWidget } from './NavigationWidget';
 import { withSection } from './withSection';
 
 const LearnMore = () => {
   const color = useColorModeValue('#F7F8F9', '#060514');
-
-  const fadeInLeftAnim = keyframes`${fadeInLeft}`;
-  const fadeInDownBigAnim = keyframes`${fadeInDownBig}`;
-  const fadeInUpBigAnim = keyframes`${fadeInUpBig}`;
-
-  const fadeInLeftAnimation = `${fadeInLeftAnim} 0.5s linear`;
-  const fadeInDownBigAnimation = `${fadeInDownBigAnim} 0.5s linear`;
-  const fadeInUpBigAnimation = `${fadeInUpBigAnim} 0.5s linear`;
-
   return (
     <Box
       bg={color}

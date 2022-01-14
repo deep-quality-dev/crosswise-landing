@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
-
+import { zoomInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
 import { IconBridge, IconSwap, IconTools, IconFarms } from '../icons';
@@ -33,6 +33,7 @@ const Feature = ({
       width={'fit-content'}
       cursor={'pointer'}
       height={'320px'}
+      animation={zoomInAnimation}
     >
       <Box
         position={'absolute'}

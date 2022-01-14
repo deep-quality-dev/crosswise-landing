@@ -8,7 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
-
+import { bounceInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
 const Feature = ({ label }: { label: string }) => {
@@ -56,6 +56,7 @@ const Adoption = () => {
       bgSize={'cover'}
       bgImage={color}
       color={'white'}
+      animation={bounceInAnimation}
     >
       <Stack
         as={Container}

@@ -16,7 +16,6 @@ import {
   FaTelegram,
   FaTwitter,
 } from 'react-icons/fa';
-import { fadeIn, fadeInLeft, fadeInRight } from 'react-animations';
 import ImageDapp from '@/assets/images/dapp.png';
 import ImageDappLight from '@/assets/images/dapp-light.png';
 import { withSection } from '@/components/Sections/withSection';
@@ -28,16 +27,13 @@ import {
   DISCORD_LINK,
   TWITTER_LINK,
 } from '@/constants/index';
+import {
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+} from '@/constants/animations';
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
-
-  const fadeInLeftAnim = keyframes`${fadeInLeft}`;
-  const fadeInRightAnim = keyframes`${fadeInRight}`;
-
-  const fadeInLeftAnimation = `${fadeInLeftAnim} 0.5s linear`;
-  const fadeInRightAnimation = `${fadeInRightAnim} 0.5s linear`;
-
   return (
     <Box bg={color} position={'relative'} zIndex={0}>
       <Stack

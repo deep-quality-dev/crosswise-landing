@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Container,
@@ -9,8 +10,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from 'react';
-
+import { fadeInAnimation } from '@/constants/animations';
 import {
   IconCrosswine,
   IconGasless,
@@ -39,6 +39,7 @@ const Feature = ({
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
+      animation={fadeInAnimation}
     >
       <Flex
         padding={'10px'}

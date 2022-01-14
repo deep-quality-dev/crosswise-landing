@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { flipAnimation } from '@/constants/animations';
 
 import ImageFreddy from '@/assets/images/members/Freddy.png';
 import ImageGreg from '@/assets/images/members/Greg.png';
@@ -117,6 +118,7 @@ const MemberCard = (member: MemberProps) => {
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
       height={'fit-content'}
+      animation={flipAnimation}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
         <Box position={'relative'}>
