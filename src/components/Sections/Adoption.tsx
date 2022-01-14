@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { bounceInAnimation } from '@/constants/animations';
+import { zoomInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
 const Feature = ({ label }: { label: string }) => {
@@ -58,7 +58,6 @@ const Adoption = () => {
       bgSize={'cover'}
       bgImage={color}
       color={'white'}
-      animation={inView ? bounceInAnimation : ''}
       ref={ref}
     >
       <Stack
@@ -70,6 +69,7 @@ const Adoption = () => {
         direction={{ base: 'column' }}
         alignItems={'start'}
         justifyContent={'center'}
+        animation={inView ? zoomInAnimation : ''}
       >
         <Heading
           as={'h3'}
