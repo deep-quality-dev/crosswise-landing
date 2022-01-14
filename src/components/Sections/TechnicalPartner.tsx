@@ -128,7 +128,7 @@ const TechnicalPartner = () => {
         </Heading>
 
         <Stack
-          direction={{ sm: 'column', md: 'column', lg: 'row' }}
+          direction={{ base: 'column', lg: 'row' }}
           spacing={{ base: 8 }}
           pt={{ base: 10, lg: 24 }}
         >

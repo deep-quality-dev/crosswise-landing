@@ -40,7 +40,7 @@ const Feature = ({
         left={0}
         top={0}
         zIndex={-1}
-        width={'332px'}
+        width={'100%'}
         height={'100%'}
         backgroundImage={
           'linear-gradient(180deg, #04F8AD 0%, #3F81EF 50%, #8750F4 100%)'
@@ -54,7 +54,7 @@ const Feature = ({
           '1px 10px 50px 0px #00000073 inset',
           'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
         )}
-        width={'320px'}
+        width={{ base: '270px', md: '320px' }}
         height={'100%'}
         padding={'30px'}
         fontWeight={'600'}

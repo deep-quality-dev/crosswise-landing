@@ -54,7 +54,7 @@ const Feature = ({
           '1px 10px 50px 0px #00000073 inset',
           'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'
         )}
-        width={'320px'}
+        width={{ base: '270px', md: '320px' }}
         height={'100%'}
         padding={'30px'}
         fontWeight={'600'}
