@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  keyframes,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import {
@@ -15,7 +16,7 @@ import {
   FaTelegram,
   FaTwitter,
 } from 'react-icons/fa';
-
+import { fadeIn, fadeInLeft, fadeInRight } from 'react-animations';
 import ImageDapp from '@/assets/images/dapp.png';
 import ImageDappLight from '@/assets/images/dapp-light.png';
 import { withSection } from '@/components/Sections/withSection';
@@ -30,6 +31,13 @@ import {
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
+
+  const fadeInLeftAnim = keyframes`${fadeInLeft}`;
+  const fadeInRightAnim = keyframes`${fadeInRight}`;
+
+  const fadeInLeftAnimation = `${fadeInLeftAnim} 0.5s linear`;
+  const fadeInRightAnimation = `${fadeInRightAnim} 0.5s linear`;
+
   return (
     <Box bg={color} position={'relative'} zIndex={0}>
       <Stack
@@ -42,7 +50,12 @@ const DApp = () => {
         direction={{ base: 'column', lg: 'row' }}
         alignItems={'center'}
       >
-        <Stack spacing={4} mb={{ base: 12, lg: 0 }} flex={1}>
+        <Stack
+          spacing={4}
+          mb={{ base: 12, lg: 0 }}
+          flex={1}
+          animation={fadeInLeftAnimation}
+        >
           <Heading
             as={'h2'}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
@@ -91,7 +104,11 @@ const DApp = () => {
             ]}
           />
         </Stack>
-        <Box flex={1} boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}>
+        <Box
+          flex={1}
+          boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}
+          animation={fadeInRightAnimation}
+        >
           <Image
             src={useColorModeValue(ImageDappLight, ImageDapp)}
             alt="dapp"
