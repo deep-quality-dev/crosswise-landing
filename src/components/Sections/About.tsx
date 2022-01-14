@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -9,8 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from 'react';
-
+import { fadeInAnimation } from '@/constants/animations';
 import {
   IconCrosswine,
   IconGasless,
@@ -67,8 +68,15 @@ const Feature = ({
 
 const About = () => {
   const color = useColorModeValue('gray.100', '#060514');
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'} zIndex={0}>
+    <Box
+      bg={color}
+      position={'relative'}
+      zIndex={0}
+      ref={ref}
+      animation={inView ? fadeInAnimation : ''}
+    >
       <Stack
         as={Container}
         maxW={'7xl'}

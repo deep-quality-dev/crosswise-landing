@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -9,11 +11,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React, { useState } from 'react';
-
 import { withSection } from './withSection';
 
 import ImageRocket from '@/assets/images/rocket.png';
+import {
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+} from '@/constants/animations';
 import { IconArrowDown, IconArrowUp } from '../icons';
 
 const Feature = ({
@@ -71,12 +75,14 @@ const Solutions = () => {
     'radial-gradient(50% 50% at 50% 50%, rgba(4, 248, 181, 0.15) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.0465) 0%, rgba(6, 19, 31, 0) 100%)',
     'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
   );
+  const [ref, inView] = useInView();
   return (
     <Box
       bg={color}
       position={'relative'}
       bgRepeat={'no-repeat'}
       bgPosition={'center'}
+      ref={ref}
     >
       <Stack
         as={Container}
@@ -106,6 +112,7 @@ const Solutions = () => {
             flex={1}
             direction={'column'}
             maxW={{ base: '400px' }}
+            animation={inView ? fadeInLeftAnimation : ''}
           >
             <Feature
               title={'Seamless & Optimized DeFi Experience'}
@@ -145,7 +152,12 @@ const Solutions = () => {
             ></Feature>
           </Stack>
 
-          <Box flex={1} position={'relative'} zIndex={0}>
+          <Box
+            flex={1}
+            position={'relative'}
+            zIndex={0}
+            animation={inView ? fadeInRightAnimation : ''}
+          >
             <Image src={ImageRocket} alt="dapp" objectFit={'cover'} />
             <Box
               position={'absolute'}

@@ -23,7 +23,8 @@
       "@/hooks/*": ["./hooks/*"],
       "@/layout/*": ["./layout/*"],
       "@/utils/*": ["./utils/*"],
-    }
+    },
+    "noImplicitAny": false,
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

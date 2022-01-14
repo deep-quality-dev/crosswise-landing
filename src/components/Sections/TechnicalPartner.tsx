@@ -22,22 +22,45 @@ import Link from 'next/link';
 const Partners = [
   {
     href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf',
-    icon: <IconTechRate width={'42px'} height={'42px'} />,
+    icon: (
+      <Icon
+        as={IconTechRate}
+        width={'42px'}
+        height={'42px'}
+        cursor={'pointer'}
+      />
+    ),
     label: 'TechRate',
   },
   {
     href: 'https://data.chain.link/users/crosswise',
-    icon: <Icon as={IconChainLink} width={'42px'} height={'42px'} />,
+    icon: (
+      <Icon
+        as={IconChainLink}
+        width={'42px'}
+        height={'42px'}
+        cursor={'pointer'}
+      />
+    ),
     label: 'ChainLink',
   },
   {
     href: 'https://www.certik.com/projects/crosswise-finance',
-    icon: <Icon as={IconCERTIK} width={'42px'} height={'42px'} />,
+    icon: (
+      <Icon as={IconCERTIK} width={'42px'} height={'42px'} cursor={'pointer'} />
+    ),
     label: 'CERTIK',
   },
   {
     href: 'https://www.biconomy.io/',
-    icon: <Icon as={IconBiconomy} width={'42px'} height={'42px'} />,
+    icon: (
+      <Icon
+        as={IconBiconomy}
+        width={'42px'}
+        height={'42px'}
+        cursor={'pointer'}
+      />
+    ),
     label: 'Biconomy',
   },
 ];
@@ -67,7 +90,7 @@ const Feature = ({
       alignItems={'center'}
       bg={useColorModeValue(
         'linear-gradient(89.98deg, #F5F7FA 0.02%, #FFFFFF 50%, #FFFFFF 99.99%)',
-        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%);'
+        'linear-gradient(89.98deg, rgba(245, 247, 250, 0.12) 0.02%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 99.99%)'
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}

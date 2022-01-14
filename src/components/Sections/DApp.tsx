@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -15,7 +17,6 @@ import {
   FaTelegram,
   FaTwitter,
 } from 'react-icons/fa';
-
 import ImageDapp from '@/assets/images/dapp.png';
 import ImageDappLight from '@/assets/images/dapp-light.png';
 import { withSection } from '@/components/Sections/withSection';
@@ -27,11 +28,16 @@ import {
   DISCORD_LINK,
   TWITTER_LINK,
 } from '@/constants/index';
+import {
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+} from '@/constants/animations';
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'} zIndex={0}>
+    <Box bg={color} position={'relative'} zIndex={0} ref={ref}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -42,7 +48,12 @@ const DApp = () => {
         direction={{ base: 'column', lg: 'row' }}
         alignItems={'center'}
       >
-        <Stack spacing={4} mb={{ base: 12, lg: 0 }} flex={1}>
+        <Stack
+          spacing={4}
+          mb={{ base: 12, lg: 0 }}
+          flex={1}
+          animation={inView ? fadeInLeftAnimation : ''}
+        >
           <Heading
             as={'h2'}
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
@@ -91,7 +102,11 @@ const DApp = () => {
             ]}
           />
         </Stack>
-        <Box flex={1} boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}>
+        <Box
+          flex={1}
+          boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}
+          animation={inView ? fadeInRightAnimation : ''}
+        >
           <Image
             src={useColorModeValue(ImageDappLight, ImageDapp)}
             alt="dapp"

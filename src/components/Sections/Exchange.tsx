@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -8,8 +10,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from 'react';
-
+import { zoomInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
 import { IconBridge, IconSwap, IconTools, IconFarms } from '../icons';
@@ -89,8 +90,9 @@ const Exchange = () => {
     'linear-gradient(90deg, #04F8AD80 0%, #3F81EF80 50.52%, #8750F480 100%)',
     'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)'
   );
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'}>
+    <Box bg={color} position={'relative'} ref={ref}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -115,6 +117,7 @@ const Exchange = () => {
           columns={{ base: 1, lg: 2 }}
           spacing={8}
           pt={{ base: 10, lg: 24 }}
+          animation={inView ? zoomInAnimation : ''}
         >
           <Feature
             icon={<Icon as={IconBridge} width={'60px'} height={'53px'} />}

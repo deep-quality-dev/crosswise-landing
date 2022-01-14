@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -11,11 +13,15 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React from 'react';
 
 import { withSection } from './withSection';
 
 import ImageEarth from '@/assets/images/earth.png';
+import {
+  fadeInAnimation,
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+} from '@/constants/animations';
 
 interface StageProps {
   title: string;
@@ -148,6 +154,8 @@ const Map = () => {
 };
 
 const RoadMap = () => {
+  const [ref, inView] = useInView();
+  const [ref1, inView1] = useInView();
   return (
     <Box position={'relative'}>
       <Stack
@@ -160,6 +168,8 @@ const RoadMap = () => {
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
         bgSize={'contain'}
+        ref={ref}
+        animation={inView ? fadeInAnimation : ''}
       >
         <Stack
           alignItems={'center'}
@@ -184,9 +194,15 @@ const RoadMap = () => {
           columns={{ base: 1, lg: 2 }}
           spacing={8}
           py={{ base: 24, lg: 24 }}
+          ref={ref1}
         >
-          <Image alt={'earth-img'} src={ImageEarth} objectFit="contain" />
-          <Stack direction={'column'}>
+          <Box animation={inView1 ? fadeInLeftAnimation : ''}>
+            <Image alt={'earth-img'} src={ImageEarth} objectFit="contain" />
+          </Box>
+          <Stack
+            direction={'column'}
+            animation={inView1 ? fadeInRightAnimation : ''}
+          >
             <Box
               position={'relative'}
               zIndex={0}
