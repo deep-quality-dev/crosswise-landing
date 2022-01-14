@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  keyframes,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import {
