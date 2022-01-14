@@ -145,7 +145,7 @@ export const Footer = () => {
             spacing={3}
             pt={{ sm: '10px', md: '0px' }}
           >
-            <IconChat />
+            <IconChat color={useColorModeValue('#606060', '#E0E0FF')} />
             <Text
               fontSize={'13px'}
               color={useColorModeValue('#606060', '#E0E0FF')}
@@ -155,7 +155,7 @@ export const Footer = () => {
           </Stack>
           <Stack justifyContent={'space-between'} direction={'row'}>
             <Stack direction={'row'} align={'center'} spacing={3}>
-              <IconSend />
+              <IconSend color={useColorModeValue('#606060', '#E0E0FF')} />
               <Text
                 fontSize={'13px'}
                 color={useColorModeValue('#606060', '#E0E0FF')}
