@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -10,7 +12,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-import React, { useState } from 'react';
 import { flipAnimation } from '@/constants/animations';
 
 import ImageFreddy from '@/assets/images/members/Freddy.png';
@@ -99,7 +100,13 @@ const Members: Array<MemberProps> = [
   },
 ];
 
-const MemberCard = (member: MemberProps) => {
+const MemberCard = ({
+  member,
+  animate,
+}: {
+  member: MemberProps;
+  animate: boolean;
+}) => {
   // const boxTextColor = useColorModeValue('black', 'gray.300');
   const [expand, setExpand] = useState(false);
   const descColor = useColorModeValue('black', 'gray.300');
@@ -118,7 +125,7 @@ const MemberCard = (member: MemberProps) => {
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
       height={'fit-content'}
-      animation={flipAnimation}
+      animation={animate ? flipAnimation : ''}
     >
       <Stack spacing={{ base: '17px' }} direction={'row'} alignItems={'center'}>
         <Box position={'relative'}>
@@ -169,6 +176,7 @@ const MemberCard = (member: MemberProps) => {
 
 const CoreTeam = () => {
   const color = useColorModeValue('gray.100', '#282A2E');
+  const [ref, inView] = useInView();
   return (
     <Box bg={color}>
       <Stack
@@ -179,6 +187,7 @@ const CoreTeam = () => {
         spacing={{ base: 5 }}
         direction={{ base: 'column' }}
         alignItems={'center'}
+        ref={ref}
       >
         <Heading
           as={'h3'}
@@ -196,7 +205,7 @@ const CoreTeam = () => {
           spacing={{ base: 8 }}
         >
           {Members.map((member) => (
-            <MemberCard key={member.name} {...member} />
+            <MemberCard key={member.name} member={member} animate={inView} />
           ))}
         </SimpleGrid>
       </Stack>

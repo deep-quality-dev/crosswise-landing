@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -33,8 +35,9 @@ import {
 
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'} zIndex={0}>
+    <Box bg={color} position={'relative'} zIndex={0} ref={ref}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -49,7 +52,7 @@ const DApp = () => {
           spacing={4}
           mb={{ base: 12, lg: 0 }}
           flex={1}
-          animation={fadeInLeftAnimation}
+          animation={inView ? fadeInLeftAnimation : ''}
         >
           <Heading
             as={'h2'}
@@ -102,7 +105,7 @@ const DApp = () => {
         <Box
           flex={1}
           boxShadow={'-0.5rem 0rem 1rem rgb(0 0 0/15%) !important'}
-          animation={fadeInRightAnimation}
+          animation={inView ? fadeInRightAnimation : ''}
         >
           <Image
             src={useColorModeValue(ImageDappLight, ImageDapp)}

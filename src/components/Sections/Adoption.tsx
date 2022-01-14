@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -7,7 +9,6 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import React from 'react';
 import { bounceInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
@@ -49,6 +50,7 @@ const Feature = ({ label }: { label: string }) => {
 const Adoption = () => {
   const color =
     'linear-gradient(90deg, rgba(4, 248, 173, 0.9) 0%, rgba(63, 129, 239, 0.8) 24.48%, rgba(135, 80, 244, 0.72) 48.96%, rgba(135, 80, 244, 0) 100%), url("/images/adoption.png")';
+  const [ref, inView] = useInView();
   return (
     <Box
       position={'relative'}
@@ -56,7 +58,8 @@ const Adoption = () => {
       bgSize={'cover'}
       bgImage={color}
       color={'white'}
-      animation={bounceInAnimation}
+      animation={inView ? bounceInAnimation : ''}
+      ref={ref}
     >
       <Stack
         as={Container}

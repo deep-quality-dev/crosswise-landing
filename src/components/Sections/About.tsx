@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -39,7 +40,6 @@ const Feature = ({
       )}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
-      animation={fadeInAnimation}
     >
       <Flex
         padding={'10px'}
@@ -68,8 +68,15 @@ const Feature = ({
 
 const About = () => {
   const color = useColorModeValue('gray.100', '#060514');
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'} zIndex={0}>
+    <Box
+      bg={color}
+      position={'relative'}
+      zIndex={0}
+      ref={ref}
+      animation={inView ? fadeInAnimation : ''}
+    >
       <Stack
         as={Container}
         maxW={'7xl'}

@@ -29,13 +29,13 @@ const zoomInAnim = keyframes`${zoomIn}`;
 
 const flipAnim = keyframes`${flip}`;
 
-export const fadeInAnimation = `${fadeInAnim} 0.5s linear`;
-export const fadeInLeftAnimation = `${fadeInLeftAnim} 0.5s linear`;
-export const fadeInRightAnimation = `${fadeInRightAnim} 0.5s linear`;
-export const fadeInDownAnimation = `${fadeInDownAnim} 0.5s linear`;
-export const fadeInUpAnimation = `${fadeInUpAnim} 0.5s linear`;
-export const fadeInDownBigAnimation = `${fadeInDownBigAnim} 0.5s linear`;
-export const fadeInUpBigAnimation = `${fadeInUpBigAnim} 0.5s linear`;
+export const fadeInAnimation = `${fadeInAnim} 1s linear`;
+export const fadeInLeftAnimation = `${fadeInLeftAnim} 1s linear`;
+export const fadeInRightAnimation = `${fadeInRightAnim} 1s linear`;
+export const fadeInDownAnimation = `${fadeInDownAnim} 1s linear`;
+export const fadeInUpAnimation = `${fadeInUpAnim} 1s linear`;
+export const fadeInDownBigAnimation = `${fadeInDownBigAnim} 1s linear`;
+export const fadeInUpBigAnimation = `${fadeInUpBigAnim} 1s linear`;
 
 export const bounceInAnimation = `${bounceInAnim} 2s linear`;
 

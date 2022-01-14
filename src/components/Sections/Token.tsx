@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -8,7 +10,6 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import React from 'react';
 import { zoomInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
@@ -33,7 +34,6 @@ const Feature = ({
       width={'fit-content'}
       cursor={'pointer'}
       height={'320px'}
-      animation={zoomInAnimation}
     >
       <Box
         position={'absolute'}
@@ -90,8 +90,9 @@ const Token = () => {
     'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)',
     'linear-gradient(90deg, #04F8AD26 0%, #3F81EF26 50.52%, #8750F426 100%)'
   );
+  const [ref, inView] = useInView();
   return (
-    <Box bg={color} position={'relative'} zIndex={0}>
+    <Box bg={color} position={'relative'} zIndex={0} ref={ref}>
       <Stack
         as={Container}
         maxW={'7xl'}
@@ -123,6 +124,7 @@ const Token = () => {
           columns={{ base: 1, lg: 2 }}
           spacing={8}
           pt={{ base: 10, lg: 24 }}
+          animation={inView ? zoomInAnimation : ''}
         >
           <Feature
             icon={<Icon as={IconEmission} width={'60px'} height={'53px'} />}

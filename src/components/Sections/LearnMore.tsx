@@ -1,3 +1,5 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   Box,
   Container,
@@ -7,7 +9,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
-
 import ImageSwap from '@/assets/images/swap-dialog.png';
 import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
 import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
@@ -21,6 +22,7 @@ import { withSection } from './withSection';
 
 const LearnMore = () => {
   const color = useColorModeValue('#F7F8F9', '#060514');
+  const [ref, inView] = useInView();
   return (
     <Box
       bg={color}
@@ -30,6 +32,7 @@ const LearnMore = () => {
       )}
       bgRepeat={'no-repeat'}
       bgPosition={'bottom'}
+      ref={ref}
     >
       <Stack
         as={Container}
@@ -42,7 +45,7 @@ const LearnMore = () => {
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
       >
-        <Box flex={1} animation={fadeInLeftAnimation}>
+        <Box flex={1} animation={inView ? fadeInLeftAnimation : ''}>
           <Image
             src={useColorModeValue(ImageSwapLight, ImageSwap)}
             alt="swap"
@@ -55,11 +58,11 @@ const LearnMore = () => {
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             fontWeight={{ base: '400' }}
             maxW={'2xl'}
-            animation={fadeInDownBigAnimation}
+            animation={inView ? fadeInDownBigAnimation : ''}
           >
             Low Fees Powered by Binance Smart Chain
           </Heading>
-          <Box animation={fadeInUpBigAnimation}>
+          <Box animation={inView ? fadeInUpBigAnimation : ''}>
             <NavigationWidget
               primary={{
                 label: 'Learn more',
