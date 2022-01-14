@@ -5,8 +5,10 @@ import {
   Icon,
   Stack,
   useColorModeValue,
+  keyframes,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import { fadeInLeft, fadeInDownBig, fadeInUpBig } from 'react-animations';
 
 import ImageSwap from '@/assets/images/swap-dialog.png';
 import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
@@ -16,6 +18,15 @@ import { withSection } from './withSection';
 
 const LearnMore = () => {
   const color = useColorModeValue('#F7F8F9', '#060514');
+
+  const fadeInLeftAnim = keyframes`${fadeInLeft}`;
+  const fadeInDownBigAnim = keyframes`${fadeInDownBig}`;
+  const fadeInUpBigAnim = keyframes`${fadeInUpBig}`;
+
+  const fadeInLeftAnimation = `${fadeInLeftAnim} 0.5s linear`;
+  const fadeInDownBigAnimation = `${fadeInDownBigAnim} 0.5s linear`;
+  const fadeInUpBigAnimation = `${fadeInUpBigAnim} 0.5s linear`;
+
   return (
     <Box
       bg={color}
@@ -37,7 +48,7 @@ const LearnMore = () => {
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
       >
-        <Box flex={1}>
+        <Box flex={1} animation={fadeInLeftAnimation}>
           <Image
             src={useColorModeValue(ImageSwapLight, ImageSwap)}
             alt="swap"
@@ -50,33 +61,36 @@ const LearnMore = () => {
             fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
             fontWeight={{ base: '400' }}
             maxW={'2xl'}
+            animation={fadeInDownBigAnimation}
           >
             Low Fees Powered by Binance Smart Chain
           </Heading>
-          <NavigationWidget
-            primary={{
-              label: 'Learn more',
-              href: 'https://crosswise.finance',
-            }}
-            icons={[
-              {
-                key: 'usdt',
-                icon: <Icon as={IconUSDT} color={'#00B8B9'} />,
-              },
-              {
-                key: 'btc',
-                icon: <Icon as={IconBTC} color={'#00B8B9'} />,
-              },
-              {
-                key: 'xrh',
-                icon: <Icon as={IconXRH} color={'#00B8B9'} />,
-              },
-              {
-                key: 'bnb',
-                icon: <Icon as={IconBNB} color={'#00B8B9'} />,
-              },
-            ]}
-          />
+          <Box animation={fadeInUpBigAnimation}>
+            <NavigationWidget
+              primary={{
+                label: 'Learn more',
+                href: 'https://crosswise.finance',
+              }}
+              icons={[
+                {
+                  key: 'usdt',
+                  icon: <Icon as={IconUSDT} color={'#00B8B9'} />,
+                },
+                {
+                  key: 'btc',
+                  icon: <Icon as={IconBTC} color={'#00B8B9'} />,
+                },
+                {
+                  key: 'xrh',
+                  icon: <Icon as={IconXRH} color={'#00B8B9'} />,
+                },
+                {
+                  key: 'bnb',
+                  icon: <Icon as={IconBNB} color={'#00B8B9'} />,
+                },
+              ]}
+            />
+          </Box>
         </Stack>
       </Stack>
     </Box>
