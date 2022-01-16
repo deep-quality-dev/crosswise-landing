@@ -9,6 +9,7 @@ import {
   Icon,
 } from '@chakra-ui/react';
 // import { ReactNode } from 'react';
+import animateScrollTo from 'animated-scroll-to';
 import {
   TELEGRAM_LINK,
   TWITTER_LINK,
@@ -115,12 +116,13 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
 
 export const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto',
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
+    animateScrollTo(0);
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'auto',
+    //   /* you can also use 'auto' behaviour
+    //      in place of 'smooth' */
+    // });
   };
 
   return (
