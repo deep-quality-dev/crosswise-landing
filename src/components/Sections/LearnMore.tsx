@@ -14,8 +14,7 @@ import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
 import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
 import {
   fadeInLeftAnimation,
-  fadeInDownBigAnimation,
-  fadeInUpBigAnimation,
+  fadeInRightAnimation,
 } from '@/constants/animations';
 import { NavigationWidget } from './NavigationWidget';
 import { withSection } from './withSection';
@@ -41,28 +40,51 @@ const LearnMore = () => {
         minH={950}
         py={{ base: 24, lg: 32 }}
         spacing={{ base: 10, lg: 24 }}
-        direction={{ base: 'column', lg: 'row' }}
+        direction={{ base: 'column', md: 'row' }}
         bgRepeat={'no-repeat'}
         bgPosition={'bottom'}
       >
-        <Box flex={1} animation={inView ? fadeInLeftAnimation : ''}>
+        <Box
+          flex={1}
+          animation={inView ? fadeInLeftAnimation : ''}
+          display={{ base: 'none', md: 'block' }}
+        >
           <Image
             src={useColorModeValue(ImageSwapLight, ImageSwap)}
             alt="swap"
             objectFit={'cover'}
           />
         </Box>
-        <Stack spacing={4} pt={20} mb={{ base: 12, lg: 0 }} flex={1}>
+        <Stack
+          spacing={4}
+          pt={{ base: 0, md: '100px' }}
+          mb={{ base: 12, lg: 0 }}
+          flex={1}
+        >
           <Heading
             as={'h3'}
-            fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+            fontSize={{ base: '3xl', lg: '4xl' }}
             fontWeight={{ base: '400' }}
             maxW={'2xl'}
-            animation={inView ? fadeInDownBigAnimation : ''}
+            width={'95%'}
+            textAlign={'center'}
+            animation={inView ? fadeInRightAnimation : ''}
           >
             Low Fees Powered by Binance Smart Chain
           </Heading>
-          <Box animation={inView ? fadeInUpBigAnimation : ''}>
+          <Box
+            flex={1}
+            animation={inView ? fadeInLeftAnimation : ''}
+            display={{ base: 'block', md: 'none' }}
+            justifyContent={'center'}
+          >
+            <Image
+              src={useColorModeValue(ImageSwapLight, ImageSwap)}
+              alt="swap"
+              objectFit={'cover'}
+            />
+          </Box>
+          <Box width={'95%'} animation={inView ? fadeInRightAnimation : ''}>
             <NavigationWidget
               primary={{
                 label: 'Learn more',

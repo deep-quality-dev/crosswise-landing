@@ -69,14 +69,37 @@ const Feature = ({
   );
 };
 
+const RocketImage = ({ showAnim }: { showAnim: boolean }) => {
+  const rightBackground = useColorModeValue(
+    'radial-gradient(50% 50% at 50% 50%, rgba(4, 248, 181, 0.15) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.0465) 0%, rgba(6, 19, 31, 0) 100%)',
+    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
+  );
+  return (
+    <Box
+      flex={1}
+      position={'relative'}
+      zIndex={0}
+      animation={showAnim ? fadeInRightAnimation : ''}
+    >
+      <Image src={ImageRocket} alt="dapp" objectFit={'cover'} />
+      <Box
+        position={'absolute'}
+        bg={rightBackground}
+        bgRepeat={'no-repeat'}
+        top={'0%'}
+        left={'0%'}
+        right={'0%'}
+        bottom={'0%'}
+        zIndex={-1}
+      ></Box>
+    </Box>
+  );
+};
+
 const Solutions = () => {
   const color = useColorModeValue(
     'url("/images/shine-light.png")',
     'url("/images/shine-light.png")'
-  );
-  const rightBackground = useColorModeValue(
-    'radial-gradient(50% 50% at 50% 50%, rgba(4, 248, 181, 0.15) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.0465) 0%, rgba(6, 19, 31, 0) 100%)',
-    'radial-gradient(50% 50% at 50% 50%, rgba(40, 94, 176, 0.31) 0%, rgba(6, 19, 31, 0) 100%)'
   );
   const [ref, inView] = useInView();
   return (
@@ -110,12 +133,21 @@ const Solutions = () => {
           spacing={4}
           pt={{ base: 10, lg: 24 }}
         >
+          <Box
+            flex={1}
+            display={{ base: 'block', lg: 'none' }}
+            mt={{ base: 10 }}
+          >
+            <RocketImage showAnim={inView} />
+          </Box>
           <Stack
             spacing={4}
             flex={1}
             direction={'column'}
             maxW={{ base: '400px' }}
             animation={inView ? fadeInLeftAnimation : ''}
+            margin={'0 auto'}
+            mt={{ base: 20, lg: 0 }}
           >
             <Feature
               title={'Seamless & Optimized DeFi Experience'}
@@ -154,24 +186,12 @@ const Solutions = () => {
               }
             ></Feature>
           </Stack>
-
           <Box
             flex={1}
-            position={'relative'}
-            zIndex={0}
-            animation={inView ? fadeInRightAnimation : ''}
+            display={{ base: 'none', lg: 'block' }}
+            mt={{ base: 10 }}
           >
-            <Image src={ImageRocket} alt="dapp" objectFit={'cover'} />
-            <Box
-              position={'absolute'}
-              bg={rightBackground}
-              bgRepeat={'no-repeat'}
-              top={'0%'}
-              left={'0%'}
-              right={'0%'}
-              bottom={'0%'}
-              zIndex={-1}
-            ></Box>
+            <RocketImage showAnim={inView} />
           </Box>
         </SimpleGrid>
       </Stack>
