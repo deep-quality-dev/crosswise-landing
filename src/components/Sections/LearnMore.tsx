@@ -76,7 +76,7 @@ const LearnMore = () => {
             flex={1}
             animation={inView ? fadeInLeftAnimation : ''}
             display={{ base: 'block', md: 'none' }}
-            justifyContent={'center'}
+            textAlign={'center'}
           >
             <Image
               src={useColorModeValue(ImageSwapLight, ImageSwap)}
@@ -84,7 +84,7 @@ const LearnMore = () => {
               objectFit={'cover'}
             />
           </Box>
-          <Box width={'95%'} animation={inView ? fadeInRightAnimation : ''}>
+          <Box width={'100%'} animation={inView ? fadeInRightAnimation : ''}>
             <NavigationWidget
               primary={{
                 label: 'Learn more',
