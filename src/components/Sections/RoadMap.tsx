@@ -94,16 +94,15 @@ const Circle = ({ description }: CircleProps) => {
         <Box
           borderRadius={'50%'}
           backgroundColor={'#1B272D'}
-          fontSize={'20px'}
           boxShadow={'inset 1px 10px 50px rgba(0, 0, 0, 0.45)'}
           height={'100%'}
         ></Box>
       </Box>
       <Box
         position={'absolute'}
-        left={'calc(50% + 30px)'}
-        top={'12px'}
-        maxWidth={'240px'}
+        left={'calc(50% + 20px)'}
+        top={'13px'}
+        width={{ base: '180px' }}
         fontSize={'16px'}
       >
         {description}
@@ -121,6 +120,7 @@ const Map = () => {
       alignItems={'center'}
       width={'100%'}
       paddingBottom={'40px'}
+      left={{ base: '-25%', md: 0 }}
     >
       <Stage title="Q1 2022" />
       <Circle description="Token Listing onDEX - launch on BSC" />
@@ -162,7 +162,7 @@ const RoadMap = () => {
         as={Container}
         maxW={'7xl'}
         minH={950}
-        py={{ base: 200, lg: 32 }}
+        py={{ base: 32 }}
         spacing={{ base: 5 }}
         bgImage="url('/images/spary-2.png')"
         bgRepeat={'no-repeat'}
@@ -190,12 +190,7 @@ const RoadMap = () => {
           <Map />
         </Stack>
 
-        <SimpleGrid
-          columns={{ base: 1, lg: 2 }}
-          spacing={8}
-          py={{ base: 24, lg: 24 }}
-          ref={ref1}
-        >
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} ref={ref1}>
           <Box animation={inView1 ? fadeInLeftAnimation : ''}>
             <Image alt={'earth-img'} src={ImageEarth} objectFit="contain" />
           </Box>
@@ -245,7 +240,7 @@ const RoadMap = () => {
               fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
               maxW={'2xl'}
             >
-              Crosswise Launchpad
+              <Text fontWeight={{ base: '500' }}>Crosswise</Text> Launchpad
             </Heading>
             <Spacer />
             <Text fontSize={'20px'} fontWeight={'300'}>
