@@ -67,7 +67,7 @@ const LearnMore = () => {
             fontWeight={{ base: '400' }}
             maxW={'2xl'}
             width={'95%'}
-            textAlign={'center'}
+            textAlign={{ base: 'center', md: 'start' }}
             animation={inView ? fadeInRightAnimation : ''}
           >
             Low Fees Powered by Binance Smart Chain

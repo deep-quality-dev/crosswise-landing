@@ -25,9 +25,9 @@ export interface WidgetProps {
 export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
   return (
     <Stack
-      as={Container}
       p={{ base: '17px' }}
       spacing={{ base: '17px' }}
+      width={{ base: '100%', md: 'fit-content' }}
       direction={{ base: 'column', md: 'row' }}
       alignItems={'center'}
       bg={useColorModeValue('transparent', '#25272C')}
