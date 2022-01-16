@@ -106,7 +106,7 @@ const DApp = () => {
             <br />
             Swap, Stake & Earn
           </Text>
-          <Box display={{ base: 'none', md: 'block' }}>
+          <Box display={{ base: 'none', lg: 'block' }}>
             <Widget />
           </Box>
         </Stack>
@@ -122,7 +122,7 @@ const DApp = () => {
             className={'dapp-screen'}
           />
         </Box>
-        <Box display={{ base: 'block', md: 'none' }}>
+        <Box display={{ base: 'block', lg: 'none' }}>
           <Widget />
         </Box>
       </Stack>
