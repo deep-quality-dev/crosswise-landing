@@ -104,7 +104,7 @@ const GotoTopBtn = ({ onClick }: { onClick: any }) => {
         flexDirection={'row'}
         alignItems={'center'}
       >
-        <Text fontSize={'13px'} mr={{ sm: '10px', md: '10px' }}>
+        <Text fontSize={'12px'} mr={{ base: '5px' }}>
           GO TO TOP
         </Text>
         <IconUp />
@@ -139,11 +139,13 @@ export const Footer = () => {
               crosswise
             </Text>
           </Stack>
+
           <Stack
             direction={'row'}
             align={'center'}
             spacing={3}
-            pt={{ sm: '10px', md: '0px' }}
+            pt={{ base: '10px', md: '0px' }}
+            display={{ base: 'none', md: 'flex' }}
           >
             <IconChat color={useColorModeValue('#606060', '#E0E0FF')} />
             <Text
@@ -153,7 +155,12 @@ export const Footer = () => {
               English (United States)
             </Text>
           </Stack>
-          <Stack justifyContent={'space-between'} direction={'row'}>
+
+          <Stack
+            justifyContent={'space-between'}
+            direction={'row'}
+            display={{ base: 'none', md: 'flex' }}
+          >
             <Stack direction={'row'} align={'center'} spacing={3}>
               <IconSend color={useColorModeValue('#606060', '#E0E0FF')} />
               <Text
@@ -181,6 +188,38 @@ export const Footer = () => {
                 {link.icon}
               </Link>
             ))}
+          </Stack>
+
+          <Stack
+            direction={'row'}
+            align={'center'}
+            spacing={3}
+            pt={{ base: '10px', md: '0px' }}
+            display={{ base: 'flex', md: 'none' }}
+          >
+            <IconChat color={useColorModeValue('#606060', '#E0E0FF')} />
+            <Text
+              fontSize={'13px'}
+              color={useColorModeValue('#606060', '#E0E0FF')}
+            >
+              English (United States)
+            </Text>
+          </Stack>
+          <Stack
+            justifyContent={'space-between'}
+            direction={'row'}
+            pt={{ base: '10px', md: '0px' }}
+            display={{ base: 'flex', md: 'none' }}
+          >
+            <Stack direction={'row'} align={'center'} spacing={3}>
+              <IconSend color={useColorModeValue('#606060', '#E0E0FF')} />
+              <Text
+                fontSize={'13px'}
+                color={useColorModeValue('#606060', '#E0E0FF')}
+              >
+                United States
+              </Text>
+            </Stack>
           </Stack>
 
           <Link
@@ -211,6 +250,14 @@ export const Footer = () => {
               TERMS & CONDITIONS | PRIVACY POLICY
             </Text>
           </Link>
+
+          <Box
+            pt={{ base: '10px', md: '0px' }}
+            display={{ base: 'flex', md: 'none' }}
+            justifyContent={{ base: 'end' }}
+          >
+            <GotoTopBtn onClick={scrollToTop} />
+          </Box>
         </SimpleGrid>
       </Container>
     </Box>
