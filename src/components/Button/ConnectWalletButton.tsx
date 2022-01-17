@@ -78,6 +78,7 @@ const ConnectWalletButton = () => {
                       width={'64px'}
                       height={'64px'}
                       onClick={() => login(connector.connectorId)}
+                      cursor={'pointer'}
                     />
                     <Text>{connector.title}</Text>
                     <Text>{connector.description}</Text>
