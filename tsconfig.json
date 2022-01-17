@@ -18,7 +18,6 @@
     "paths": {
       "@/assets/*": ["./assets/*"],
       "@/components/*": ["./components/*"],
-      "@/config/*": ["./config/*"],
       "@/constants/*": ["./constants/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/layout/*": ["./layout/*"],
@@ -26,6 +25,6 @@
     },
     "noImplicitAny": false,
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "next.config.js"]
 }

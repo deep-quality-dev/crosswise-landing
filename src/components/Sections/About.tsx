@@ -17,7 +17,7 @@ import {
   IconGasless,
   IconIntegrated,
   IconUserFriendly,
-} from '@/components/icons';
+} from '@/components/Icons';
 import { Logo } from '../Logo';
 import { withSection } from './withSection';
 

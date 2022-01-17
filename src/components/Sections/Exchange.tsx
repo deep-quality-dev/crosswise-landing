@@ -13,7 +13,7 @@ import {
 import { zoomInAnimation } from '@/constants/animations';
 import { withSection } from './withSection';
 
-import { IconBridge, IconSwap, IconTools, IconFarms } from '../icons';
+import { IconBridge, IconSwap, IconTools, IconFarms } from '../Icons';
 
 const Feature = ({
   icon,

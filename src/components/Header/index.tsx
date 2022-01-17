@@ -16,6 +16,7 @@ import { IoMoon, IoSunny } from 'react-icons/io5';
 import Link from 'next/link';
 
 // import { Logo } from './Logo';
+import PrimaryButton from '@/components/Button/PrimaryButton';
 import { MobileNav } from '@/components/Header/MobileNav';
 import { DesktopNav } from '@/components/Header/DesktopNav';
 import { Logo } from '@/components/Logo';
@@ -75,18 +76,6 @@ export const Header = () => {
             justify={'flex-end'}
           >
             <DesktopNav display={{ base: 'none', md: 'flex' }} />
-            <Link href={'https://app.crosswise.finance'} passHref>
-              <Button
-                color={'white'}
-                bgImage={'linear-gradient(107deg, #0fa, #4579f5 55%, #9c42f5)'}
-                boxShadow={'0 .5rem 1rem rgba(0, 0, 0, .15)'}
-                cursor={'pointer'}
-                size={'sm'}
-              >
-                Launch APP
-              </Button>
-            </Link>
-
             <IconButton
               size={'sm'}
               variant={'ghost'}

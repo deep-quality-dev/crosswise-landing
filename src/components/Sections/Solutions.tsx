@@ -19,7 +19,7 @@ import {
   fadeInLeftAnimation,
   fadeInRightAnimation,
 } from '@/constants/animations';
-import { IconArrowDown, IconArrowUp } from '../icons';
+import { IconArrowDown, IconArrowUp } from '../Icons';
 
 const Feature = ({
   title,

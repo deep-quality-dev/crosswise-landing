@@ -2,7 +2,7 @@ import {
   Box,
   Container,
   Heading,
-  Icon,
+  Link,
   Stack,
   Text,
   useColorModeValue,
@@ -16,51 +16,28 @@ import {
   IconChainLink,
   IconCERTIK,
   IconBiconomy,
-} from '../icons';
-import Link from 'next/link';
+} from '../Icons';
+import NextLink from 'next/link';
 
 const Partners = [
   {
     href: 'https://github.com/TechRate/Smart-Contract-Audits/blob/main/October/Crosswise%20Token%20Full%20Smart%20Contract%20Security%20Audit.pdf',
-    icon: (
-      <Icon
-        as={IconTechRate}
-        width={'42px'}
-        height={'42px'}
-        cursor={'pointer'}
-      />
-    ),
+    icon: <IconTechRate width={'42px'} height={'42px'} />,
     label: 'TechRate',
   },
   {
     href: 'https://data.chain.link/users/crosswise',
-    icon: (
-      <Icon
-        as={IconChainLink}
-        width={'42px'}
-        height={'42px'}
-        cursor={'pointer'}
-      />
-    ),
+    icon: <IconChainLink width={'42px'} height={'42px'} />,
     label: 'ChainLink',
   },
   {
     href: 'https://www.certik.com/projects/crosswise-finance',
-    icon: (
-      <Icon as={IconCERTIK} width={'42px'} height={'42px'} cursor={'pointer'} />
-    ),
+    icon: <IconCERTIK width={'42px'} height={'42px'} />,
     label: 'CERTIK',
   },
   {
     href: 'https://www.biconomy.io/',
-    icon: (
-      <Icon
-        as={IconBiconomy}
-        width={'42px'}
-        height={'42px'}
-        cursor={'pointer'}
-      />
-    ),
+    icon: <IconBiconomy width={'42px'} height={'42px'} />,
     label: 'Biconomy',
   },
 ];
@@ -96,9 +73,9 @@ const Feature = ({
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
-      <Link href={href} passHref>
-        <ChildLink ref={ref}>{icon}</ChildLink>
-      </Link>
+      <NextLink href={href} passHref>
+        <Link>{icon}</Link>
+      </NextLink>
       <Text fontWeight={{ base: '600' }}>{label}</Text>
     </Stack>
   );

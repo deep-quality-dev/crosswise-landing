@@ -23,7 +23,7 @@ import ImageLeon from '@/assets/images/members/Leon.jpg';
 import ImageJamesGao from '@/assets/images/members/JamesGao.jpg';
 import ImageJamesYin from '@/assets/images/members/JamesYin.jpg';
 import ImageBenWeider from '@/assets/images/members/BenWeider.jpg';
-import { IconArrowDown, IconArrowUp, IconLinkedin } from '../icons';
+import { IconArrowDown, IconArrowUp, IconLinkedin } from '../Icons';
 import Link from 'next/link';
 
 const ref = React.createRef<HTMLButtonElement>();
