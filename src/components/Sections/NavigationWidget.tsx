@@ -1,10 +1,4 @@
-import {
-  Container,
-  Button,
-  Stack,
-  useColorModeValue,
-  Link,
-} from '@chakra-ui/react';
+import { Button, Stack, useColorModeValue, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import PrimaryButton from '../Button/PrimaryButton';
@@ -40,7 +34,7 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
           <PrimaryButton cursor={'pointer'} label={primary.label} />
         </Link>
       </NextLink>
-      
+
       <Stack
         display={'flex'}
         width={{ base: 'max-content' }}

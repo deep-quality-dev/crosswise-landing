@@ -17,13 +17,13 @@ export const nodes = [
   process.env.NEXT_PUBLIC_RPC_URL3,
 ];
 
-const getNodeUrl = () => {
+const getNodeUrl = (): string => {
   // Use custom node if available (both for development and production)
   // However on the testnet it wouldn't work, so if on testnet - comment out the REACT_APP_NODE_PRODUCTION from env file
   if (process.env.NEXT_PUBLIC_NODE_PRODUCTION) {
     return process.env.NEXT_PUBLIC_NODE_PRODUCTION;
   }
-  return sample(nodes);
+  return sample(nodes)!;
 };
 
 export const getChainId = () => {

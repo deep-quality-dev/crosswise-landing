@@ -15,7 +15,6 @@ const injected = new InjectedConnector({ supportedChainIds: [chainId] });
 const walletconnect = new WalletConnectConnector({
   rpc: { [chainId]: rpcUrl },
   qrcode: true,
-  pollingInterval: POLLING_INTERVAL,
 });
 
 const bscConnector = new BscConnector({ supportedChainIds: [chainId] });
@@ -42,7 +41,11 @@ export const signMessage = async (
   account: string,
   message: string
 ): Promise<string> => {
-  if (window.BinanceChain && connector instanceof BscConnector) {
+  if (
+    window.BinanceChain &&
+    window.BinanceChain.bnbSign &&
+    connector instanceof BscConnector
+  ) {
     const { signature } = await window.BinanceChain.bnbSign(account, message);
     return signature;
   }
