@@ -26,7 +26,7 @@ import {
   IconMail,
   IconCoinGecko,
   IconCoinMarketCaps,
-} from '@/components/icons';
+} from '@/components/Icons';
 import {
   FaDiscord,
   FaGithub,

@@ -10,8 +10,11 @@ import Token from '@/components/Sections/Token';
 import { AppLayout } from '@/layout/AppLayout';
 import TechnicalPartner from '@/components/Sections/TechnicalPartner';
 import CoreTeam from '@/components/Sections/CoreTeam';
+import useEagerConnect from '@/hooks/useEagerConnect';
 
 const Home: NextPage = () => {
+  useEagerConnect();
+
   return (
     <AppLayout>
       <DApp></DApp>

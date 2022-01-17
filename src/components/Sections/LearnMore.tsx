@@ -11,7 +11,7 @@ import {
 import Image from 'next/image';
 import ImageSwap from '@/assets/images/swap-dialog.png';
 import ImageSwapLight from '@/assets/images/swap-dialog-light.png';
-import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/icons';
+import { IconBNB, IconUSDT, IconBTC, IconXRH } from '@/components/Icons';
 import {
   fadeInLeftAnimation,
   fadeInRightAnimation,

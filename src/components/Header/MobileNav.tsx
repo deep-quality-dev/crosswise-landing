@@ -1,6 +1,23 @@
-import { Flex, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { NaviationItems, NavigationItem } from '@/components/Header/navData';
+import useActiveWeb3React from '@/hooks/useActiveWeb3React';
+import useAuth from '@/hooks/useAuth';
+import ConnectWalletButton from '../Button/ConnectWalletButton';
+import { shortenAddress } from '@/utils/address';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { IoExitOutline } from 'react-icons/io5';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -11,6 +28,9 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
     'rgba(255, 255, 255, 0.8)',
     'rgba(26, 32, 44, 0.8)'
   );
+
+  const { account } = useActiveWeb3React();
+  const { logout } = useAuth();
 
   if (!isOpen) return null;
 
@@ -32,6 +52,21 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
       {NaviationItems.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+
+      {!account ? (
+        <ConnectWalletButton />
+      ) : (
+        <Menu>
+          <MenuButton as={Button} rightIcon={<ChevronRightIcon />} size={'sm'}>
+            <Text>{shortenAddress(account)}</Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem icon={<IoExitOutline />} onClick={logout}>
+              Disconnect
+            </MenuItem>
+          </MenuList>
+        </Menu>
+      )}
     </Stack>
   );
 };
