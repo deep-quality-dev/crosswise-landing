@@ -9,14 +9,11 @@ import {
   Icon,
   useColorMode,
   Heading,
-  Button,
 } from '@chakra-ui/react';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { IoMoon, IoSunny } from 'react-icons/io5';
 import Link from 'next/link';
 
-// import { Logo } from './Logo';
-import PrimaryButton from '@/components/Button/PrimaryButton';
 import { MobileNav } from '@/components/Header/MobileNav';
 import { DesktopNav } from '@/components/Header/DesktopNav';
 import { Logo } from '@/components/Logo';

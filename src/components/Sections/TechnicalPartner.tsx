@@ -42,12 +42,12 @@ const Partners = [
   },
 ];
 
-const ref = React.createRef<HTMLButtonElement>();
-type LinkProps = React.HTMLProps<HTMLElement>;
-const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
-  <>{props.children}</>
-));
-ChildLink.displayName = 'ChildLink';
+// const ref = React.createRef<HTMLButtonElement>();
+// type LinkProps = React.HTMLProps<HTMLElement>;
+// const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
+//   <>{props.children}</>
+// ));
+// ChildLink.displayName = 'ChildLink';
 
 const Feature = ({
   href,

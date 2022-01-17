@@ -13,7 +13,6 @@ import {
   MenuList,
   MenuItem,
 } from '@chakra-ui/react';
-import NextLink from 'next/link';
 
 import { NaviationItems, NavigationItem } from '@/components/Header/navData';
 import PrimaryButton from '@/components/Button/PrimaryButton';
@@ -56,14 +55,9 @@ export const DesktopNav = (props: BoxProps) => {
           </Box>
         ))}
 
-        <PrimaryButton
-          as={Link}
-          cursor={'pointer'}
-          href={'https://app.crosswise.finance'}
-          label={'Launch APP'}
-          size={'sm'}
-          isExternal
-        />
+        <Link href={'https://app.crosswise.finance'} isExternal>
+          <PrimaryButton cursor={'pointer'} label={'Launch APP'} size={'sm'} />
+        </Link>
 
         {!account ? (
           <ConnectWalletButton />

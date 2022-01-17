@@ -28,6 +28,7 @@ import Link from 'next/link';
 
 const ref = React.createRef<HTMLButtonElement>();
 type LinkProps = React.HTMLProps<HTMLElement>;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ChildLink = React.forwardRef<HTMLElement, LinkProps>((props, ref) => (
   <>{props.children}</>
 ));

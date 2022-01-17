@@ -12,6 +12,7 @@ export const setupNetwork = async () => {
   if (provider) {
     const chainId = getChainId();
     try {
+      if (!provider.request) return false;
       await provider.request({
         method: 'wallet_addEthereumChain',
         params: [
@@ -53,18 +54,21 @@ export const registerToken = async (
   tokenSymbol: string,
   tokenDecimals: number
 ) => {
-  const tokenAdded = await window.ethereum.request({
-    method: 'wallet_watchAsset',
-    params: {
-      type: 'ERC20',
-      options: {
-        address: tokenAddress,
-        symbol: tokenSymbol,
-        decimals: tokenDecimals,
-        image: `${BASE_URL}/images/tokens/${tokenAddress}.png`,
+  if (window.ethereum && window.ethereum.request) {
+    await window.ethereum.request({
+      method: 'wallet_watchAsset',
+      params: {
+        type: 'ERC20',
+        options: {
+          address: tokenAddress,
+          symbol: tokenSymbol,
+          decimals: tokenDecimals,
+          image: `${BASE_URL}/images/tokens/${tokenAddress}.png`,
+        },
       },
-    },
-  });
+    });
+    return true;
+  }
 
-  return tokenAdded;
+  return false;
 };
