@@ -95,18 +95,22 @@ const About = () => {
         </Box>
         <Heading
           as={'h3'}
-          fontSize={{ base: '3xl', sm: '4xl', md: '4xl', lg: '5xl' }}
+          fontSize={{ base: '4xl', sm: '4xl', md: '4xl', lg: '5xl' }}
           fontWeight={{ base: '400' }}
           maxW={'2xl'}
+          textAlign={'center'}
         >
           About Crosswise
         </Heading>
-        <Text fontSize={{ base: '2xl' }} textAlign={'center'}>
-          A next generation cross-chain decentralized exchange
-          <br />
-          with integrated trading tools & incentives.
+        <Text
+          fontSize={{ base: 'xl' }}
+          textAlign={'center'}
+          width={{ base: '90%' }}
+        >
+          A next generation cross-chain decentralized exchange with integrated
+          trading tools & incentives.
         </Text>
-        <SimpleGrid columns={{ base: 2 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Feature
             icon={<Icon as={IconUserFriendly} />}
             label="User Friendly"
@@ -124,7 +128,11 @@ const About = () => {
             label="Integrated Tools"
           ></Feature>
         </SimpleGrid>
-        <Text fontSize={{ base: '2xl' }} align={'center'}>
+        <Text
+          fontSize={{ base: '2xl' }}
+          align={'center'}
+          display={{ base: 'none', md: 'block' }}
+        >
           Crosswise Finance aims to combine CeFi and DeFi, enhance
           interoperability, and drive mass adoption.
         </Text>

@@ -45,27 +45,6 @@ export const Header = () => {
       >
         <Container as={Flex} maxW={'7xl'} align={'center'} width="100%">
           <Flex
-            flex={{ base: '0', md: 'auto' }}
-            ml={{ base: -2 }}
-            mr={{ base: 6, md: 0 }}
-            display={{ base: 'flex', md: 'none' }}
-          >
-            <IconButton
-              onClick={onToggle}
-              icon={
-                isMobileNavOpen ? (
-                  <CloseIcon w={3} h={3} />
-                ) : (
-                  <HamburgerIcon w={5} h={5} />
-                )
-              }
-              variant={'ghost'}
-              size={'sm'}
-              aria-label={'Toggle Navigation'}
-            />
-          </Flex>
-
-          <Flex
             flex={{ base: 1, md: 'auto' }}
             justify={{ base: 'start', md: 'start' }}
           >
@@ -122,6 +101,25 @@ export const Header = () => {
               }
             />
           </Stack>
+
+          <Flex
+            flex={{ base: '0', md: 'auto' }}
+            display={{ base: 'flex', md: 'none' }}
+          >
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isMobileNavOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={'ghost'}
+              size={'sm'}
+              aria-label={'Toggle Navigation'}
+            />
+          </Flex>
         </Container>
       </Flex>
       <MobileNav isOpen={isMobileNavOpen} />

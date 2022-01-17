@@ -33,6 +33,44 @@ import {
   fadeInRightAnimation,
 } from '@/constants/animations';
 
+const Widget = () => {
+  return (
+    <NavigationWidget
+      primary={{
+        label: 'Launch APP',
+        href: 'https://app.crosswise.finance',
+      }}
+      icons={[
+        {
+          key: 'twitter',
+          icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
+          href: TWITTER_LINK,
+        },
+        {
+          key: 'telegram',
+          icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
+          href: TELEGRAM_LINK,
+        },
+        {
+          key: 'discord',
+          icon: <Icon as={FaDiscord} color={'#00B8B9'} />,
+          href: DISCORD_LINK,
+        },
+        {
+          key: 'github',
+          icon: <Icon as={FaGithub} color={'#00B8B9'} />,
+          href: GITHUB_LINK,
+        },
+        {
+          key: 'medium',
+          icon: <Icon as={FaMedium} color={'#00B8B9'} />,
+          href: MEDIUM_LINK,
+        },
+      ]}
+    />
+  );
+};
+
 const DApp = () => {
   const color = useColorModeValue('gray.100', '#060514');
   const [ref, inView] = useInView();
@@ -68,39 +106,9 @@ const DApp = () => {
             <br />
             Swap, Stake & Earn
           </Text>
-          <NavigationWidget
-            primary={{
-              label: 'Launch APP',
-              href: 'https://app.crosswise.finance',
-            }}
-            icons={[
-              {
-                key: 'twitter',
-                icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
-                href: TWITTER_LINK,
-              },
-              {
-                key: 'telegram',
-                icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
-                href: TELEGRAM_LINK,
-              },
-              {
-                key: 'discord',
-                icon: <Icon as={FaDiscord} color={'#00B8B9'} />,
-                href: DISCORD_LINK,
-              },
-              {
-                key: 'github',
-                icon: <Icon as={FaGithub} color={'#00B8B9'} />,
-                href: GITHUB_LINK,
-              },
-              {
-                key: 'medium',
-                icon: <Icon as={FaMedium} color={'#00B8B9'} />,
-                href: MEDIUM_LINK,
-              },
-            ]}
-          />
+          <Box display={{ base: 'none', lg: 'block' }}>
+            <Widget />
+          </Box>
         </Stack>
         <Box
           flex={1}
@@ -113,6 +121,9 @@ const DApp = () => {
             objectFit={'cover'}
             className={'dapp-screen'}
           />
+        </Box>
+        <Box display={{ base: 'block', lg: 'none' }}>
+          <Widget />
         </Box>
       </Stack>
 

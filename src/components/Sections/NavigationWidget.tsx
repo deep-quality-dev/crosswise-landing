@@ -25,15 +25,14 @@ export interface WidgetProps {
 export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
   return (
     <Stack
-      as={Container}
       p={{ base: '17px' }}
       spacing={{ base: '17px' }}
-      direction={'row'}
+      width={{ base: '100%', md: 'fit-content' }}
+      direction={{ base: 'column', md: 'row' }}
       alignItems={'center'}
       bg={useColorModeValue('transparent', '#25272C')}
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
-      maxW={'fit-content'}
     >
       <NextLink href={primary.href} passHref>
         <Button
@@ -41,28 +40,36 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
           bgImage={'linear-gradient(107deg, #0fa, #4579f5 55%, #9c42f5)'}
           boxShadow={'0 .5rem 1rem rgba(0, 0, 0, .15)'}
           cursor={'pointer'}
+          width={{ base: '100%', md: 'fit-content' }}
         >
           {primary.label}
         </Button>
       </NextLink>
-      {icons &&
-        icons.map((item: WidgetIconProps) => {
-          return (
-            <Button
-              key={item.key}
-              as={Link}
-              href={item.href ?? ''}
-              borderRadius={'50%'}
-              width={'48px'}
-              height={'48px'}
-              bg={'#E0E0FF02'}
-              boxShadow={'inset 1px 1px 6px #00000040'}
-              cursor={'pointer'}
-            >
-              {item.icon}
-            </Button>
-          );
-        })}
+      <Stack
+        display={'flex'}
+        width={{ base: 'max-content' }}
+        direction={'row'}
+        justifyContent={'space-between'}
+      >
+        {icons &&
+          icons.map((item: WidgetIconProps) => {
+            return (
+              <Button
+                key={item.key}
+                as={Link}
+                href={item.href ?? ''}
+                borderRadius={'50%'}
+                width={'48px'}
+                height={'48px'}
+                bg={'#E0E0FF02'}
+                boxShadow={'inset 1px 1px 6px #00000040'}
+                cursor={'pointer'}
+              >
+                {item.icon}
+              </Button>
+            );
+          })}
+      </Stack>
     </Stack>
   );
 };

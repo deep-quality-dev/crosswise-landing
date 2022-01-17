@@ -87,16 +87,21 @@ const Adoption = () => {
         >
           Facilitating DeFi Adoption
         </Heading>
-        <HStack spacing={'10'} pt={{ base: 5 }}>
+        <Stack
+          spacing={'10'}
+          pt={{ base: 5 }}
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Feature label={'Cost-Effective'}></Feature>
           <Feature label={'Performance'}></Feature>
           <Feature label={'UI/UX Optimized'}></Feature>
-        </HStack>
-        <SimpleGrid columns={2}>
+        </Stack>
+        <SimpleGrid columns={{ base: 1, md: 2 }}>
           <Text
             fontSize={{ base: 'xl' }}
             fontWeight={{ base: '300' }}
             lineHeight={{ base: '28px' }}
+            textAlign={{ base: 'center', md: 'start' }}
           >
             In spite of accelerated innovation & development, decentralized
             exchanges have yet to find a perfect balance between transactional
