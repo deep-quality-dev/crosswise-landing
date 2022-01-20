@@ -10,7 +10,7 @@ interface WidgetIconProps {
 }
 
 export interface WidgetProps {
-  primary: {
+  primary?: {
     label: string;
     href: string;
   };
@@ -29,11 +29,13 @@ export const NavigationWidget = ({ primary, icons }: WidgetProps) => {
       borderRadius={'10'}
       boxShadow={'0 .5rem 1rem rgb(0 0 0/15%) !important'}
     >
-      <NextLink href={primary.href} passHref>
-        <Link>
-          <PrimaryButton cursor={'pointer'} label={primary.label} />
-        </Link>
-      </NextLink>
+      {primary && (
+        <NextLink href={primary.href} passHref>
+          <Link>
+            <PrimaryButton cursor={'pointer'} label={primary.label} />
+          </Link>
+        </NextLink>
+      )}
 
       <Stack
         display={'flex'}

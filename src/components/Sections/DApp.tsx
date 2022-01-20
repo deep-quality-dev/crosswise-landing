@@ -36,10 +36,6 @@ import {
 const Widget = () => {
   return (
     <NavigationWidget
-      primary={{
-        label: 'Launch APP',
-        href: 'https://app.crosswise.finance',
-      }}
       icons={[
         {
           key: 'twitter',

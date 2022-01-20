@@ -55,9 +55,9 @@ export const DesktopNav = (props: BoxProps) => {
           </Box>
         ))}
 
-        <Link href={'https://app.crosswise.finance'} isExternal>
+        {/* <Link href={'https://app.crosswise.finance'} isExternal>
           <PrimaryButton cursor={'pointer'} label={'Launch APP'} size={'sm'} />
-        </Link>
+        </Link> */}
 
         {!account ? (
           <ConnectWalletButton />
