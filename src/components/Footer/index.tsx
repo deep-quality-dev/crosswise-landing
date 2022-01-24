@@ -39,34 +39,42 @@ const SOCIAL_LINKS = [
   {
     icon: <Icon as={FaTwitter} color={'#00B8B9'} />,
     href: TWITTER_LINK,
+    disabled: false
   },
   {
     icon: <Icon as={FaTelegram} color={'#00B8B9'} />,
     href: TELEGRAM_LINK,
+    disabled: false
   },
   {
     icon: <Icon as={FaDiscord} color={'#00B8B9'} />,
     href: DISCORD_LINK,
+    disabled: false
   },
   {
     icon: <Icon as={FaMedium} color={'#00B8B9'} />,
     href: MEDIUM_LINK,
+    disabled: false
   },
   {
     icon: <Icon as={IconMail} />,
     href: 'mail_link',
+    disabled: true
   },
   {
     icon: <Icon as={FaGithub} color={'#00B8B9'} />,
     href: GITHUB_LINK,
+    disabled: false
   },
   {
     icon: <Icon as={IconCoinGecko} />,
     href: 'coingecho_link',
+    disabled: true
   },
   {
     icon: <Icon as={IconCoinMarketCaps} />,
     href: 'coinmarketcaps_link',
+    disabled: true
   },
 ];
 
@@ -185,11 +193,18 @@ export const Footer = () => {
 
         <SimpleGrid columns={{ base: 1, lg: 3 }}>
           <Stack spacing={5} direction={'row'}>
-            {SOCIAL_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} isExternal>
-                {link.icon}
-              </Link>
-            ))}
+            {SOCIAL_LINKS.map((link) => {
+              return !link.disabled ? (
+                <Link key={link.href} href={link.href} isExternal>
+                  {link.icon}
+                </Link>
+              ) : (
+                <Link key={link.href}>
+                  {link.icon}
+                </Link>
+              )
+            }
+            )}
           </Stack>
 
           <Stack
