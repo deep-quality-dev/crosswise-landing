@@ -7,6 +7,7 @@ const styles = {
     },
     html: {
       scrollBehavior: 'smooth',
+      overflowX: 'hidden',
     },
   },
 };

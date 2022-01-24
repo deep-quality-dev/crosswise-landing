@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --write --no-error-on-unmatched-pattern '**/*.{js,jsx,ts,tsx}'"
   },
   "husky": {
     "hooks": {
@@ -24,10 +24,10 @@
     "@types/styled-components": "^5.1.19",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
-    "animated-scroll-to": "^2.2.0",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/walletconnect-connector": "^6.2.8",
+    "animated-scroll-to": "^2.2.0",
     "dotenv": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
